@@ -41,7 +41,7 @@
     <div class="row">
       <strong>Terra CORE — Deckbuilder</strong>
       <span class="pill" id="counts">Loading…</span>
-      <span class="small">Uses Cards.csv + /images/*.JPG</span>
+      <span class="small">Uses cards.csv + /images/</span>
     </div>
     <div class="row" style="margin-top:10px;">
       <input id="search" placeholder="Search name or abilities…" style="flex:1; min-width:240px;" />
@@ -75,7 +75,7 @@
       </div>
 
       <div class="small" style="margin-top:8px;">
-        Format supported in .txt:<br>
+        .txt supports:<br>
         <code>VOLCANO_HIDEOUT</code> or <code>2x VOLCANO_HIDEOUT</code>
       </div>
 
@@ -96,9 +96,10 @@
 
 <script>
 /** CONFIG **/
-const CSV_URL = "./cards.csv"; // you renamed to cards.csv
-const IMAGE_BASE = "./images/"; // hosted images folder
-const IMAGE_EXT = ".JPG";       // your current extension
+const CSV_URL = "./cards.csv";
+const IMAGE_BASE = "./images/";
+// Mixed extensions? No problem:
+const IMAGE_EXTS = [".JPG", ".jpg", ".JPEG", ".jpeg"];
 /** END CONFIG **/
 
 const el = (id) => document.getElementById(id);
@@ -106,6 +107,7 @@ const el = (id) => document.getElementById(id);
 let CARDS = [];          // [{ID, Name, Type, Cost, Abilities}]
 let BY_ID = new Map();   // ID -> card
 let deck = new Map();    // ID -> qty
+let foundExtById = new Map(); // ID -> actual extension that worked (for better export)
 
 function escapeHtml(s){
   return String(s ?? "")
@@ -123,18 +125,14 @@ function parseCSV(text){
 
     if (inQuotes){
       if (c === '"'){
-        // double quote escape
         if (text[i+1] === '"'){ field += '"'; i += 2; continue; }
         inQuotes = false; i++; continue;
-      } else {
-        field += c; i++; continue;
-      }
+      } else { field += c; i++; continue; }
     } else {
       if (c === '"'){ inQuotes = true; i++; continue; }
       if (c === ','){ row.push(field); field=""; i++; continue; }
       if (c === '\n'){
         row.push(field); field="";
-        // ignore empty last line
         if (row.some(x => x.trim() !== "")) rows.push(row);
         row = [];
         i++; continue;
@@ -143,7 +141,6 @@ function parseCSV(text){
       field += c; i++; continue;
     }
   }
-  // tail
   if (field.length || row.length){
     row.push(field);
     if (row.some(x => x.trim() !== "")) rows.push(row);
@@ -173,18 +170,33 @@ function getFilteredCards(){
   });
 }
 
+/** Called automatically when an <img> fails; tries the next extension */
+window.tcTryNextExt = function(imgEl){
+  const id = imgEl.getAttribute("data-id");
+  let idx = parseInt(imgEl.getAttribute("data-try") || "0", 10) + 1;
+  if (idx >= IMAGE_EXTS.length) return;
+  imgEl.setAttribute("data-try", String(idx));
+  imgEl.src = IMAGE_BASE + id + IMAGE_EXTS[idx];
+};
+
 function renderGrid(){
   const grid = el("grid");
   grid.innerHTML = "";
 
   const items = getFilteredCards();
   for (const c of items){
-    const imgUrl = IMAGE_BASE + c.ID + IMAGE_EXT;
+    const firstUrl = IMAGE_BASE + c.ID + IMAGE_EXTS[0];
 
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
-      <img loading="lazy" src="${imgUrl}" alt="${escapeHtml(c.Name)}" />
+      <img loading="lazy"
+           src="${firstUrl}"
+           data-id="${escapeHtml(c.ID)}"
+           data-try="0"
+           onerror="window.tcTryNextExt(this)"
+           onload="window.tcMarkExt(this)"
+           alt="${escapeHtml(c.Name)}" />
       <div class="meta">
         <div class="name">${escapeHtml(c.Name)}</div>
         <div class="sub">
@@ -202,6 +214,18 @@ function renderGrid(){
   el("status").textContent = `Showing ${items.length} of ${CARDS.length} cards.`;
   el("counts").textContent = `${CARDS.length} cards loaded`;
 }
+
+/** Track which extension actually loaded so exports are accurate */
+window.tcMarkExt = function(imgEl){
+  const id = imgEl.getAttribute("data-id");
+  const src = imgEl.getAttribute("src") || "";
+  for (const ext of IMAGE_EXTS){
+    if (src.endsWith(ext)){
+      foundExtById.set(id, ext);
+      return;
+    }
+  }
+};
 
 function deckTotal(){
   let n = 0;
@@ -252,7 +276,6 @@ function renderDeck(){
   }
 
   el("deckCount").textContent = deckTotal();
-  // update preview box with PC.io export
   el("exportBox").value = buildPCIOCSV();
 }
 
@@ -261,12 +284,18 @@ function safeFilename(name){
   return cleaned || "terracore_deck";
 }
 
+function siteBase(){
+  // https://terracoretcg.github.io/terracore-cards/
+  return location.origin + location.pathname.replace(/\/[^\/]*$/, "/");
+}
+
 function buildPCIOCSV(){
-  // PlayingCards.io expects one URL per card row
   const rows = ["image"];
+  const base = siteBase();
   for (const [id, qty] of deck.entries()){
+    const ext = foundExtById.get(id) || IMAGE_EXTS[0];
     for (let i=0; i<qty; i++){
-      rows.push(`${location.origin}${location.pathname.replace(/\/[^\/]*$/, "/")}${IMAGE_BASE}${id}${IMAGE_EXT}`.replace(/\/\.\//g,"/"));
+      rows.push(`${base}images/${id}${ext}`);
     }
   }
   return rows.join("\n") + "\n";
@@ -308,7 +337,6 @@ async function init(){
     const text = await res.text();
     const data = parseCSV(text);
 
-    // normalize keys (in case of weird spacing)
     CARDS = data.map(r => ({
       ID: (r.ID || "").trim(),
       Name: (r.Name || "").trim(),
@@ -319,7 +347,6 @@ async function init(){
 
     BY_ID = new Map(CARDS.map(c => [c.ID, c]));
 
-    // fill Type filter
     const types = uniq(CARDS.map(c=>c.Type));
     const typeSel = el("type");
     typeSel.innerHTML = `<option value="">All Types</option>` +
@@ -334,7 +361,6 @@ async function init(){
   }
 }
 
-/** Events */
 el("search").addEventListener("input", renderGrid);
 el("type").addEventListener("change", renderGrid);
 el("clearFilters").addEventListener("click", () => {
