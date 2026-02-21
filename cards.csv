@@ -194,8 +194,8 @@ AIR_SUPERIORITY_ACE,Air Superiority Ace,Plane,5,
 ELITE_SKY_HUNTER,Elite Sky Hunter,Plane,6,Hover; 
 LEGENDARY_AIR_MARSHAL,Legendary Air Marshal,Plane,7,Hover; Breakthrough
 COLD_DENIAL,Cold Denial,Ops,7,Enemy units cannot attack or block this turn.
-NUCLEAR_FALLOUT,Nuclear Fallout,Ops,8,Roll d20. 1–9: Deal 3 damage to all units; 10–17: Deal 4 damage to all units; 18–20: Destroy all non-Apex units.
-LAST_BASTION,Last Bastion,Ops,7,"Roll d20: 1–9 prevent 3 dmg, 10–17 prevent 5 dmg, 18–20 prevent all dmg this turn."
+NUCLEAR_FALLOUT,Nuclear Fallout,Ops,8,Roll d20. 1Â–9: Deal 3 damage to all units; 10Â–17: Deal 4 damage to all units; 18Â–20: Destroy all non-Apex units.
+LAST_BASTION,Last Bastion,Ops,7,"Roll d20: 1Â–9 prevent 3 dmg, 10Â–17 prevent 5 dmg, 18Â–20 prevent all dmg this turn."
 ORBITAL_WINDOW,Orbital Window,Ops,2,Units deployed this turn may attack immediately.
 CORROSIVE_FALLOUT,Corrosive Fallout,Ops,4,All units get -1 DR until end of turn.
 TARGET_REASSIGNMENT,Target Reassignment,Ops,4,Change the target of an attack or ability.
@@ -211,7 +211,7 @@ BLITZ_COUNTER,Blitz Counter,Ops,3,Intercept target unit as its deployed
 HARDLIGHT_BARRIER,Hardlight Barrier,Ops,4,Prevent all damage to a unit this turn.
 FORTIFIED_STAND,Fortified Stand,Ops,2,Prevent X damage divided as you choose among friendly units.
 ENERGY_RECLAIM,Energy Reclaim,Ops,3,Reduce the Deployment Cost of all your cards by 1 this turn
-PERMAFROST_RETURN,Permafrost Return,Ops,3,Return target unit to its owner’s hand.
+PERMAFROST_RETURN,Permafrost Return,Ops,3,Return target unit to its ownerÂ’s hand.
 CRYO_LOCKDOWN,Cryo Lockdown,Ops,2,Target unit cannot Ready during its next Ready step.
 AGGRESSION_SURGE,Aggression Surge,Ops,2,Target unit gains +2 damage this turn.
 DISRUPTION_STRIKE,Disruption Strike,Ops,3,Target unit gets -1 Speed and -1 DR this turn.
@@ -223,17 +223,17 @@ HEAL_COUNTER,Heal Counter,Ops,5,heal base by d20
 HOVER_COUNTER,Hover Counter,Ops,5,all friendly plains gain hover
 SCAVENGE,Scavenge,Ops,0,Destroy a friendly unit upgrade. Gain 2 DP.
 SHIELD_REINFORCEMENT,Shield Reinforcement,Ops,2,Prevent the next 3 damage to a unit or base.
-EMERGENCY_REINFORCE,Emergency Reinforce,Ops,1,"Roll d20: 1–9 prevent 1 dmg, 10–17 prevent 2 dmg, 18–20 3 dmg to unit or base."
-FLASH_FREEZE,Flash Freeze,Ops,3,Target unit becomes Frozen Roll d20 1–9 1 turn 10–17 2 turns 18–20 3 turns.
+EMERGENCY_REINFORCE,Emergency Reinforce,Ops,1,"Roll d20: 1Â–9 prevent 1 dmg, 10Â–17 prevent 2 dmg, 18Â–20 3 dmg to unit or base."
+FLASH_FREEZE,Flash Freeze,Ops,3,Target unit becomes Frozen Roll d20 1Â–9 1 turn 10Â–17 2 turns 18Â–20 3 turns.
 FROZEN_MECH,Frozen Mech,Ops,6,Remove all heat from friendly units.
 TARGET_DESIGNATION,Target Designation,Ops,3,Each time damage is dealt to target unit this turn it is increased by 1.
 NO_SURVIVORS,No Survivors,Ops,1,Destroy a friendly unit and an enemy unit.
 SUPPRESSIVE_BARRAGE,Suppressive Barrage,Ops,3,Enemy units get -1 Speed this turn.
 RELENTLESS_ORDERS,Relentless Orders,Ops,9,Friendly units may attack twice this turn.
 HOLD_THE_LINE,Hold the Line,Ops,3,Friendly units may block one additional attacker this turn.
-PRECISION_STRIKE,Precision Strike,Ops,1,Roll d20. Deal damage to a unit: 1–10: 2 dmg; 11–18: 3 dmg; 19–20: 4 dmg (cannot be prevented).
-STRUCTURAL_COLLAPSE,Structural Collapse,Ops,3,Roll d20. Deal damage to all attacking units: 1–9: 1 dmg; 10–17: 2 dmg; 18–20: 3 dmg.
-ALL_SYSTEMS_RED,All Systems Red,Ops,2,Roll d20. deal X damage to target: 1–10: +1; 11–18: +2; 19–20: +3.
+PRECISION_STRIKE,Precision Strike,Ops,1,Roll d20. Deal damage to a unit: 1Â–10: 2 dmg; 11Â–18: 3 dmg; 19Â–20: 4 dmg (cannot be prevented).
+STRUCTURAL_COLLAPSE,Structural Collapse,Ops,3,Roll d20. Deal damage to all attacking units: 1Â–9: 1 dmg; 10Â–17: 2 dmg; 18Â–20: 3 dmg.
+ALL_SYSTEMS_RED,All Systems Red,Ops,2,Roll d20. deal X damage to target: 1Â–10: +1; 11Â–18: +2; 19Â–20: +3.
 OVERDRIVE,Overdrive,Ops,3,Roll d20: attackers gain +1/+2/+3 OR
 DRONE_FABRICATION,Drone Fabrication,Ops,4,Roll d20: create 2/3/4 1/1/1 Drones.
 MISSILE_ATTACK,Missile Attack,Ops,3,destroy target unit
@@ -271,15 +271,15 @@ KINETIC_CONVERTER,Kinetic Converter,Unit Upgrades,6,Pay 3 Heat: This unit gains 
 REACTOR_BURST_MODULE,Reactor Burst Module,Unit Upgrades,7,Pay 2 Heat: Attached Mech gains +2 OR this turn. It cannot Ready during your next turn.
 HARDLIGHT_PROJECTOR,Hardlight Projector,Unit Upgrades,4,Prevent the first damage dealt to attached unit each turn; attached unit also gains +1 DR.
 REINFORCEMENT_PROTOCOL,Reinforcement Protocol,Unit Upgrades,4,4 dp Prevent the next 1 damage to each friendly unit this turn.
-ALL_SYSTEMS_RED_SUITE,All Systems Red Suite,Unit Upgrades,4,Roll d20: 1–10 friendly units of a chosen type gain +1 OR this turn; 11–18 gain +2; 19–20 gain +3.
+ALL_SYSTEMS_RED_SUITE,All Systems Red Suite,Unit Upgrades,4,Roll d20: 1Â–10 friendly units of a chosen type gain +1 OR this turn; 11Â–18 gain +2; 19Â–20 gain +3.
 SCAVENGED_SWARM_BAY,Scavenged Swarm Bay,Unit Upgrades,3,pay 3 dp roll d20 to create 1/1/1 drone 1-9 1 10-18 2 19-20 3
-LAST_BASTION_OVERRIDE,Last Bastion Override,Unit Upgrades,7,Roll d20: 1–9 prevent 3 damage to your base this turn; 10–17 prevent 5; 18–20 prevent all damage to your base this turn.
+LAST_BASTION_OVERRIDE,Last Bastion Override,Unit Upgrades,7,Roll d20: 1Â–9 prevent 3 damage to your base this turn; 10Â–17 prevent 5; 18Â–20 prevent all damage to your base this turn.
 SUBZERO_ACTUATORS,Subzero Actuators,Unit Upgrades,5,"The first time each turn attached unit deals damage to a unit, that unit becomes Frozen until your next turn."
 CORROSIVE_PAYLOAD,Corrosive Payload,Unit Upgrades,4,Units damaged by attached unit get -1 DR until end of your next turn.
 SHIELD_WALL_EMITTER,Shield Wall Emitter,Unit Upgrades,2,"When attached unit blocks, prevent 1 damage to another friendly unit."
 SALVAGE_RESOURCES,Salvage Resources,Unit Upgrades,2,"When attached unit destroys a unit, gain 1 DP."
 CATACLYSM_DRIVE_MATRIX,Cataclysm Drive Matrix,Unit Upgrades,6,Pay 8 Heat: Destroy all other units.
-SINGULARITY_COMPRESSION,Singularity Compression,Unit Upgrades,5,"Pay 6 Heat: Double this unit’s OR and DR until end of turn. At end of turn, take 3 damage."
+SINGULARITY_COMPRESSION,Singularity Compression,Unit Upgrades,5,"Pay 6 Heat: Double this unitÂ’s OR and DR until end of turn. At end of turn, take 3 damage."
 TEMPORAL_OVERBURN_CHAMBER,Temporal Overburn Chamber,Unit Upgrades,6,Pay 5 Heat:  Roll a d20 deal x damage to all enemy units 1-8 1 damage 9-16 2 damage 17-20 3 damage
 REACTOR_CASCADE_PROTOCOL,Reactor Cascade Protocol,Unit Upgrades,4,Pay 4 Heat: Deal 1 damage to all enemy units.
 ABSOLUTE_ZERO_FEEDBACK_LOOP,Absolute Zero Feedback Loop,Unit Upgrades,4,Pay 6 Heat: Freeze all enemy units until your next turn.
@@ -318,7 +318,7 @@ SNAP_FREEZE,Snap Freeze,Global Event,2,Target terrain becomes Frozen for 2 turns
 GLACIAL_SHIFT,Glacial Shift,Global Event,3,Target 2 adjacent terrains becomes Frozen for 2 turns. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed.
 ABSOLUTE_WINTER,Absolute Winter,Global Event,7,"Target all terrains, they become Frozen permanently. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed."
 VOLCANIC_SURGE,Volcanic Surge,Global Event,4,Target 1 terrain becomes Volcanic for 2 turns. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat.
-SOLAR_EXTINCTION,Solar Extinction,Global Event,7,Target all terrains becomes Volcanic permanently. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat. d20: 15–20: Destroy all non-Mech units.
+SOLAR_EXTINCTION,Solar Extinction,Global Event,7,Target all terrains becomes Volcanic permanently. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat. d20: 15Â–20: Destroy all non-Mech units.
 SOLAR_FLARE,Solar Flare,Global Event,4,Apply on target terrain. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat and take 1 damage.
 WORLDFIRE_PULSE,Worldfire Pulse,Global Event,7,Target all terrains. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat. D20 1-14 1 damage to non-fire units 15-20: 2 damage to non-fire units
 BLAZING_ADVANCE,Blazing Advance,Global Event,5,"Target all terrains, they become Volcanic for 1 turn. Fire units on this terrain gain +1 OR and +1 Speed. Non-Fire units on this terrain gain +1 Heat."
@@ -332,16 +332,16 @@ RADIATION_STORM,Radiation Storm,Global Event,4,Target 1 terrain becomes Nuclear 
 EMP_FALLOUT,EMP Fallout,Global Event,5,Target terrain becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. Units on this terrain cannot activate abilities.
 NUCLEAR_WINTER,Nuclear Winter,Global Event,6,Target all terrains becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. Units on this terrain get Speed -1.
 ASHFALL_APOCALYPSE,Ashfall Apocalypse,Global Event,7,Target all terrains becomes Nuclear Waste permanently. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
-NUCLEAR_OPTION,Nuclear Option,Global Event,7,Target all terrains becomes Nuclear Waste permanently. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. d20: 15–20: Destroy all units.
+NUCLEAR_OPTION,Nuclear Option,Global Event,7,Target all terrains becomes Nuclear Waste permanently. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. d20: 15Â–20: Destroy all units.
 TOTAL_BLACKOUT,Total Blackout,Global Event,5,All terrains becomes Neutral for 1 turn. Units on this terrain cannot activate abilities.
 BATTLEFIELD_RESET,Battlefield Reset,Global Event,4,Apply on target 1 terrain instantly. Destroy all upgrades on units on this terrain.
-ORBITAL_BOMBARDMENT,Orbital Bombardment,Global Event,3,Apply on target 1 terrain instantly. Deal 1 damage immediately to units on this terrain. d20: 15–20: deal 2 damage instead.
-METEOR_SHOWER,Meteor Shower,Global Event,7,Target all terrains. Deal 2 damage immediately to units on this terrain. Then roll a d20: 1–14: 1 damage to units in the terrain 15–20: 2 damage to units in the terrain
-TORNADO_OUTBREAK,Tornado Outbreak,Global Event,5,Apply on target 1 terrain instantly. Return all units on this terrain to their owners’ hands. d20: 18–20: also affect an adjacent terrain.
+ORBITAL_BOMBARDMENT,Orbital Bombardment,Global Event,3,Apply on target 1 terrain instantly. Deal 1 damage immediately to units on this terrain. d20: 15Â–20: deal 2 damage instead.
+METEOR_SHOWER,Meteor Shower,Global Event,7,Target all terrains. Deal 2 damage immediately to units on this terrain. Then roll a d20: 1Â–14: 1 damage to units in the terrain 15Â–20: 2 damage to units in the terrain
+TORNADO_OUTBREAK,Tornado Outbreak,Global Event,5,Apply on target 1 terrain instantly. Return all units on this terrain to their ownersÂ’ hands. d20: 18Â–20: also affect an adjacent terrain.
 ATMOSPHERIC_RESET,Atmospheric Reset,Global Event,5,All terrains becomes Neutral permanently.
 DENSE_FOG_BANK,Dense Fog Bank,Global Event,3,Target terrain becomes Neutral for 2 turns. Units on this terrain cannot attack for 1 turn.
 CEASEFIRE_PROTOCOL,Ceasefire Protocol,Global Event,4,Target all terrains becomes Neutral for 2 turns. Units on this terrain cannot attack.
-EVACUATION_ORDER,Evacuation Order,Global Event,4,Apply on target 1 terrain instantly. Return all units on this terrain to their owners’ hands.
+EVACUATION_ORDER,Evacuation Order,Global Event,4,Apply on target 1 terrain instantly. Return all units on this terrain to their ownersÂ’ hands.
 SIGNAL_INTERFERENCE,Signal Interference,Global Event,3,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain cannot Ready next turn.
 SCRAP_STORM,Scrap Storm,Global Event,4,Target terrain becomes Neutral for 2 turns. Destroy all upgrades on units on this terrain. Gain 1 DP for each upgrade destroyed in this way.
 SUPPLY_CRASH,Supply Crash,Global Event,3,Apply on target all terrains instantly. d20: On 10+: gain +1 DP (or equivalent).
