@@ -338,11 +338,7 @@ CEASEFIRE_PROTOCOL,Ceasefire Protocol,Global Event,4,Target all terrains becomes
 EVACUATION_ORDER,Evacuation Order,Global Event,4,Apply on target 1 terrain instantly. Return all units on this terrain to their owners hands.
 SIGNAL_INTERFERENCE,Signal Interference,Global Event,3,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain cannot Ready next turn.
 SCRAP_STORM,Scrap Storm,Global Event,4,Target terrain becomes Neutral for 2 turns. Destroy all upgrades on units on this terrain. Gain 1 DP for each upgrade destroyed in this way.
-SUPPLY_CRASH,Supply Crash,Global Event,3,Apply on target all terrains instantly. d20: On 10+: gain +1 DP (or equivalent).
-STATIC_FIELD,Static Field,Global Event,3,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain get OR -1. Units on this terrain get Speed -1.
-OVERWATCH_DISRUPTION,Overwatch Disruption,Global Event,4,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain cannot attack. Units on this terrain cannot activate abilities.
 HARD_WIND_GUSTS,Hard Wind Gusts,Global Event,2,Target 1 terrain becomes Neutral for 1 turn. Units on this terrain get Speed -1.
-ATMOSPHERIC_COLLAPSE,Atmospheric Collapse,Global Event,4,Target 2 adjacent terrains becomes Neutral for 2 turns. Units on this terrain get Speed -2.
 SWAMP,Swamp,Terrain,,Troops on this terrain lose 1 Speed.
 JUNGLE,Jungle,Terrain,,Troops gain +1 Speed. Tanks lose 1 Speed. Planes lose 1 OR.
 DESERT,Desert,Terrain,,Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat.
@@ -376,5 +372,6 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
 
