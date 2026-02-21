@@ -165,11 +165,11 @@ SENTINEL,Sentinel ,Mech,9,All friendly heat abilites cost 1 less
 KEANES_AEGIS,Keanes Aegis,Tank,8,All friendly tanks stop the first 1 point of damage delt to them each turn
 DEAD_CHANNEL,Dead Channel,Plane,8,All friendly planes gain when you damage enemy unit they cant activate abilities this turn
 GRAVEWAR_THE_UNBROKEN,Gravewar The Unbroken,Tank,10,All friendly units gain 1 dr and can block 1 extra attacker
-HIGH_ARBITER_OF_THE_CRYO_MARCH,High Arbiter of the Cryo March,Core,10,All friendly units get +1 or and Enemys get -1 speed
+HIGH_ARBITER_OF_THE_CRYO_MARCH,High Arbiter of the Cryo March,Mech,10,All friendly units get +1 or and Enemys get -1 speed
 THE_BURNING_ANGEL,The Burning Angel,Plane,10,All friendly units gain pay 2dp engage and roll a d20 deal 1 damage to 1-11 1 target 12-18 2 targets 19-20 3 targets
 SCRAPLORD,Scraplord,Troop,10,All friendly units gain when destroyed create 1/1/1 drone
 CALL_SIGN_SKYLANCE,Call Sign Skylance,Plane,10,Friendly Units are unaffected by negative terrain effects
-THE_LAST_LIGHT_OF_MERIDIAN,The Last Light of Meridian,Core,10,all enemy units get -1or and -1dr
+THE_LAST_LIGHT_OF_MERIDIAN,The Last Light of Meridian,Mech,10,all enemy units get -1or and -1dr
 VETERAN_INFANTRY,Veteran Infantry,Troop,3,
 URBAN_BREACH_VET,Urban Breach Vet,Troop,4,Maintain Position
 SHOCK_LEADER,Shock Leader,Troop,5,
@@ -372,6 +372,7 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
 
 
