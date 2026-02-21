@@ -1,0 +1,370 @@
+<!doctype html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width,initial-scale=1" />
+  <title>Terra CORE — Deckbuilder</title>
+  <style>
+    :root { color-scheme: dark; }
+    body { margin:0; font-family: Arial, sans-serif; background:#0f0f10; color:#eee; }
+    header { position: sticky; top:0; z-index:10; background:#151516; border-bottom:1px solid #2a2a2a; padding:12px; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    input, select, button, textarea {
+      background:#101012; color:#eee; border:1px solid #333; border-radius:10px; padding:10px;
+    }
+    button { cursor:pointer; }
+    button:hover { border-color:#555; }
+    main { display:grid; grid-template-columns: 1fr 380px; gap:12px; padding:12px; }
+    @media (max-width: 980px){ main{ grid-template-columns:1fr; } .deck{ position:static; height:auto; } }
+    .grid { display:grid; grid-template-columns: repeat(auto-fill, minmax(190px, 1fr)); gap:10px; }
+    .card { background:#141415; border:1px solid #2a2a2a; border-radius:14px; overflow:hidden; display:flex; flex-direction:column; }
+    .card img { width:100%; height:auto; display:block; background:#000; }
+    .meta { padding:10px; display:flex; flex-direction:column; gap:6px; }
+    .name { font-weight:700; font-size:14px; line-height:1.2; }
+    .sub { font-size:12px; opacity:.85; display:flex; justify-content:space-between; gap:10px; }
+    .ability { font-size:12px; opacity:.9; line-height:1.25; max-height:3.6em; overflow:hidden; }
+    .deck { position: sticky; top:78px; height: calc(100vh - 100px); overflow:auto; background:#141415; border:1px solid #2a2a2a; border-radius:14px; padding:12px; }
+    .deck h2 { margin:0 0 10px 0; font-size:16px; }
+    .decklist { display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+    .deckitem { border:1px solid #2a2a2a; border-radius:12px; padding:10px; background:#121213; }
+    .deckitem .top { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .qty { display:flex; gap:8px; align-items:center; }
+    .qty button { padding:6px 10px; }
+    .divider { height:1px; background:#2a2a2a; margin:10px 0; }
+    .small { font-size:12px; opacity:.85; }
+    textarea { width:100%; min-height:120px; }
+    .pill { font-size:12px; padding:6px 10px; border:1px solid #2a2a2a; border-radius:999px; background:#111; }
+  </style>
+</head>
+<body>
+  <header>
+    <div class="row">
+      <strong>Terra CORE — Deckbuilder</strong>
+      <span class="pill" id="counts">Loading…</span>
+      <span class="small">Uses Cards.csv + /images/*.JPG</span>
+    </div>
+    <div class="row" style="margin-top:10px;">
+      <input id="search" placeholder="Search name or abilities…" style="flex:1; min-width:240px;" />
+      <select id="type"><option value="">All Types</option></select>
+      <button id="clearFilters">Clear</button>
+    </div>
+  </header>
+
+  <main>
+    <section>
+      <div class="grid" id="grid"></div>
+      <div class="small" id="status" style="padding:10px;"></div>
+    </section>
+
+    <aside class="deck">
+      <h2>Deck</h2>
+
+      <div class="row">
+        <input id="deckName" placeholder="Deck name (e.g., Test_01)" style="flex:1;" />
+        <button id="clearDeck">Clear</button>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <button id="exportPCIO">Download PC.io CSV</button>
+        <button id="saveTxt">Save Deck (.txt)</button>
+        <label class="small" style="display:flex; align-items:center; gap:8px;">
+          Load .txt <input type="file" id="loadTxt" accept=".txt" />
+        </label>
+      </div>
+
+      <div class="small" style="margin-top:8px;">
+        Format supported in .txt:<br>
+        <code>VOLCANO_HIDEOUT</code> or <code>2x VOLCANO_HIDEOUT</code>
+      </div>
+
+      <div class="divider"></div>
+
+      <div class="row">
+        <div class="small"><span id="deckCount">0</span> cards</div>
+      </div>
+
+      <div class="decklist" id="decklist"></div>
+
+      <div class="divider"></div>
+
+      <div class="small">Preview export:</div>
+      <textarea id="exportBox" placeholder="Export preview will appear here…"></textarea>
+    </aside>
+  </main>
+
+<script>
+/** CONFIG **/
+const CSV_URL = "./cards.csv"; // you renamed to cards.csv
+const IMAGE_BASE = "./images/"; // hosted images folder
+const IMAGE_EXT = ".JPG";       // your current extension
+/** END CONFIG **/
+
+const el = (id) => document.getElementById(id);
+
+let CARDS = [];          // [{ID, Name, Type, Cost, Abilities}]
+let BY_ID = new Map();   // ID -> card
+let deck = new Map();    // ID -> qty
+
+function escapeHtml(s){
+  return String(s ?? "")
+    .replaceAll("&","&amp;").replaceAll("<","&lt;").replaceAll(">","&gt;")
+    .replaceAll('"',"&quot;").replaceAll("'","&#039;");
+}
+
+/** Robust-enough CSV parser supporting quoted commas */
+function parseCSV(text){
+  const rows = [];
+  let i = 0, field = "", row = [], inQuotes = false;
+
+  while (i < text.length){
+    const c = text[i];
+
+    if (inQuotes){
+      if (c === '"'){
+        // double quote escape
+        if (text[i+1] === '"'){ field += '"'; i += 2; continue; }
+        inQuotes = false; i++; continue;
+      } else {
+        field += c; i++; continue;
+      }
+    } else {
+      if (c === '"'){ inQuotes = true; i++; continue; }
+      if (c === ','){ row.push(field); field=""; i++; continue; }
+      if (c === '\n'){
+        row.push(field); field="";
+        // ignore empty last line
+        if (row.some(x => x.trim() !== "")) rows.push(row);
+        row = [];
+        i++; continue;
+      }
+      if (c === '\r'){ i++; continue; }
+      field += c; i++; continue;
+    }
+  }
+  // tail
+  if (field.length || row.length){
+    row.push(field);
+    if (row.some(x => x.trim() !== "")) rows.push(row);
+  }
+
+  const header = rows.shift()?.map(h => h.trim()) || [];
+  return rows.map(r => {
+    const obj = {};
+    header.forEach((h, idx) => obj[h] = (r[idx] ?? "").trim());
+    return obj;
+  });
+}
+
+function uniq(arr){ return [...new Set(arr)].filter(Boolean).sort((a,b)=>a.localeCompare(b)); }
+
+function getFilteredCards(){
+  const q = el("search").value.trim().toLowerCase();
+  const t = el("type").value;
+
+  return CARDS.filter(c => {
+    if (t && (c.Type || "") !== t) return false;
+    if (q){
+      const hay = `${c.Name || ""} ${(c.Abilities || "")}`.toLowerCase();
+      if (!hay.includes(q)) return false;
+    }
+    return true;
+  });
+}
+
+function renderGrid(){
+  const grid = el("grid");
+  grid.innerHTML = "";
+
+  const items = getFilteredCards();
+  for (const c of items){
+    const imgUrl = IMAGE_BASE + c.ID + IMAGE_EXT;
+
+    const card = document.createElement("div");
+    card.className = "card";
+    card.innerHTML = `
+      <img loading="lazy" src="${imgUrl}" alt="${escapeHtml(c.Name)}" />
+      <div class="meta">
+        <div class="name">${escapeHtml(c.Name)}</div>
+        <div class="sub">
+          <span>${escapeHtml(c.Type || "")}</span>
+          <span>${escapeHtml(c.Cost || "")}</span>
+        </div>
+        <div class="ability">${escapeHtml(c.Abilities || "")}</div>
+        <button>Add to Deck</button>
+      </div>
+    `;
+    card.querySelector("button").addEventListener("click", () => addToDeck(c.ID, 1));
+    grid.appendChild(card);
+  }
+
+  el("status").textContent = `Showing ${items.length} of ${CARDS.length} cards.`;
+  el("counts").textContent = `${CARDS.length} cards loaded`;
+}
+
+function deckTotal(){
+  let n = 0;
+  for (const v of deck.values()) n += v;
+  return n;
+}
+
+function addToDeck(id, delta){
+  const cur = deck.get(id) || 0;
+  const next = cur + delta;
+  if (next <= 0) deck.delete(id);
+  else deck.set(id, next);
+  renderDeck();
+}
+
+function renderDeck(){
+  const list = el("decklist");
+  list.innerHTML = "";
+
+  const entries = [...deck.entries()]
+    .map(([id, qty]) => ({ card: BY_ID.get(id), id, qty }))
+    .filter(x => x.card)
+    .sort((a,b) => (a.card.Name || a.id).localeCompare(b.card.Name || b.id));
+
+  for (const {card, id, qty} of entries){
+    const item = document.createElement("div");
+    item.className = "deckitem";
+    item.innerHTML = `
+      <div class="top">
+        <div>
+          <div class="name">${escapeHtml(card.Name || id)}</div>
+          <div class="sub">
+            <span>${escapeHtml(card.Type || "")}</span>
+            <span>${escapeHtml(card.Cost || "")}</span>
+          </div>
+        </div>
+        <div class="qty">
+          <button title="Remove one">-</button>
+          <strong>${qty}</strong>
+          <button title="Add one">+</button>
+        </div>
+      </div>
+    `;
+    const [minusBtn, plusBtn] = item.querySelectorAll("button");
+    minusBtn.addEventListener("click", ()=> addToDeck(id, -1));
+    plusBtn.addEventListener("click", ()=> addToDeck(id, 1));
+    list.appendChild(item);
+  }
+
+  el("deckCount").textContent = deckTotal();
+  // update preview box with PC.io export
+  el("exportBox").value = buildPCIOCSV();
+}
+
+function safeFilename(name){
+  const cleaned = (name || "").trim().replace(/[^\w\-]+/g, "_");
+  return cleaned || "terracore_deck";
+}
+
+function buildPCIOCSV(){
+  // PlayingCards.io expects one URL per card row
+  const rows = ["image"];
+  for (const [id, qty] of deck.entries()){
+    for (let i=0; i<qty; i++){
+      rows.push(`${location.origin}${location.pathname.replace(/\/[^\/]*$/, "/")}${IMAGE_BASE}${id}${IMAGE_EXT}`.replace(/\/\.\//g,"/"));
+    }
+  }
+  return rows.join("\n") + "\n";
+}
+
+function downloadText(text, filename, mime){
+  const blob = new Blob([text], { type: mime });
+  const a = document.createElement("a");
+  a.href = URL.createObjectURL(blob);
+  a.download = filename;
+  a.click();
+}
+
+function deckToTxt(){
+  const lines = [];
+  const entries = [...deck.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
+  for (const [id, qty] of entries){
+    lines.push(qty === 1 ? id : `${qty}x ${id}`);
+  }
+  return lines.join("\n") + "\n";
+}
+
+function loadDeckFromTxt(text){
+  const lines = text.split("\n").map(l=>l.trim()).filter(Boolean);
+  deck = new Map();
+  for (const line of lines){
+    const m = line.match(/^(\d+)\s*x?\s+(.+)$/i);
+    let qty = 1, id = line;
+    if (m){ qty = Math.max(1, parseInt(m[1],10)); id = m[2].trim(); }
+    if (BY_ID.has(id)) deck.set(id, (deck.get(id)||0) + qty);
+  }
+  renderDeck();
+}
+
+async function init(){
+  try{
+    const res = await fetch(CSV_URL, { cache: "no-store" });
+    if (!res.ok) throw new Error("Could not fetch cards.csv");
+    const text = await res.text();
+    const data = parseCSV(text);
+
+    // normalize keys (in case of weird spacing)
+    CARDS = data.map(r => ({
+      ID: (r.ID || "").trim(),
+      Name: (r.Name || "").trim(),
+      Type: (r.Type || "").trim(),
+      Cost: (r.Cost || "").trim(),
+      Abilities: (r.Abilities || "").trim()
+    })).filter(c => c.ID && c.Name);
+
+    BY_ID = new Map(CARDS.map(c => [c.ID, c]));
+
+    // fill Type filter
+    const types = uniq(CARDS.map(c=>c.Type));
+    const typeSel = el("type");
+    typeSel.innerHTML = `<option value="">All Types</option>` +
+      types.map(t=>`<option value="${escapeHtml(t)}">${escapeHtml(t)}</option>`).join("");
+
+    renderGrid();
+    renderDeck();
+  } catch (e){
+    el("counts").textContent = "Load failed";
+    el("status").textContent = "Could not load cards.csv. Make sure it is named cards.csv in repo root and GitHub Pages is live.";
+    console.error(e);
+  }
+}
+
+/** Events */
+el("search").addEventListener("input", renderGrid);
+el("type").addEventListener("change", renderGrid);
+el("clearFilters").addEventListener("click", () => {
+  el("search").value = "";
+  el("type").value = "";
+  renderGrid();
+});
+
+el("clearDeck").addEventListener("click", () => { deck = new Map(); renderDeck(); });
+
+el("exportPCIO").addEventListener("click", () => {
+  const name = safeFilename(el("deckName").value);
+  const csv = buildPCIOCSV();
+  downloadText(csv, `${name}.csv`, "text/csv");
+});
+
+el("saveTxt").addEventListener("click", () => {
+  const name = safeFilename(el("deckName").value);
+  downloadText(deckToTxt(), `${name}.txt`, "text/plain");
+});
+
+el("loadTxt").addEventListener("change", (evt) => {
+  const f = evt.target.files?.[0];
+  if (!f) return;
+  const reader = new FileReader();
+  reader.onload = () => loadDeckFromTxt(String(reader.result || ""));
+  reader.readAsText(f);
+});
+
+init();
+</script>
+</body>
+</html>
