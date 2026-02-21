@@ -255,12 +255,9 @@ ICEBOUND_FIREWALL,Icebound Firewall,Unit Upgrades,2,Attached unit gains Firewall
 HOVER_JETS,Hover Jets,Unit Upgrades,2,Attached unit gains Hover and +1 Speed.
 HOLD_THE_LINE_RIG,Hold the Line Rig,Unit Upgrades,2,Attached unit gains Maintain Position.
 MINE_DISPENSER,Mine Dispenser,Unit Upgrades,2,Attached unit gains Mines.
-FORTRESS_FRAME,Fortress Frame,Unit Upgrades,3,Attached unit gains Multi-Defender 1 and +1 DR.
 FLARE_COUNTERMEASURES,Flare Countermeasures,Unit Upgrades,3,Attached unit gains Shield 1 and +1 Speed.
 BULWARK_PLATING,Bulwark Plating,Unit Upgrades,6,Attached unit gains Shield 2 and +2 DR.
 TRIPWIRE_RIG,Tripwire Rig,Unit Upgrades,2,Attached unit gains Tripwire.
-BLITZ_TARGETING_SUITE,Blitz Targeting Suite,Unit Upgrades,4,Attached unit gains 1-Strike and +1 OR.
-FORWARD_UPLINK,Forward Uplink,Unit Upgrades,4,Attached unit may activate abilities even if Engaged.
 SCRAP_LAUNCHER,Scrap Launcher,Unit Upgrades,6,"Pay 3 DP: Attached unit gains 2-Strike this turn. If it uses 2-Strike, it takes 1 damage for each attack."
 TARGET_REASSIGNMENT_CHIP,Target Reassignment Chip,Unit Upgrades,3,Pay 4 DP: Change the target of an attack or ability to another valid target.
 ENERGY_ROUTER,Energy Router,Unit Upgrades,5,Pay 1 DP: Move 1 damage from attached unit to another friendly unit.
@@ -379,4 +376,5 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
