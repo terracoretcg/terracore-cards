@@ -1,27 +1,63 @@
 <!DOCTYPE html>
 <html>
 <head>
+  <meta charset="utf-8" />
   <title>Terra CORE Deck CSV Generator</title>
   <style>
-    body { font-family: Arial; padding: 20px; background: #111; color: white; }
-    textarea { width: 100%; height: 200px; }
-    button { padding: 10px 20px; margin-top: 10px; }
+    body { font-family: Arial; padding: 20px; background: #111; color: white; max-width: 900px; margin: 0 auto; }
+    textarea { width: 100%; height: 260px; background:#0c0c0c; color:#eee; border:1px solid #333; border-radius:10px; padding:12px; }
+    input { width: 100%; background:#0c0c0c; color:#eee; border:1px solid #333; border-radius:10px; padding:10px 12px; }
+    button { padding: 10px 14px; margin-top: 10px; border-radius:10px; border:1px solid #333; background:#1b1b1b; color:#eee; cursor:pointer; }
+    button:hover { border-color:#555; }
+    .row { display:flex; gap:10px; flex-wrap:wrap; align-items:center; }
+    .small { opacity:.8; font-size: 12px; margin-top: 8px; line-height: 1.4; }
+    .card { border:1px solid #2a2a2a; border-radius:14px; padding:14px; background:#151515; }
+    a { color: #9ad; }
   </style>
 </head>
 <body>
 
-<h2>Terra CORE → PlayingCards.io CSV Generator</h2>
+  <h2>Terra CORE → PlayingCards.io CSV Generator</h2>
 
-<p>Paste card IDs below (one per line):</p>
+  <div class="card">
+    <label>Deck name (controls filename):</label>
+    <input id="deckName" placeholder="Example: Frostbyte_Test_01" />
 
-<textarea id="ids"></textarea>
-<br>
-<button onclick="generateCSV()">Generate CSV</button>
+    <div class="small">
+      Paste card IDs below (one per line). Optional quantities:<br>
+      <code>VOLCANO_HIDEOUT</code><br>
+      <code>2x MAGMA_BASTION</code><br>
+      <code>3 ASHEN_FOUNDRY</code>
+    </div>
+
+    <textarea id="ids" placeholder="Paste IDs here..."></textarea>
+
+    <div class="row">
+      <button onclick="downloadPCIOCSV()">Download PC.io CSV</button>
+      <button onclick="downloadDeckText()">Save Deck (.txt)</button>
+
+      <label style="margin-top:10px;">
+        <input type="file" id="loadFile" accept=".txt" onchange="loadDeckText(event)" />
+      </label>
+    </div>
+
+    <div class="small">
+      • <b>Download PC.io CSV</b> → import into PlayingCards.io Custom Deck (CSV Import).<br>
+      • <b>Save Deck (.txt)</b> → share this file with your fiancé; they can load it here and generate the CSV too.
+    </div>
+  </div>
 
 <script>
-function generateCSV() {
-  const baseURL = "https://terracoretcg.github.io/terracore-cards/images/";
-  const rawLines = document.getElementById("ids").value
+const baseURL = "https://terracoretcg.github.io/terracore-cards/images/";
+const ext = ".JPG"; // keep consistent with your uploaded images
+
+function safeFilename(name) {
+  const cleaned = (name || "").trim().replace(/[^\w\-]+/g, "_");
+  return cleaned || "terracore_deck";
+}
+
+function parseLinesToUrls(text) {
+  const rawLines = text
     .split("\n")
     .map(l => l.trim())
     .filter(Boolean);
@@ -29,10 +65,6 @@ function generateCSV() {
   let rows = ["image"];
 
   for (const line of rawLines) {
-    // Accept formats:
-    // VOLCANO_HIDEOUT
-    // 2x VOLCANO_HIDEOUT
-    // 2 VOLCANO_HIDEOUT
     const m = line.match(/^(\d+)\s*x?\s+(.+)$/i);
     let qty = 1;
     let id = line;
@@ -43,21 +75,42 @@ function generateCSV() {
     }
 
     for (let i = 0; i < qty; i++) {
-      rows.push(baseURL + id + ".JPG");
+      rows.push(baseURL + id + ext);
     }
   }
 
-  const csv = rows.join("\n") + "\n";
+  return rows.join("\n") + "\n";
+}
 
-  // Better filename (timestamped)
-  const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,"-");
-  const filename = `terracore_deck_${stamp}.csv`;
-
-  const blob = new Blob([csv], { type: "text/csv" });
+function downloadBlob(text, filename, mime) {
+  const blob = new Blob([text], { type: mime });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
   link.download = filename;
   link.click();
+}
+
+function downloadPCIOCSV() {
+  const name = safeFilename(document.getElementById("deckName").value);
+  const idsText = document.getElementById("ids").value;
+  const csv = parseLinesToUrls(idsText);
+  downloadBlob(csv, `${name}.csv`, "text/csv");
+}
+
+function downloadDeckText() {
+  const name = safeFilename(document.getElementById("deckName").value);
+  const idsText = document.getElementById("ids").value.trim() + "\n";
+  downloadBlob(idsText, `${name}.txt`, "text/plain");
+}
+
+function loadDeckText(evt) {
+  const file = evt.target.files?.[0];
+  if (!file) return;
+  const reader = new FileReader();
+  reader.onload = () => {
+    document.getElementById("ids").value = String(reader.result || "");
+  };
+  reader.readAsText(file);
 }
 </script>
 
