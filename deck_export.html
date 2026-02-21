@@ -21,20 +21,42 @@
 <script>
 function generateCSV() {
   const baseURL = "https://terracoretcg.github.io/terracore-cards/images/";
-  const ids = document.getElementById("ids").value
+  const rawLines = document.getElementById("ids").value
     .split("\n")
-    .map(id => id.trim())
-    .filter(id => id !== "");
+    .map(l => l.trim())
+    .filter(Boolean);
 
-  let csv = "image\n";
-  ids.forEach(id => {
-    csv += baseURL + id + ".JPG\n";
-  });
+  let rows = ["image"];
+
+  for (const line of rawLines) {
+    // Accept formats:
+    // VOLCANO_HIDEOUT
+    // 2x VOLCANO_HIDEOUT
+    // 2 VOLCANO_HIDEOUT
+    const m = line.match(/^(\d+)\s*x?\s+(.+)$/i);
+    let qty = 1;
+    let id = line;
+
+    if (m) {
+      qty = Math.max(1, parseInt(m[1], 10));
+      id = m[2].trim();
+    }
+
+    for (let i = 0; i < qty; i++) {
+      rows.push(baseURL + id + ".JPG");
+    }
+  }
+
+  const csv = rows.join("\n") + "\n";
+
+  // Better filename (timestamped)
+  const stamp = new Date().toISOString().slice(0,19).replace(/[:T]/g,"-");
+  const filename = `terracore_deck_${stamp}.csv`;
 
   const blob = new Blob([csv], { type: "text/csv" });
   const link = document.createElement("a");
   link.href = URL.createObjectURL(blob);
-  link.download = "terracore_deck.csv";
+  link.download = filename;
   link.click();
 }
 </script>
