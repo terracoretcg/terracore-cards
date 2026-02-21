@@ -25,12 +25,10 @@ PIT_BOSS,Pit Boss,Troop,3,
 WARCALLER,Warcaller,Troop,4,1dp can only be blocked by 1 unit
 DROP_INFANTRY,Drop Infantry,Troop,1,
 VANGUARD_SCOUTS,Vanguard Scouts,Troop,2,Rapid Deployment
-SHOCK_TROOPERS,Shock Troopers,Troop,2,
 FLANK_OPERATIVES,Flank Operatives,Troop,3,Anti Air
 TACTICAL_SERGEANT,Tactical Sergeant,Troop,3,
 PHASE_CAPTAIN,Phase Captain,Troop,4,2 DP target unit becomes combat ready
 SECURITY_DETAIL,Security Detail,Troop,1,
-FIELD_OPERATIVES,Field Operatives,Troop,2,hacking
 COUNTERINTEL_TEAM,Counterintel Team,Troop,2,
 SHIELD_MARSHAL,Shield Marshal,Troop,3,Anti Air
 ENFORCEMENT_CAPTAIN,Enforcement Captain,Troop,3,
@@ -84,7 +82,6 @@ CONTAINMENT_PLATFORM,Containment Platform,Tank,4,Maintain Posistion
 COLD_BASTION,Cold Bastion,Tank,4,
 GLACIAL_ENGINE,Glacial Engine,Tank,5,3 dp reduce speed of target unit by 1.
 FUEL_CARRIER,Fuel Carrier,Tank,2,
-FIRE_SUPPORT_RIG,Fire Support Rig,Tank,3,Break Through
 THERMAL_PLATFORM,Thermal Platform,Tank,3,
 OVERPRESSURE_ENGINE,Overpressure Engine,Tank,4,Combat Ready
 INCINERATOR_PLATFORM,Incinerator Platform,Tank,4,
@@ -382,3 +379,4 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
