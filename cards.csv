@@ -333,7 +333,7 @@ ORBITAL_BOMBARDMENT,Orbital Bombardment,Global Event,3,Apply on target 1 terrain
 METEOR_SHOWER,Meteor Shower,Global Event,7,Target all terrains. Deal 2 damage immediately to units on this terrain. Then roll a d20: 114: 1 damage to units in the terrain 1520: 2 damage to units in the terrain
 TORNADO_OUTBREAK,Tornado Outbreak,Global Event,5,Return all units to their owners hands.
 ATMOSPHERIC_RESET,Atmospheric Reset,Global Event,5,All terrains becomes Neutral permanently.
-DENSE_FOG_BANK,Dense Fog Bank,Global Event,3,All terrain become neutral for 2 turns, units on this terrain cannot attack for 1 turn.
+DENSE_FOG_BANK,Dense Fog Bank,Global Event,3,All terrain become neutral for 2 turns units on this terrain cannot attack for 1 turn.
 CEASEFIRE_PROTOCOL,Ceasefire Protocol,Global Event,4,Target all terrains becomes Neutral for 2 turns. Units on this terrain cannot attack.
 EVACUATION_ORDER,Evacuation Order,Global Event,4,Return all units to their owners hands.
 SIGNAL_INTERFERENCE,Signal Interference,Global Event,3,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain cannot Ready next turn.
@@ -372,6 +372,7 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
 
 
