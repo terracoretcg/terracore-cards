@@ -337,7 +337,7 @@ DENSE_FOG_BANK,Dense Fog Bank,Global Event,3,All terrain become neutral for 2 tu
 CEASEFIRE_PROTOCOL,Ceasefire Protocol,Global Event,4,Target all terrains becomes Neutral for 2 turns. Units on this terrain cannot attack.
 EVACUATION_ORDER,Evacuation Order,Global Event,4,Return all units to their owners hands.
 SIGNAL_INTERFERENCE,Signal Interference,Global Event,3,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain cannot Ready next turn.
-SCRAP_STORM,Scrap Storm,Global Event,4,Terrain becomes neutral for 2 turns, destroy all upgrades, gain 1 DF for each upgrade destroyed this way.
+SCRAP_STORM,Scrap Storm,Global Event,4,Terrain becomes neutral for 2 turns destroy all upgrades gain 1 DF for each upgrade destroyed this way.
 HARD_WIND_GUSTS,Hard Wind Gusts,Global Event,2,Target 1 terrain becomes Neutral for 1 turn. Units on this terrain get Speed -1.
 SWAMP,Swamp,Terrain,,Troops on this terrain lose 1 Speed.
 JUNGLE,Jungle,Terrain,,Troops gain +1 Speed. Tanks lose 1 Speed. Planes lose 1 OR.
@@ -372,6 +372,7 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
 
 
