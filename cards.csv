@@ -218,7 +218,7 @@ TARGET_BEACON,Target Beacon,Ops,2,The next damage you deal to a unit this turn i
 SCRAP_DRONE_SWARM,Scrap Drone Swarm,Ops,5,All friendly units gain breakthrough
 HEAL_COUNTER,Heal Counter,Ops,5,heal base by d20
 HOVER_COUNTER,Hover Counter,Ops,5,all friendly plains gain hover
-SCAVENGE,Scavenge,Ops,0,Discard a card draw a card.
+SALVAGE,Salvage,Ops,0,Discard a card draw a card.
 SHIELD_REINFORCEMENT,Shield Reinforcement,Ops,2,Prevent the next 3 damage to a unit or base.
 EMERGENCY_REINFORCE,Emergency Reinforce,Ops,1,"Roll d20: 19 prevent 1 dmg, 1017 prevent 2 dmg, 1820 3 dmg to unit or base."
 FLASH_FREEZE,Flash Freeze,Ops,3,Slow attacking enemy units by 1 speed for this turn.
@@ -372,6 +372,7 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
 
 
