@@ -292,7 +292,7 @@ HOVER_UPGRADE,Hover upgrade,Base Upgrades,5,All friendly units gain Hover.
 MAINTAIN_POSITION_UPGRADE,Maintain Position Upgrade,Base Upgrades,5,All friendly units gain Maintain Position.
 MULTI_DEFENDER_1_UPGRADE,Multi Defender 1 Upgrade,Base Upgrades,4,All friendly units gain Multi-Defender 1.
 OVERCLOCKED_1_UPGRADE,Overclocked 1 Upgrade,Base Upgrades,6,All friendly units gain Overclocked 1.
-SALVAGE_UPGRADE,Salvage Upgrade,Base Upgrades,5,When salvaged is used draw an extra card.
+SALVAGE_UPGRADE,Salvage Upgrade,Base Upgrades,1,When salvaged is used draw an extra card.
 SHIELD_1_UPGRADE,Shield 1 Upgrade,Base Upgrades,4,All friendly units gain Shield 1.
 BREACH_ALARM_SYSTEM,Breach Alarm System,Base Upgrades,5,Attacking enemy units lose 1 Speed.
 SIEGE_DRONE_LAUNCHPAD,Siege Drone Launchpad,Base Upgrades,5,"Create a 1/1/1 Drone, then it may block this combat."
@@ -301,7 +301,7 @@ REACTIVE_DRONE_RESPONSE,Reactive Drone Response,Base Upgrades,5,Create a 1/1/1 D
 DEFENSE_TURRET_ARRAY,Defense Turret Array,Base Upgrades,4,2 df Deal 2 damage to one attacking unit.
 COMMAND_RELAY_UPLINK,Command Relay Uplink,Base Upgrades,4,When attacked gain 1 df
 SALVAGE_DRONE_RECYCLER,Salvage Drone Recycler,Base Upgrades,4,"If a unit was destroyed last turn, create a 1/1/1 Drone."
-REINFORCED_BULKHEADS,Reinforced Bulkheads,Base Upgrades,5,You gain 1 extra DF on your turn.
+REINFORCED_BULKHEADS,Reinforced Bulkheads,Base Upgrades,1,You gain 1 extra DF on your turn.
 COUNTERFIRE_PROTOCOL,Counterfire Protocol,Base Upgrades,6,"Roll d20. On 10 or higher, deal 3 damage to one attacking unit."
 CRYO_SPIKE,Cryo Spike,Global Event,4,Apply on target 1 terrain instantly. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed. Deal 1 damage immediately to units on this terrain.
 WHITEOUT_SIEGE,Whiteout Siege,Global Event,4,"Target 2 adjacent terrains, they become Frozen for 2 turns. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed and cannot attack."
@@ -372,6 +372,7 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+
 
 
 
