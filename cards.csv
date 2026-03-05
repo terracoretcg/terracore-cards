@@ -1,195 +1,176 @@
 ID,Name,Type,Cost ,Abilities
-LINE_INFANTRY,Line Infantry,Troop,1,
-SHIELDBEARERS,Shieldbearers,Troop,2,Anti Air
-SAPPERS,Sappers,Troop,2,
-DEMOLITION_CREW,Demolition Crew,Troop,3,Maintain Posistion 
-BASTION_CAPTAIN,Bastion Captain,Troop,3,
-SIEGE_MARSHAL,Siege Marshal,Troop,4,tripwire
-RECON_PATROL,Recon Patrol,Troop,1,
-ICE_SKIRMISHERS,Ice Skirmishers,Troop,2,Maintain Posistion 
-CRYO_SABOTEURS,Cryo Saboteurs,Troop,2,
-CAPTURE_UNIT,Capture Unit,Troop,3,Combat Ready
-COLD_MARSHAL,Cold Marshal,Troop,3,
-FIELD_COMMANDER,Field Commander,Troop,4,Stasis Lock
-ASSAULT_TROOPERS,Assault Troopers,Troop,1,
-FLAME_SCOUTS,Flame Scouts,Troop,2,Combant Ready
-OVERCHARGE_SQUAD,Overcharge Squad,Troop,2,
-HEAT_RUNNERS,Heat Runners,Troop,3,Rapid Deployment
-FIRE_MARSHAL,Fire Marshal,Troop,3,
-SHOCK_COMMANDER,Shock Commander,Troop,4,3 df engage 1 dmg
-JUNK_RAIDERS,Junk raiders,Troop,1,
-WASTELAND_RAIDERS,Wasteland Raiders,Troop,2,x strike
-SABOTEURS,Saboteurs,Troop,2,
-MUTANT_PACK,Mutant Pack,Troop,3,Breakthrough
-PIT_BOSS,Pit Boss,Troop,3,
-WARCALLER,Warcaller,Troop,4,1 df can only be blocked by 1 unit
-DROP_INFANTRY,Drop Infantry,Troop,1,
-VANGUARD_SCOUTS,Vanguard Scouts,Troop,2,Rapid Deployment
-FLANK_OPERATIVES,Flank Operatives,Troop,3,Anti Air
-TACTICAL_SERGEANT,Tactical Sergeant,Troop,3,
-PHASE_CAPTAIN,Phase Captain,Troop,4,Flamethrower
-SECURITY_DETAIL,Security Detail,Troop,1,
-COUNTERINTEL_TEAM,Counterintel Team,Troop,2,
-SHIELD_MARSHAL,Shield Marshal,Troop,3,Anti Air
-ENFORCEMENT_CAPTAIN,Enforcement Captain,Troop,3,
-HIGH_ADJUDICATOR,High Adjudicator,Troop,4,Air Suppression
 BULWARK_FRAME,Bulwark Frame,Mech,1,
-BREACHER_FRAME,Breacher Frame,Mech,5,Firewall
-SIEGE_FRAME,Siege Frame,Mech,5,
-EARTHSHAKER_FRAME,Earthshaker Frame,Mech,6,Route Secured
-IRONCLAD,Ironclad,Mech,6,
-SIEGE_COLOSSUS,Siege Colossus,Mech,7,4 Heat: gains breakthrough and can only be blocked by 1 unit this turn
 CHILL_FRAME,Chill Frame,Mech,1,
-CRYO_LOCK_FRAME,Cryo Lock Frame,Mech,5,Maintain Posistion 
-GLACIAL_BREAKER,Glacial Breaker,Mech,5,
-CONTAINMENT_FRAME,Containment Frame,Mech,6,Thermal Shear - This unit loses 1 extra heat on your turn.
-ABSOLUTE_ZERO_ENGINE,Absolute Zero Engine,Mech,6,
-TUNDRA_COLOSSUS,Tundra Colossus,Mech,7,1 Heat reduce the heat of target by 1.
-STRIKER_FRAME,Striker Frame,Mech,1,
-INFERNO_FRAME,Inferno Frame,Mech,5,Rapid Deployment
-OVERLOAD_FRAME,Overload Frame,Mech,5,
-REACTOR_FRAME,Reactor Frame,Mech,6,OverClocked 2
-SUNFORGED_COLOSSUS,Sunforged Colossus,Mech,6,
-MELTDOWN_ENGINE,Meltdown Engine,Mech,7,Destroy this Mech and deal damage to target unit equal to the amount of heat this unit has
 SCRAP_FRAME,Scrap Frame,Mech,1,
-OVERDRIVE_FRAME,Overdrive Frame,Mech,5,OverClocked 1
-RUPTURE_FRAME,Rupture Frame,Mech,5,
-DETONATION_FRAME,Detonation Frame,Mech,6,Recon
-ANOMALY_ENGINE,Anomaly Engine,Mech,6,
-DOOM_WALKER,Doom Walker,Mech,7,when a friendly unit is destroyed pay 3 heat and create a 1/1/1 drone
+SIEGE_FRAME,Siege Frame,Mech,2,
+GLACIAL_BREAKER,Glacial Breaker,Mech,2,
+OVERLOAD_FRAME,Overload Frame,Mech,2,
+RUPTURE_FRAME,Rupture Frame,Mech,2,
+BREACHER_FRAME,Breacher Frame,Mech,3,Firewall
+CRYO_LOCK_FRAME,Cryo Lock Frame,Mech,3,Maintain Posistion 
+OVERDRIVE_FRAME,Overdrive Frame,Mech,3,OverClocked 1
+EARTHSHAKER_FRAME,Earthshaker Frame,Mech,3,
+STRIKER_FRAME,Striker Frame,Mech,3,
+IRONCLAD,Ironclad,Mech,3,
+INFERNO_FRAME,Inferno Frame,Mech,4,Rapid Deployment
+AMBUSH_FRAME,Ambush Frame,Mech,4,X Strike
 DROP_FRAME,Drop Frame,Mech,4,
-AMBUSH_FRAME,Ambush Frame,Mech,5,X Strike
-PHASE_STRIKER,Phase Striker,Mech,5,
-GHOST_FRAME,Ghost Frame,Mech,6,Breakthrough
-TEMPORAL_BREAKER,Temporal Breaker,Mech,6,
-DROP_TITAN,Drop Titan,Mech,7,4 Heat Delay this units destruction until end of this turn
 SENTINEL_FRAME,Sentinel Frame,Mech,4,
+ABSOLUTE_ZERO_ENGINE,Absolute Zero Engine,Mech,4,
+DETONATION_FRAME,Detonation Frame,Mech,5,Recon
 FIREWALL_FRAME,Firewall Frame,Mech,5,firewall
+PHASE_STRIKER,Phase Striker,Mech,5,
+TEMPORAL_BREAKER,Temporal Breaker,Mech,5,
 SUPPRESSION_FRAME,Suppression Frame,Mech,5,
-BASTION_FRAME,Bastion Frame,Mech,6,hacking
-NULL_ENGINE,Null Engine,Mech,6,
+CONTAINMENT_FRAME,Containment Frame,Mech,6,Thermal Shear - This unit loses 1 extra heat on your turn.
+REACTOR_FRAME,Reactor Frame,Mech,6,OverClocked 2
+GHOST_FRAME,Ghost Frame,Mech,6,Breakthrough
+SUNFORGED_COLOSSUS,Sunforged Colossus,Mech,6,
+ANOMALY_ENGINE,Anomaly Engine,Mech,6,
+SIEGE_COLOSSUS,Siege Colossus,Mech,7,4 Heat: gains breakthrough and can only be blocked by 1 unit this turn
+MELTDOWN_ENGINE,Meltdown Engine,Mech,7,Destroy this Mech and deal damage to target unit equal to the amount of heat this unit has
+DOOM_WALKER,Doom Walker,Mech,7,when a friendly unit is destroyed pay 3 heat and create a 1/1/1 drone
 APEX_GUARDIAN,Apex Guardian,Mech,7,4 Heat: roll d20 deal damage to target unit.
-SUPPLY_HAULER,Supply Hauler,Tank,2,
-TROOP_HAULER,troop hauler,Tank,3,anti air
-WALLBREAKER,Wallbreaker,Tank,3,
-BREACH_CARRIER,Breach Carrier,Tank,4,Multi Defender x
-BASTION_CARRIER,Bastion Carrier,Tank,4,
-SIEGE_PLATFORM,Siege Platform,Tank,5,3 df When this unit blocks and survives Deal damage equal to this units DR to the attacking unit.
-ICE_CARRIER,Ice Carrier,Tank,2,
-PERMAFROST_ENGINE,Permafrost Engine,Tank,3,Route Secured
-SUPPRESSION_RIG,Suppression Rig,Tank,3,
-CONTAINMENT_PLATFORM,Containment Platform,Tank,4,Maintain Posistion
-COLD_BASTION,Cold Bastion,Tank,1,
-GLACIAL_ENGINE,Glacial Engine,Tank,5,3 df reduce speed of target unit by 1.
-FUEL_CARRIER,Fuel Carrier,Tank,2,
-THERMAL_PLATFORM,Thermal Platform,Tank,3,
-OVERPRESSURE_ENGINE,Overpressure Engine,Tank,4,Combat Ready
-INCINERATOR_PLATFORM,Incinerator Platform,Tank,1,
-FURNACE_ENGINE,Furnace Engine,Tank,5,2 df gain 1 or
-SCRAP_HAULER,Scrap Hauler,Tank,2,
-HAZARD_RIG,Hazard Rig,Tank,3,Recon
-UNSTABLE_PLATFORM,Unstable Platform,Tank,3,
-RADIATION_ENGINE,Radiation Engine,Tank,4,Rapid Deployment
-CATACLYSM_PLATFORM,Cataclysm Platform,Tank,1,
-FALLOUT_BASTION,Fallout Bastion,Tank,5,3 df deal 1 damage to d20 targets
-DEPLOYMENT_CARRIER,Deployment Carrier,Tank,2,
-MOBILE_COVER_UNIT,Mobile Cover Unit,Tank,3,Combat Ready
-RAPID_SUPPORT_RIG,Rapid Support Rig,Tank,3,
-PHASE_RELAY,Phase Relay,Tank,4,X Strike
-TACTICAL_BASTION,Tactical Bastion,Tank,1,
-TEMPORAL_ENGINE,Temporal Engine,Tank,5,When this unit attacks deal 1 damage to a target
-DEFENSE_CARRIER,Defense Carrier,Tank,2,
-SHIELD_PLATFORM,Shield Platform,Tank,3,Shield X
-INTERFERENCE_RIG,Interference Rig,Tank,3,
-LOCKDOWN_ENGINE,Lockdown Engine,Tank,4,Anti Air
-AEGIS_PLATFORM,Aegis Platform,Tank,4,
-COMMAND_BASTION,Command Bastion,Tank,5,3 df and engage prevent all damage to target unit
-PATROL_GUNSHIP,Patrol Gunship,Plane,2,
-GUNSHIP,Gunship,Plane,3,Hover
-SUPPRESSION_WING,Suppression Wing,Plane,3,
-BOMBARD_WING,Bombard Wing,Plane,4,Breakthrough
+NULL_ENGINE,Null Engine,Mech,7,
+HOTSHOT,Hotshot,Mech,8,All friendly Mechs Gain OverClocked
+AFTERMATH,Aftermath,Mech,8,All friendly Mechs gain reduce heat by 1  when any unit is destroyed
+HARD_COUNT,Hard Count,Mech,8,All friendly Mechs gain pay 6 heat deal 1 damage to target unit for each mech in play
+COLDFRAME,Coldframe,Mech,9,All friendly Mechs gain at the start of your turn reduce heat by 1 extra point
+THE_LAST_LIGHT_OF_MERIDIAN,The Last Light of Meridian,Mech,10,all enemy units get -1or and -1dr
 SKY_BASTION,Sky Bastion,Plane,1,
-SKYBREAKER_GUNSHIP,Skybreaker Gunship,Plane,5,2 df deal 1 extra damage to target if unblocked
-SNOW_WING,Snow Wing,Plane,2,
-CRYO_DRONES,Cryo Drones,Plane,3,Breakthrough
-ICE_LANCER,Ice Lancer,Plane,3,
-WEATHER_CONTROLLER,Weather Controller,Plane,4,Hover
 STORM_WING,Storm Wing,Plane,1,
-WHITEOUT_BOMBER,Whiteout Bomber,Plane,5,Hacking
+BLITZ_WING,Blitz Wing,Plane,1,
+PATROL_GUNSHIP,Patrol Gunship,Plane,2,
+SNOW_WING,Snow Wing,Plane,2,
 STRIKE_WING,Strike Wing,Plane,2,
-BURN_DRONES,Burn Drones,Plane,3,X Strike
-FLAME_INTERCEPTOR,Flame Interceptor,Plane,3,
-FIRESTORM_BOMBER,Firestorm Bomber,Plane,4,Rapid Deployment
-SOLAR_TALON,Solar Talon,Plane,4,
-CATACLYSM_WING,Cataclysm Wing,Plane,5,Carpet Bombing
 SKIRMISH_JET,Skirmish Jet,Plane,2,
 BOMB_DRONES,Bomb Drones,Plane,3,Breakthrough
-HAZARD_BOMBER,Hazard Bomber,Plane,3,
-WILDFIRE_WING,Wildfire Wing,Plane,4,Reactor Leak
-DOOM_BOMBER,Doom Bomber,Plane,4,
-APOCALYPSE_WING,Apocalypse Wing,Plane,5,mine
-RECON_WING,Recon Wing,Plane,2,
-INTERCEPT_DRONES,Intercept Drones,Plane,3,Hover
-SKYDIVE_STRIKERS,Skydive Strikers,Plane,3,
-PHASE_BOMBER,Phase Bomber,Plane,4,Rapid Deployment
-BLITZ_WING,Blitz Wing,Plane,1,
-TEMPORAL_SKYBREAKER,Temporal Skybreaker,Plane,5,2 df target unit cant block this turn
-SPY_PLANE,Spy Plane,Plane,2,
+BURN_DRONES,Burn Drones,Plane,3,X Strike
 SHIELD_DRONES,Shield Drones,Plane,3,Combat Ready
-INTERCEPTOR_WING,Interceptor Wing,Plane,3,
-DISRUPTION_BOMBER,Disruption Bomber,Plane,4,Hover
-PRECISION_WING,Precision Wing,Plane,1,
-SKY_SENTINEL,Sky Sentinel,Plane,5,3 DF Target unit cant active abilites this turn.
-WALLACE_THE_BULWARK,Wallace The Bulawrk,Troop,8,All Friendly troops can block one additional attacker
-LAST_PLATE,Last Plate,Mech,8,All friendly Mechs take 1 less damage from each source
-BLACK_ANVIL,Black Anvil,Tank,9,All friendly tanks gain when one is put into play you may search library for an exact copy to put into your hand.
+SUPPRESSION_WING,Suppression Wing,Plane,3,
+ICE_LANCER,Ice Lancer,Plane,3,
+FLAME_INTERCEPTOR,Flame Interceptor,Plane,3,
+BOMBARD_WING,Bombard Wing,Plane,4,Breakthrough
+WEATHER_CONTROLLER,Weather Controller,Plane,4,Hover
+FIRESTORM_BOMBER,Firestorm Bomber,Plane,4,Rapid Deployment
+RECON_WING,Recon Wing,Plane,4,
+SPY_PLANE,Spy Plane,Plane,4,
+INTERCEPT_DRONES,Intercept Drones,Plane,5,Hover
+WILDFIRE_WING,Wildfire Wing,Plane,5,Reactor Leak
+DOOM_BOMBER,Doom Bomber,Plane,5,
+SKYDIVE_STRIKERS,Skydive Strikers,Plane,5,
+SOLAR_TALON,Solar Talon,Plane,5,
+GUNSHIP,Gunship,Plane,6,Hover
+PHASE_BOMBER,Phase Bomber,Plane,6,Rapid Deployment
+DISRUPTION_BOMBER,Disruption Bomber,Plane,6,Hover
+SKYBREAKER_GUNSHIP,Skybreaker Gunship,Plane,6,2 df deal 1 extra damage to target if unblocked
+PRECISION_WING,Precision Wing,Plane,6,
+WHITEOUT_BOMBER,Whiteout Bomber,Plane,7,Hacking
+CATACLYSM_WING,Cataclysm Wing,Plane,7,Carpet Bombing
+APOCALYPSE_WING,Apocalypse Wing,Plane,7,mine
+TEMPORAL_SKYBREAKER,Temporal Skybreaker,Plane,7,2 df target unit cant block this turn
+INTERCEPTOR_WING,Interceptor Wing,Plane,7,
 IRONWING,Ironwing,Plane,8,All Friendly Planes Gain hover.
-LOCKSTEP_THE_FROZEN_ORDER,Lockstep The Frozen Order,Troop,8,all friendly troops gain pay 3 df and engage freeze target unit
-COLDFRAME,Coldframe,Mech,9,All friendly Mechs gain at the start of your turn reduce heat by 1 extra point
-WHITE_LOCK,White Lock,Tank,8,All friendly Tanks when blocked or blocking that enemy unit loses 1 speed
 WHITE_GALE,White Gale,Plane,8,All friendly Planes gain +1 speed
-REDMARK_STRIKE_LEAD,Redmark Strike Lead,Troop,8,All friendly Troops gain pay 2 DF deal 1 damage to target unit
-HOTSHOT,Hotshot,Mech,8,All friendly Mechs Gain OverClocked
-REDLINE,Redline,Tank,8,All friendly Tanks have rapid deployment
-SUNSPIKE,Sunspike,Plane,9,All friendly Planes enter Combat Ready
-GRAVES_GROUND_OPS,Graves Ground Ops,Troop,9,When an enemy unit is destroyed you may pay 1 df if you do create a 1/1/1 drone
-AFTERMATH,Aftermath,Mech,8,All friendly Mechs gain reduce heat by 1  when any unit is destroyed
-LAST_LAUGH,Last Laugh,Tank,8,All friendly tanks gain when destroyed deal 1 damage to d20 enemys
 LAST_RATTLE,Last Rattle,Plane,8,All friendly units gain when destroyed draw a card.
-MERCER_TASK_LEAD,Mercer Task Lead,Troop,8,all friendly troops gain Recon.
-HARD_COUNT,Hard Count,Mech,8,All friendly Mechs gain pay 6 heat deal 1 damage to target unit for each mech in play
-FIRST_CONTACT,First Contact,Tank,8,All friendly tanks gain deal 1 damage to target base when enter play
-CLEAR_SKY,Clear Sky,Plane,9,All friendly planes gain when they enter play target unit cant block this turn
-MARA_CALDWELL_FIELD_LEAD,Mara Caldwell Field Lead,Troop,8,All friendly troops may activate abilities even if they are engaged
-SENTINEL,Sentinel ,Mech,9,All friendly heat abilites cost 1 less
-KEANES_AEGIS,Keanes Aegis,Tank,8,All friendly tanks stop the first 1 point of damage delt to them each turn
-DEAD_CHANNEL,Dead Channel,Plane,8,All friendly planes gain when you damage enemy unit they cant activate abilities this turn
-GRAVEWAR_THE_UNBROKEN,Gravewar The Unbroken,Tank,10,All friendly units gain 1 dr and can block 1 extra attacker
-HIGH_ARBITER_OF_THE_CRYO_MARCH,High Arbiter of the Cryo March,Mech,10,All friendly units get +1 or and Enemys get -1 speed
+SUNSPIKE,Sunspike,Plane,9,All friendly Planes enter Combat Ready
 THE_BURNING_ANGEL,The Burning Angel,Plane,10,All friendly units gain pay 2df engage and roll a d20 deal 1 damage to 1-11 1 target 12-18 2 targets 19-20 3 targets
+COLD_BASTION,Cold Bastion,Tank,1,
+INCINERATOR_PLATFORM,Incinerator Platform,Tank,1,
+CATACLYSM_PLATFORM,Cataclysm Platform,Tank,1,
+SUPPLY_HAULER,Supply Hauler,Tank,2,
+ICE_CARRIER,Ice Carrier,Tank,2,
+FUEL_CARRIER,Fuel Carrier,Tank,2,
+SCRAP_HAULER,Scrap Hauler,Tank,2,
+TROOP_HAULER,troop hauler,Tank,3,anti air
+HAZARD_RIG,Hazard Rig,Tank,3,Recon
+SHIELD_PLATFORM,Shield Platform,Tank,3,Shield X
+SUPPRESSION_RIG,Suppression Rig,Tank,3,
+THERMAL_PLATFORM,Thermal Platform,Tank,3,
+UNSTABLE_PLATFORM,Unstable Platform,Tank,3,
+CONTAINMENT_PLATFORM,Containment Platform,Tank,4,Maintain Posistion
+OVERPRESSURE_ENGINE,Overpressure Engine,Tank,4,Combat Ready
+RADIATION_ENGINE,Radiation Engine,Tank,4,Rapid Deployment
+TACTICAL_BASTION,Tactical Bastion,Tank,4,
+DEPLOYMENT_CARRIER,Deployment Carrier,Tank,4,
+MOBILE_COVER_UNIT,Mobile Cover Unit,Tank,5,Combat Ready
+BREACH_CARRIER,Breach Carrier,Tank,5,Multi Defender x
+BASTION_CARRIER,Bastion Carrier,Tank,5,
+AEGIS_PLATFORM,Aegis Platform,Tank,5,
+DEFENSE_CARRIER,Defense Carrier,Tank,5,
+PHASE_RELAY,Phase Relay,Tank,6,X Strike
+LOCKDOWN_ENGINE,Lockdown Engine,Tank,6,Anti Air
+SIEGE_PLATFORM,Siege Platform,Tank,6,3 df When this unit blocks and survives Deal damage equal to this units DR to the attacking unit.
+GLACIAL_ENGINE,Glacial Engine,Tank,6,3 df reduce speed of target unit by 1.
+RAPID_SUPPORT_RIG,Rapid Support Rig,Tank,6,
+FURNACE_ENGINE,Furnace Engine,Tank,7,2 df gain 1 or
+FALLOUT_BASTION,Fallout Bastion,Tank,7,3 df deal 1 damage to d20 targets
+TEMPORAL_ENGINE,Temporal Engine,Tank,7,When this unit attacks deal 1 damage to a target
+COMMAND_BASTION,Command Bastion,Tank,7,3 df and engage prevent all damage to target unit
+INTERFERENCE_RIG,Interference Rig,Tank,7,
+WHITE_LOCK,White Lock,Tank,8,All friendly Tanks when blocked or blocking that enemy unit loses 1 speed
+LAST_LAUGH,Last Laugh,Tank,8,All friendly tanks gain when destroyed deal 1 damage to d20 enemys
+FIRST_CONTACT,First Contact,Tank,8,All friendly tanks gain deal 1 damage to target base when enter play
+BLACK_ANVIL,Black Anvil,Tank,9,All friendly tanks gain when one is put into play you may search library for an exact copy to put into your hand.
+GRAVEWAR_THE_UNBROKEN,Gravewar The Unbroken,Tank,10,All friendly units gain 1 dr and can block 1 extra attacker
+LINE_INFANTRY,Line Infantry,Troop,1,
+RECON_PATROL,Recon Patrol,Troop,1,
+ASSAULT_TROOPERS,Assault Troopers,Troop,1,
+CRYO_SABOTEURS,Cryo Saboteurs,Troop,2,
+OVERCHARGE_SQUAD,Overcharge Squad,Troop,2,
+SABOTEURS,Saboteurs,Troop,2,
+COUNTERINTEL_TEAM,Counterintel Team,Troop,2,
+FLANK_OPERATIVES,Flank Operatives,Troop,3,Anti Air
+HEAT_RUNNERS,Heat Runners,Troop,3,Rapid Deployment
+CAPTURE_UNIT,Capture Unit,Troop,3,Combat Ready
+SAPPERS,Sappers,Troop,3,
+COLD_MARSHAL,Cold Marshal,Troop,3,
+FIRE_MARSHAL,Fire Marshal,Troop,3,
+SIEGE_MARSHAL,Siege Marshal,Troop,4,tripwire
+FIELD_COMMANDER,Field Commander,Troop,4,Stasis Lock
+SHOCK_COMMANDER,Shock Commander,Troop,4,3 df engage 1 dmg
+DROP_INFANTRY,Drop Infantry,Troop,4,
+SECURITY_DETAIL,Security Detail,Troop,4,
+HIGH_ADJUDICATOR,High Adjudicator,Troop,5,Air Suppression
+WASTELAND_RAIDERS,Wasteland Raiders,Troop,5,x strike
+SHIELDBEARERS,Shieldbearers,Troop,5,Anti Air
+TACTICAL_SERGEANT,Tactical Sergeant,Troop,5,
+ENFORCEMENT_CAPTAIN,Enforcement Captain,Troop,5,
+WARCALLER,Warcaller,Troop,6,1 df can only be blocked by 1 unit
+PHASE_CAPTAIN,Phase Captain,Troop,6,Flamethrower
+MUTANT_PACK,Mutant Pack,Troop,6,Breakthrough
+SHIELD_MARSHAL,Shield Marshal,Troop,6,Anti Air
+PIT_BOSS,Pit Boss,Troop,6,
+DEMOLITION_CREW,Demolition Crew,Troop,7,Maintain Posistion 
+ICE_SKIRMISHERS,Ice Skirmishers,Troop,7,Maintain Posistion 
+FLAME_SCOUTS,Flame Scouts,Troop,7,Combant Ready
+JUNK_RAIDERS,Junk raiders,Troop,7,
+BASTION_CAPTAIN,Bastion Captain,Troop,7,
+REDMARK_STRIKE_LEAD,Redmark Strike Lead,Troop,8,All friendly Troops gain pay 2 DF deal 1 damage to target unit
+MERCER_TASK_LEAD,Mercer Task Lead,Troop,8,all friendly troops gain Recon.
+MARA_CALDWELL_FIELD_LEAD,Mara Caldwell Field Lead,Troop,8,All friendly troops may activate abilities even if they are engaged
+GRAVES_GROUND_OPS,Graves Ground Ops,Troop,9,When an enemy unit is destroyed you may pay 1 df if you do create a 1/1/1 drone
 SCRAPLORD,Scraplord,Troop,10,All friendly units gain when destroyed create 1/1/1 drone
-CALL_SIGN_SKYLANCE,Call Sign Skylance,Plane,10,Friendly Units are unaffected by negative terrain effects
-THE_LAST_LIGHT_OF_MERIDIAN,The Last Light of Meridian,Mech,10,all enemy units get -1or and -1dr
-VETERAN_INFANTRY,Veteran Infantry,Troop,3,
-URBAN_BREACH_VET,Urban Breach Vet,Troop,4,Maintain Position
-SHOCK_LEADER,Shock Leader,Troop,5,
-ELITE_CAPTURE_OPERATIVE,Elite Capture Operative,Troop,6,Breakthrough
-LEGENDARY_GROUND_COMMANDER,Legendary Ground Commander,Troop,7,Maintain Position; Breakthrough
-REACTOR_SPECIALIST,Reactor Specialist,Mech,3,
-FRAME_TARGETER,Frame Targeter,Mech,4,
-WARFRAME_ACE,Warframe Ace,Mech,5,Maintain Position
-ELITE_MECH_COMMANDER,Elite Mech Commander,Mech,6,
-LEGENDARY_MECH_PILOT,Legendary Mech Pilot,Mech,7,Overclocked 3
-ARMORED_CREW_VET,Armored Crew Vet,Tank,3,
-SIEGE_GUNNER,Siege Gunner,Tank,4,
-HULL_COMMANDER,Hull Commander,Tank,5,Maintain Position
-ELITE_SIEGE_MARSHAL,Elite Siege Marshal,Tank,6,Multi-Defender 1
-LEGENDARY_TANK_ACE,Legendary Tank Ace,Tank,7,Anti-Air; Maintain Position
-FLIGHT_VETERAN,Flight Veteran,Plane,3,
-STRIKE_PILOT,Strike Pilot,Plane,4,
-AIR_SUPERIORITY_ACE,Air Superiority Ace,Plane,5,
-ELITE_SKY_HUNTER,Elite Sky Hunter,Plane,6,Hover; 
-LEGENDARY_AIR_MARSHAL,Legendary Air Marshal,Plane,7,Hover; Breakthrough
+LEGENDARY_GROUND_COMMANDER,Legendary Ground Commander,Vet,7,Maintain Position; Breakthrough
+SHOCK_LEADER,Shock Leader,Vet,5,
+ELITE_CAPTURE_OPERATIVE,Elite Capture Operative,Vet,6,Breakthrough
+URBAN_BREACH_VET,Urban Breach Vet,Vet,4,Maintain Position
+VETERAN_INFANTRY,Veteran Infantry,Vet,3,
+REACTOR_SPECIALIST,Reactor Specialist,Vet,3,
+FRAME_TARGETER,Frame Targeter,Vet,4,
+WARFRAME_ACE,Warframe Ace,Vet,5,Maintain Position
+ELITE_MECH_COMMANDER,Elite Mech Commander,Vet,6,Reduce Heat cost of active abilites by 1.
+LEGENDARY_MECH_PILOT,Legendary Mech Pilot,Vet,7,Overclocked 3
+FLIGHT_VETERAN,Flight Veteran,Vet,3,
+STRIKE_PILOT,Strike Pilot,Vet,4,
+AIR_SUPERIORITY_ACE,Air Superiority Ace,Vet,5,
+ELITE_SKY_HUNTER,Elite Sky Hunter,Vet,6,Hover; 
+LEGENDARY_AIR_MARSHAL,Legendary Air Marshal,Vet,7,Hover; Breakthrough
+ARMORED_CREW_VET,Armored Crew Vet,Vet,3,
+SIEGE_GUNNER,Siege Gunner,Vet,4,
+HULL_COMMANDER,Hull Commander,Vet,5,Maintain Position
+ELITE_SIEGE_MARSHAL,Elite Siege Marshal,Vet,6,Multi-Defender 1
+LEGENDARY_TANK_ACE,Legendary Tank Ace,Vet,7,Anti-Air; Maintain Position
 COLD_DENIAL,Cold Denial,Ops,7,Enemy units cannot attack or block this turn.
 NUCLEAR_FALLOUT,Nuclear Fallout,Ops,8,Roll d20. 19: Deal 3 damage to all units; 1017: Deal 4 damage to all units; 1820: Destroy all non-Apex units.
 LAST_BASTION,Last Bastion,Ops,7,"Roll d20: 19 prevent 3 dmg, 1017 prevent 5 dmg, 1820 prevent all dmg this turn."
@@ -372,14 +353,3 @@ FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall bre
 BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
 HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
 RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
-
-
-
-
-
-
-
-
-
-
-
