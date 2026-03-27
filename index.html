@@ -48,7 +48,7 @@
       <select id="type"><option value="">All Types</option></select>
       <select id="galleryStyle">
         <option value="images">Painterly Gallery</option>
-        <option value="pixel">Pixel Gallery</option>
+        <option value="Pixel">Pixel Gallery</option>
       </select>
       <button id="clearFilters">Clear</button>
     </div>
@@ -81,7 +81,7 @@
       <div class="small" style="margin-top:8px;">
         Saved format:<br>
         <code>2x VOLCANO_HIDEOUT|images</code><br>
-        <code>3x MAGMA_BASTION|pixel</code>
+        <code>3x MAGMA_BASTION|Pixel</code>
       </div>
 
       <div class="divider"></div>
@@ -102,13 +102,13 @@
 <script>
 const CSV_URL = "./cards.csv";
 const IMAGE_EXTS = [".JPG", ".jpg", ".JPEG", ".jpeg", ".PNG", ".png"];
-const FOLDERS = ["images", "pixel"];
+const FOLDERS = ["images", "Pixel"];
 
 const el = (id) => document.getElementById(id);
 
 let CARDS = [];
 let BY_ID = new Map();
-let deck = new Map(); // key = ID|folder, value = qty
+let deck = new Map(); // key = ID|folder
 let foundExtByPath = new Map(); // key = folder/ID -> ext
 
 function escapeHtml(s){
@@ -128,7 +128,9 @@ function parseCSV(text){
       if (c === '"'){
         if (text[i+1] === '"'){ field += '"'; i += 2; continue; }
         inQuotes = false; i++; continue;
-      } else { field += c; i++; continue; }
+      } else {
+        field += c; i++; continue;
+      }
     } else {
       if (c === '"'){ inQuotes = true; i++; continue; }
       if (c === ','){ row.push(field); field=""; i++; continue; }
@@ -142,6 +144,7 @@ function parseCSV(text){
       field += c; i++; continue;
     }
   }
+
   if (field.length || row.length){
     row.push(field);
     if (row.some(x => x.trim() !== "")) rows.push(row);
@@ -155,7 +158,9 @@ function parseCSV(text){
   });
 }
 
-function uniq(arr){ return [...new Set(arr)].filter(Boolean).sort((a,b)=>a.localeCompare(b)); }
+function uniq(arr){
+  return [...new Set(arr)].filter(Boolean).sort((a,b)=>a.localeCompare(b));
+}
 
 function getFilteredCards(){
   const q = el("search").value.trim().toLowerCase();
@@ -200,6 +205,7 @@ function renderGrid(){
 
   for (const c of items){
     const firstUrl = `./${folder}/${c.ID}${IMAGE_EXTS[0]}`;
+
     const card = document.createElement("div");
     card.className = "card";
     card.innerHTML = `
@@ -224,8 +230,9 @@ function renderGrid(){
         </div>
       </div>
     `;
+
     card.querySelector(".addPainterly").addEventListener("click", () => addToDeck(c.ID, "images", 1));
-    card.querySelector(".addPixel").addEventListener("click", () => addToDeck(c.ID, "pixel", 1));
+    card.querySelector(".addPixel").addEventListener("click", () => addToDeck(c.ID, "Pixel", 1));
     grid.appendChild(card);
   }
 
@@ -301,13 +308,15 @@ function siteBase(){
 function buildPCIOCSV(){
   const rows = ["image"];
   const base = siteBase();
+
   for (const [key, qty] of deck.entries()){
     const [id, folder] = key.split("|");
     const ext = foundExtByPath.get(`${folder}/${id}`) || IMAGE_EXTS[0];
-    for (let i=0; i<qty; i++){
+    for (let i = 0; i < qty; i++){
       rows.push(`${base}${folder}/${id}${ext}`);
     }
   }
+
   return rows.join("\n") + "\n";
 }
 
@@ -333,18 +342,24 @@ function deckToTxt(){
 function loadDeckFromTxt(text){
   const lines = text.split("\n").map(l=>l.trim()).filter(Boolean);
   deck = new Map();
+
   for (const line of lines){
     const m = line.match(/^(\d+)\s*x?\s+(.+)$/i);
     let qty = 1, payload = line;
-    if (m){ qty = Math.max(1, parseInt(m[1],10)); payload = m[2].trim(); }
+    if (m){
+      qty = Math.max(1, parseInt(m[1],10));
+      payload = m[2].trim();
+    }
 
     let [id, folder] = payload.split("|");
     if (!folder || !FOLDERS.includes(folder)) folder = "images";
+
     if (BY_ID.has(id)){
       const key = `${id}|${folder}`;
       deck.set(key, (deck.get(key)||0) + qty);
     }
   }
+
   renderDeck();
 }
 
@@ -388,7 +403,10 @@ el("clearFilters").addEventListener("click", () => {
   renderGrid();
 });
 
-el("clearDeck").addEventListener("click", () => { deck = new Map(); renderDeck(); });
+el("clearDeck").addEventListener("click", () => {
+  deck = new Map();
+  renderDeck();
+});
 
 el("exportPCIO").addEventListener("click", () => {
   const name = safeFilename(el("deckName").value);
