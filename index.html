@@ -293,7 +293,7 @@ function renderDeck(){
   }
 
   el("deckCount").textContent = deckTotal();
-  el("exportBox").value = buildPCIOCSV();
+  updateExportPreview();
 }
 
 function safeFilename(name){
@@ -305,19 +305,44 @@ function siteBase(){
   return location.origin + location.pathname.replace(/\/[^\/]*$/, "/");
 }
 
-function buildPCIOCSV(){
+async function resolveExactExt(id, folder){
+  const cacheKey = `${folder}/${id}`;
+  if (foundExtByPath.has(cacheKey)) return foundExtByPath.get(cacheKey);
+
+  const base = siteBase();
+  for (const ext of IMAGE_EXTS){
+    const url = `${base}${folder}/${id}${ext}`;
+    try{
+      const res = await fetch(url, { method: "HEAD", cache: "no-store" });
+      if (res.ok){
+        foundExtByPath.set(cacheKey, ext);
+        return ext;
+      }
+    } catch {}
+  }
+
+  return IMAGE_EXTS[0];
+}
+
+async function buildPCIOCSV(){
   const rows = ["image"];
   const base = siteBase();
 
   for (const [key, qty] of deck.entries()){
     const [id, folder] = key.split("|");
-    const ext = foundExtByPath.get(`${folder}/${id}`) || IMAGE_EXTS[0];
+    const ext = await resolveExactExt(id, folder);
     for (let i = 0; i < qty; i++){
       rows.push(`${base}${folder}/${id}${ext}`);
     }
   }
 
   return rows.join("\n") + "\n";
+}
+
+async function updateExportPreview(){
+  el("exportBox").value = "Building export preview...";
+  const csv = await buildPCIOCSV();
+  el("exportBox").value = csv;
 }
 
 function downloadText(text, filename, mime){
@@ -408,10 +433,18 @@ el("clearDeck").addEventListener("click", () => {
   renderDeck();
 });
 
-el("exportPCIO").addEventListener("click", () => {
+el("exportPCIO").addEventListener("click", async () => {
   const name = safeFilename(el("deckName").value);
-  const csv = buildPCIOCSV();
-  downloadText(csv, `${name}.csv`, "text/csv");
+  el("exportPCIO").disabled = true;
+  el("exportPCIO").textContent = "Building CSV...";
+  try{
+    const csv = await buildPCIOCSV();
+    downloadText(csv, `${name}.csv`, "text/csv");
+    el("exportBox").value = csv;
+  } finally {
+    el("exportPCIO").disabled = false;
+    el("exportPCIO").textContent = "Download PC.io CSV";
+  }
 });
 
 el("saveTxt").addEventListener("click", () => {
