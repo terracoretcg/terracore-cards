@@ -24,16 +24,20 @@
     .sub { font-size:12px; opacity:.85; display:flex; justify-content:space-between; gap:10px; }
     .ability { font-size:12px; opacity:.9; line-height:1.25; max-height:3.6em; overflow:hidden; }
     .deck { position: sticky; top:78px; height: calc(100vh - 100px); overflow:auto; background:#141415; border:1px solid #2a2a2a; border-radius:14px; padding:12px; }
-    .deck h2 { margin:0 0 10px 0; font-size:16px; }
-    .decklist { display:flex; flex-direction:column; gap:8px; margin-top:10px; }
-    .deckitem { border:1px solid #2a2a2a; border-radius:12px; padding:10px; background:#121213; }
-    .deckitem .top { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
+    .deck h2, .deck h3 { margin:0 0 10px 0; font-size:16px; }
+    .decklist, .saveddecklist { display:flex; flex-direction:column; gap:8px; margin-top:10px; }
+    .deckitem, .saveddeckitem { border:1px solid #2a2a2a; border-radius:12px; padding:10px; background:#121213; }
+    .deckitem .top, .saveddeckitem .top { display:flex; justify-content:space-between; gap:10px; align-items:flex-start; }
     .qty { display:flex; gap:8px; align-items:center; }
     .qty button { padding:6px 10px; }
     .divider { height:1px; background:#2a2a2a; margin:10px 0; }
     .small { font-size:12px; opacity:.85; }
-    textarea { width:100%; min-height:120px; }
+    textarea { width:100%; min-height:160px; box-sizing:border-box; }
     .pill { font-size:12px; padding:6px 10px; border:1px solid #2a2a2a; border-radius:999px; background:#111; }
+    .saveddeckitem .actions { display:flex; flex-wrap:wrap; gap:6px; margin-top:8px; }
+    .saveddeckitem button { padding:6px 8px; font-size:12px; }
+    .previewLabel { display:flex; justify-content:space-between; align-items:center; gap:10px; margin-bottom:8px; }
+    code { word-break: break-word; }
   </style>
 </head>
 <body>
@@ -42,6 +46,7 @@
       <strong>Terra CORE — Deckbuilder</strong>
       <span class="pill" id="counts">Loading…</span>
       <span class="small">Painterly + Pixel support</span>
+      <span class="pill" id="savedState">Working deck</span>
     </div>
     <div class="row" style="margin-top:10px;">
       <input id="search" placeholder="Search name or abilities…" style="flex:1; min-width:240px;" />
@@ -65,6 +70,7 @@
 
       <div class="row">
         <input id="deckName" placeholder="Deck name (e.g., Test_01)" style="flex:1;" />
+        <button id="saveBrowser">Save to Browser</button>
         <button id="clearDeck">Clear</button>
       </div>
 
@@ -72,16 +78,23 @@
 
       <div class="row">
         <button id="exportPCIO">Download PC.io CSV</button>
-        <button id="saveTxt">Save Deck (.txt)</button>
+        <button id="showTxt">Show Deck TXT</button>
+        <button id="saveTxt">Download Deck TXT</button>
         <label class="small" style="display:flex; align-items:center; gap:8px;">
           Load .txt <input type="file" id="loadTxt" accept=".txt" />
         </label>
       </div>
 
+      <div class="row">
+        <button id="exportTTSPng">Export TTS Sheet PNG</button>
+        <button id="showTTSInfo">Show TTS Import Info</button>
+      </div>
+
       <div class="small" style="margin-top:8px;">
         Saved format:<br>
         <code>2x VOLCANO_HIDEOUT|images</code><br>
-        <code>3x MAGMA_BASTION|Pixel</code>
+        <code>3x MAGMA_BASTION|Pixel</code><br><br>
+        TTS export is built for a 50-card deck as a 10×5 sheet.
       </div>
 
       <div class="divider"></div>
@@ -94,8 +107,17 @@
 
       <div class="divider"></div>
 
-      <div class="small">Preview export:</div>
-      <textarea id="exportBox" placeholder="Export preview will appear here…"></textarea>
+      <div class="previewLabel">
+        <div class="small" id="previewTitle">Preview</div>
+        <button id="copyPreview" type="button">Copy Preview</button>
+      </div>
+      <textarea id="exportBox" placeholder="Preview will appear here…"></textarea>
+
+      <div class="divider"></div>
+
+      <h3>Saved Decks</h3>
+      <div class="small">Stored in this browser on this device.</div>
+      <div class="saveddecklist" id="savedDecks"></div>
     </aside>
   </main>
 
@@ -103,6 +125,10 @@
 const CSV_URL = "./cards.csv";
 const IMAGE_EXTS = [".JPG", ".jpg", ".JPEG", ".jpeg", ".PNG", ".png"];
 const FOLDERS = ["images", "Pixel"];
+const SAVED_DECKS_KEY = "terracore_saved_decks_v2";
+const TTS_COLUMNS = 10;
+const TTS_ROWS = 5;
+const TTS_MAX_DIM = 4096;
 
 const el = (id) => document.getElementById(id);
 
@@ -110,6 +136,7 @@ let CARDS = [];
 let BY_ID = new Map();
 let deck = new Map(); // key = ID|folder
 let foundExtByPath = new Map(); // key = folder/ID -> ext
+let currentSavedDeckName = "";
 
 function escapeHtml(s){
   return String(s ?? "")
@@ -160,6 +187,26 @@ function parseCSV(text){
 
 function uniq(arr){
   return [...new Set(arr)].filter(Boolean).sort((a,b)=>a.localeCompare(b));
+}
+
+function safeFilename(name){
+  const cleaned = (name || "").trim().replace(/[^\w\-]+/g, "_");
+  return cleaned || "terracore_deck";
+}
+
+function deckTotal(){
+  let n = 0;
+  for (const v of deck.values()) n += v;
+  return n;
+}
+
+function expandedDeckEntries(){
+  const expanded = [];
+  for (const [key, qty] of deck.entries()){
+    const [id, folder] = key.split("|");
+    for (let i = 0; i < qty; i++) expanded.push({ id, folder });
+  }
+  return expanded;
 }
 
 function getFilteredCards(){
@@ -240,10 +287,9 @@ function renderGrid(){
   el("counts").textContent = `${CARDS.length} cards loaded`;
 }
 
-function deckTotal(){
-  let n = 0;
-  for (const v of deck.values()) n += v;
-  return n;
+function setPreview(title, text){
+  el("previewTitle").textContent = title;
+  el("exportBox").value = text;
 }
 
 function addToDeck(id, folder, delta){
@@ -252,6 +298,8 @@ function addToDeck(id, folder, delta){
   const next = cur + delta;
   if (next <= 0) deck.delete(key);
   else deck.set(key, next);
+  if (currentSavedDeckName) currentSavedDeckName = "";
+  updateSavedState();
   renderDeck();
 }
 
@@ -293,12 +341,6 @@ function renderDeck(){
   }
 
   el("deckCount").textContent = deckTotal();
-  updateExportPreview();
-}
-
-function safeFilename(name){
-  const cleaned = (name || "").trim().replace(/[^\w\-]+/g, "_");
-  return cleaned || "terracore_deck";
 }
 
 function siteBase(){
@@ -331,18 +373,10 @@ async function buildPCIOCSV(){
   for (const [key, qty] of deck.entries()){
     const [id, folder] = key.split("|");
     const ext = await resolveExactExt(id, folder);
-    for (let i = 0; i < qty; i++){
-      rows.push(`${base}${folder}/${id}${ext}`);
-    }
+    for (let i = 0; i < qty; i++) rows.push(`${base}${folder}/${id}${ext}`);
   }
 
   return rows.join("\n") + "\n";
-}
-
-async function updateExportPreview(){
-  el("exportBox").value = "Building export preview...";
-  const csv = await buildPCIOCSV();
-  el("exportBox").value = csv;
 }
 
 function downloadText(text, filename, mime){
@@ -351,6 +385,7 @@ function downloadText(text, filename, mime){
   a.href = URL.createObjectURL(blob);
   a.download = filename;
   a.click();
+  setTimeout(() => URL.revokeObjectURL(a.href), 1000);
 }
 
 function deckToTxt(){
@@ -361,7 +396,7 @@ function deckToTxt(){
     const line = `${id}|${folder}`;
     lines.push(qty === 1 ? line : `${qty}x ${line}`);
   }
-  return lines.join("\n") + "\n";
+  return lines.join("\n") + (lines.length ? "\n" : "");
 }
 
 function loadDeckFromTxt(text){
@@ -385,7 +420,225 @@ function loadDeckFromTxt(text){
     }
   }
 
+  currentSavedDeckName = "";
+  updateSavedState();
   renderDeck();
+  setPreview("Deck TXT Preview", deckToTxt() || "");
+}
+
+function getSavedDecks(){
+  try {
+    const raw = localStorage.getItem(SAVED_DECKS_KEY);
+    const parsed = raw ? JSON.parse(raw) : [];
+    return Array.isArray(parsed) ? parsed : [];
+  } catch {
+    return [];
+  }
+}
+
+function setSavedDecks(items){
+  localStorage.setItem(SAVED_DECKS_KEY, JSON.stringify(items));
+}
+
+function serializeDeckEntries(){
+  return [...deck.entries()].map(([key, qty]) => ({ key, qty }));
+}
+
+function applySerializedDeck(entries){
+  deck = new Map();
+  for (const entry of entries || []){
+    if (!entry || !entry.key) continue;
+    const [id, folder] = String(entry.key).split("|");
+    const qty = Math.max(1, parseInt(entry.qty, 10) || 1);
+    if (BY_ID.has(id) && FOLDERS.includes(folder)) deck.set(`${id}|${folder}`, qty);
+  }
+  renderDeck();
+}
+
+function saveCurrentDeckToBrowser(){
+  const name = (el("deckName").value || "").trim();
+  if (!name){
+    alert("Type a deck name first.");
+    return;
+  }
+  const items = getSavedDecks();
+  const record = {
+    name,
+    updatedAt: new Date().toISOString(),
+    cardCount: deckTotal(),
+    entries: serializeDeckEntries()
+  };
+  const idx = items.findIndex(x => x.name.toLowerCase() === name.toLowerCase());
+  if (idx >= 0) items[idx] = record;
+  else items.push(record);
+  items.sort((a,b) => a.name.localeCompare(b.name));
+  setSavedDecks(items);
+  currentSavedDeckName = name;
+  updateSavedState();
+  renderSavedDecks();
+}
+
+function renderSavedDecks(){
+  const wrap = el("savedDecks");
+  const items = getSavedDecks();
+  wrap.innerHTML = "";
+  if (!items.length){
+    wrap.innerHTML = `<div class="small">No saved decks yet.</div>`;
+    return;
+  }
+
+  for (const item of items){
+    const div = document.createElement("div");
+    div.className = "saveddeckitem";
+    const updated = new Date(item.updatedAt || Date.now());
+    div.innerHTML = `
+      <div class="top">
+        <div>
+          <div class="name">${escapeHtml(item.name)}</div>
+          <div class="sub">
+            <span>${escapeHtml(String(item.cardCount || 0))} cards</span>
+            <span>${escapeHtml(updated.toLocaleString())}</span>
+          </div>
+        </div>
+      </div>
+      <div class="actions">
+        <button data-action="load">Load</button>
+        <button data-action="rename">Rename</button>
+        <button data-action="duplicate">Duplicate</button>
+        <button data-action="delete">Delete</button>
+      </div>
+    `;
+    div.querySelector('[data-action="load"]').addEventListener('click', () => {
+      applySerializedDeck(item.entries || []);
+      el("deckName").value = item.name;
+      currentSavedDeckName = item.name;
+      updateSavedState();
+      setPreview("Deck TXT Preview", deckToTxt() || "");
+    });
+    div.querySelector('[data-action="rename"]').addEventListener('click', () => {
+      const next = prompt("Rename deck:", item.name);
+      if (!next || !next.trim()) return;
+      const itemsNow = getSavedDecks();
+      if (itemsNow.some(x => x.name.toLowerCase() === next.trim().toLowerCase() && x.name !== item.name)){
+        alert("A saved deck with that name already exists.");
+        return;
+      }
+      const target = itemsNow.find(x => x.name === item.name);
+      if (!target) return;
+      target.name = next.trim();
+      target.updatedAt = new Date().toISOString();
+      setSavedDecks(itemsNow);
+      if (currentSavedDeckName === item.name) {
+        currentSavedDeckName = next.trim();
+        el("deckName").value = next.trim();
+      }
+      updateSavedState();
+      renderSavedDecks();
+    });
+    div.querySelector('[data-action="duplicate"]').addEventListener('click', () => {
+      const next = prompt("Duplicate as:", `${item.name}_copy`);
+      if (!next || !next.trim()) return;
+      const itemsNow = getSavedDecks();
+      if (itemsNow.some(x => x.name.toLowerCase() === next.trim().toLowerCase())){
+        alert("A saved deck with that name already exists.");
+        return;
+      }
+      itemsNow.push({
+        name: next.trim(),
+        updatedAt: new Date().toISOString(),
+        cardCount: item.cardCount || 0,
+        entries: item.entries || []
+      });
+      itemsNow.sort((a,b) => a.name.localeCompare(b.name));
+      setSavedDecks(itemsNow);
+      renderSavedDecks();
+    });
+    div.querySelector('[data-action="delete"]').addEventListener('click', () => {
+      if (!confirm(`Delete ${item.name}?`)) return;
+      const itemsNow = getSavedDecks().filter(x => x.name !== item.name);
+      setSavedDecks(itemsNow);
+      if (currentSavedDeckName === item.name) currentSavedDeckName = "";
+      updateSavedState();
+      renderSavedDecks();
+    });
+    wrap.appendChild(div);
+  }
+}
+
+function updateSavedState(){
+  el("savedState").textContent = currentSavedDeckName ? `Saved deck: ${currentSavedDeckName}` : "Working deck";
+}
+
+function buildTTSInfo(){
+  const count = deckTotal();
+  const status = count === 50 ? "Ready for TTS" : `TTS works best with exactly 50 cards. Current count: ${count}.`;
+  return [
+    `Deck Name: ${el("deckName").value.trim() || "Unnamed Deck"}`,
+    `Status: ${status}`,
+    "",
+    "Import into Tabletop Simulator as a Custom Deck:",
+    "Face: use the exported PNG sheet",
+    "Back: use your Terra CORE card back image",
+    `Width: ${TTS_COLUMNS}`,
+    `Height: ${TTS_ROWS}`,
+    `Number of Cards: ${count}`,
+    "",
+    "Recommended workflow:",
+    "1. Export TTS Sheet PNG from this builder",
+    "2. Upload the PNG to TTS Cloud or another direct image host",
+    "3. In TTS go to Objects > Components > Custom > Custom Deck",
+    "4. Paste the face and back URLs and use the settings above",
+    "5. Spawn the deck, then right-click it and Save Object"
+  ].join("\n");
+}
+
+function loadImage(url){
+  return new Promise((resolve, reject) => {
+    const img = new Image();
+    img.onload = () => resolve(img);
+    img.onerror = () => reject(new Error(`Could not load image: ${url}`));
+    img.src = url;
+  });
+}
+
+async function buildTTSSheetBlob(){
+  const expanded = expandedDeckEntries();
+  if (!expanded.length) throw new Error("Your deck is empty.");
+  if (expanded.length > TTS_COLUMNS * TTS_ROWS) {
+    throw new Error(`This export supports up to ${TTS_COLUMNS * TTS_ROWS} cards on one sheet. Current deck has ${expanded.length}.`);
+  }
+
+  const base = siteBase();
+  const urls = [];
+  for (const entry of expanded){
+    const ext = await resolveExactExt(entry.id, entry.folder);
+    urls.push(`${base}${entry.folder}/${entry.id}${ext}`);
+  }
+
+  const first = await loadImage(urls[0]);
+  const srcW = first.naturalWidth || first.width;
+  const srcH = first.naturalHeight || first.height;
+
+  const scale = Math.min(1, TTS_MAX_DIM / (srcW * TTS_COLUMNS), TTS_MAX_DIM / (srcH * TTS_ROWS));
+  const tileW = Math.max(1, Math.floor(srcW * scale));
+  const tileH = Math.max(1, Math.floor(srcH * scale));
+  const canvas = document.createElement('canvas');
+  canvas.width = tileW * TTS_COLUMNS;
+  canvas.height = tileH * TTS_ROWS;
+  const ctx = canvas.getContext('2d');
+  ctx.fillStyle = '#000';
+  ctx.fillRect(0, 0, canvas.width, canvas.height);
+
+  for (let i = 0; i < urls.length; i++){
+    const img = i === 0 ? first : await loadImage(urls[i]);
+    const x = (i % TTS_COLUMNS) * tileW;
+    const y = Math.floor(i / TTS_COLUMNS) * tileH;
+    ctx.drawImage(img, x, y, tileW, tileH);
+  }
+
+  return await new Promise((resolve, reject) => {
+    canvas.toBlob(blob => blob ? resolve(blob) : reject(new Error('Could not build PNG.')), 'image/png');
+  });
 }
 
 async function init(){
@@ -412,6 +665,9 @@ async function init(){
 
     renderGrid();
     renderDeck();
+    renderSavedDecks();
+    updateSavedState();
+    setPreview("Preview", "Choose Show Deck TXT, Download PC.io CSV, or Show TTS Import Info.");
   } catch (e){
     el("counts").textContent = "Load failed";
     el("status").textContent = "Could not load cards.csv.";
@@ -430,8 +686,13 @@ el("clearFilters").addEventListener("click", () => {
 
 el("clearDeck").addEventListener("click", () => {
   deck = new Map();
+  currentSavedDeckName = "";
+  updateSavedState();
   renderDeck();
+  setPreview("Deck TXT Preview", "");
 });
+
+el("saveBrowser").addEventListener("click", () => saveCurrentDeckToBrowser());
 
 el("exportPCIO").addEventListener("click", async () => {
   const name = safeFilename(el("deckName").value);
@@ -440,16 +701,22 @@ el("exportPCIO").addEventListener("click", async () => {
   try{
     const csv = await buildPCIOCSV();
     downloadText(csv, `${name}.csv`, "text/csv");
-    el("exportBox").value = csv;
+    setPreview("PC.io CSV Preview", csv);
   } finally {
     el("exportPCIO").disabled = false;
     el("exportPCIO").textContent = "Download PC.io CSV";
   }
 });
 
+el("showTxt").addEventListener("click", () => {
+  setPreview("Deck TXT Preview", deckToTxt());
+});
+
 el("saveTxt").addEventListener("click", () => {
   const name = safeFilename(el("deckName").value);
-  downloadText(deckToTxt(), `${name}.txt`, "text/plain");
+  const txt = deckToTxt();
+  setPreview("Deck TXT Preview", txt);
+  downloadText(txt, `${name}.txt`, "text/plain");
 });
 
 el("loadTxt").addEventListener("change", (evt) => {
@@ -458,6 +725,43 @@ el("loadTxt").addEventListener("change", (evt) => {
   const reader = new FileReader();
   reader.onload = () => loadDeckFromTxt(String(reader.result || ""));
   reader.readAsText(f);
+  evt.target.value = "";
+});
+
+el("showTTSInfo").addEventListener("click", () => {
+  setPreview("TTS Import Info", buildTTSInfo());
+});
+
+el("exportTTSPng").addEventListener("click", async () => {
+  const name = safeFilename(el("deckName").value || "terracore_tts_deck");
+  el("exportTTSPng").disabled = true;
+  el("exportTTSPng").textContent = "Building TTS PNG...";
+  try {
+    const blob = await buildTTSSheetBlob();
+    const a = document.createElement('a');
+    a.href = URL.createObjectURL(blob);
+    a.download = `${name}_tts_sheet.png`;
+    a.click();
+    setTimeout(() => URL.revokeObjectURL(a.href), 1000);
+    setPreview("TTS Import Info", buildTTSInfo());
+  } catch (err) {
+    alert(err.message || String(err));
+  } finally {
+    el("exportTTSPng").disabled = false;
+    el("exportTTSPng").textContent = "Export TTS Sheet PNG";
+  }
+});
+
+el("copyPreview").addEventListener("click", async () => {
+  try {
+    await navigator.clipboard.writeText(el("exportBox").value || "");
+    const btn = el("copyPreview");
+    const original = btn.textContent;
+    btn.textContent = "Copied";
+    setTimeout(() => btn.textContent = original, 1000);
+  } catch {
+    alert("Could not copy preview text.");
+  }
 });
 
 init();
