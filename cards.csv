@@ -337,19 +337,13 @@ POWER_SUBSTATION,Power Substation,Terrain,,Mechs gain +1 DR.
 RESEARCH_COMPLEX,Research Complex,Terrain,,Units with activated abilities gain +1 OR.
 TOXIC_MARSH,Toxic Marsh,Terrain,,Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
 OPEN_PLAINS,Open Plains,Terrain,,This terrain has no additional effects.
-VOLCANO_HIDEOUT,Volcano Hideout,Bases,,"Starting life 20. Wall breaks at 8. Fire units gain +1 OR on this base. Non-Fire units gain +1 Heat. When life reaches 3, this base may be captured by Troops if unblocked."
-MAGMA_BASTION,Magma Bastion,Bases,,"Starting life 20. Wall breaks at 12. Fire units gain +1 OR on this base. Non-Fire units gain +1 Heat. When life reaches 3, this base may be captured by Troops if unblocked."
-ASHEN_FOUNDRY,Ashen Foundry,Bases,,"Starting life 20. Wall breaks at 10. Fire units gain +1 OR on this base. Non-Fire units gain +1 Heat. When life reaches 3, this base may be captured by Troops if unblocked."
-INFERNO_RELAY,Inferno Relay,Bases,,"Starting life 20. Wall breaks at 7. Fire units gain +1 Speed on this base. Non-Fire units gain +1 Heat. When life reaches 3, this base may be captured by Troops if unblocked."
-ICE_CITADEL,Ice Citadel,Bases,,"Starting life 20. Wall breaks at 13. Ice units gain +1 DR on this base. Non-Ice units lose 1 Speed. When life reaches 3, this base may be captured by Troops if unblocked."
-PERMAFROST_KEEP,Permafrost Keep,Bases,,"Starting life 20. Wall breaks at 9. Ice units gain +1 DR on this base. Non-Ice units lose 1 Speed. When life reaches 3, this base may be captured by Troops if unblocked."
-GLACIER_HOLD,Glacier Hold,Bases,,"Starting life 20. Wall breaks at 11. Ice units gain +1 DR on this base. Non-Ice units lose 1 Speed. When life reaches 3, this base may be captured by Troops if unblocked."
-CRYO_OUTPOST,Cryo Outpost,Bases,,"Starting life 20. Wall breaks at 7. Ice units gain -1 Heat on your turn while on this base. Non-Ice units lose 1 Speed.. When life reaches 3, this base may be captured by Troops if unblocked."
-NUCLEAR_SILO,Nuclear Silo,Bases,,"Starting life 20. Wall breaks at 10. Nuclear units ignore terrain damage on this base. Non-Nuclear units take 1 damage each turn. When life reaches 3, this base may be captured by Troops if unblocked."
-RADIATION_COMPLEX,Radiation Complex,Bases,,"Starting life 20. Wall breaks at 14. Nuclear units ignore terrain damage on this base. Non-Nuclear units take 1 damage each turn. When life reaches 3, this base may be captured by Troops if unblocked."
-FALLOUT_BUNKER,Fallout Bunker,Bases,,"Starting life 20. Wall breaks at 8. Nuclear units gain +1 DR on this base. Non-Nuclear units take 1 damage each turn. When life reaches 3, this base may be captured by Troops if unblocked."
-CONTAINMENT_VAULT,Containment Vault,Bases,,"Starting life 20. Wall breaks at 12. Nuclear units reduce Heat by 1 on this base. Non-Nuclear units take 1 damage each turn. When life reaches 3, this base may be captured by Troops if unblocked."
-FORWARD_OPERATING_BASE,Forward Operating Base,Bases,,"Starting life 20. Wall breaks at 10. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
-BORDER_OUTPOST,Border Outpost,Bases,,"Starting life 20. Wall breaks at 7. This base has no terrain bonuses or penalties. When life reaches 3, this base may be captured by Troops if unblocked."
-HARDENED_DEPOT,Hardened Depot,Bases,,"Starting life 20. Wall breaks at 13. Units gain +1 DR on this base. When life reaches 3, this base may be captured by Troops if unblocked."
-RAPID_DEPLOYMENT_HUB,Rapid Deployment Hub,Bases,,"Starting life 20. Wall breaks at 8. Units gain +1 Speed on this base. When life reaches 3, this base may be captured by Troops if unblocked."
+VOLCANO_HIDEOUT,Volcano Hideout,Bases,,Your units receive +1 OR.
+ASHEN_FOUNDRY,Ashen Foundry,Bases,,When this base is attacked it deals one point of damage to target of its choice.
+ICE_CITADEL,Ice Citadel,Bases,,Your units receive +1 DR.
+PERMAFROST_KEEP,Permafrost Keep,Bases,,When this base is attacked enemy units get -1 speed.
+RADIATION_COMPLEX,Radiation Complex,Bases,,When this base is attacked enemy units take 1 damage.
+FALLOUT_BUNKER,Fallout Bunker,Bases,,Your units receive when hit by enemy units they take 1 damage.
+FORTIFIED_CHEMICAL_REFINERY,Fortified Chemical Refinery,Bases,,Your units receive when blocking or become blocked enemy units receive -1 OR.
+CHEMICAL_FORTRESS,Chemical Fortress,Bases,,When this base is attacked enemy units receive -1 DR until their next turn.
+WIND_FORTRESS,Wind Fortress,Bases,,When this base is attacked it absorbs the first point of damage each turn.
+SOLAR_BASE,Solar Base,Bases,,Your units receive +1 speed
