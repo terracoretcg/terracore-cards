@@ -284,42 +284,36 @@ MULTI_DEFENDER_1_UPGRADE,Multi Defender 1 Upgrade,Base Upgrades,9,All friendly u
 SHIELD_1_UPGRADE,Shield 1 Upgrade,Base Upgrades,9,All friendly units gain Shield 1.
 BREAKTHROUGH_UPGRADE,Breakthrough Upgrade,Base Upgrades,9,All friendly units gain Breakthrough.
 COUNTERFIRE_PROTOCOL,Counterfire Protocol,Base Upgrades,9,"Roll d20. On 10 or higher, deal 3 damage to one attacking unit."
-SNAP_FREEZE,Snap Freeze,Global Event,2,Target terrain becomes Frozen for 2 turns. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed.
-RADIATION_LEAK,Radiation Leak,Global Event,2,Target 1 terrain becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
-HARD_WIND_GUSTS,Hard Wind Gusts,Global Event,2,Target 1 terrain becomes Neutral for 1 turn. Units on this terrain get Speed -1.
-GLACIAL_SHIFT,Glacial Shift,Global Event,3,Target 2 adjacent terrains becomes Frozen for 2 turns. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed.
-GAMMA_DRIFT,Gamma Drift,Global Event,3,Target terrain becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn and -1 OR.
-ORBITAL_BOMBARDMENT,Orbital Bombardment,Global Event,3,Apply on target 1 terrain instantly. Deal 1 damage immediately to units on this terrain. d20: 1520: deal 2 damage instead.
-DENSE_FOG_BANK,Dense Fog Bank,Global Event,3,All terrain become neutral for 2 turns units on this terrain cannot attack for 1 turn.
-SIGNAL_INTERFERENCE,Signal Interference,Global Event,3,Target 1 terrain becomes Neutral for 2 turns. Units on this terrain cannot Ready next turn.
-CRYO_SPIKE,Cryo Spike,Global Event,4,Apply on target 1 terrain instantly. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed. Deal 1 damage immediately to units on this terrain.
-WHITEOUT_SIEGE,Whiteout Siege,Global Event,4,"Target 2 adjacent terrains, they become Frozen for 2 turns. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed and cannot attack."
-SLEET_BARRAGE,Sleet Barrage,Global Event,4,Apply on target terrain. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed. Roll a d20 on a 10 or higher deal 2 damage to non ice units.
-VOLCANIC_SURGE,Volcanic Surge,Global Event,4,Target 1 terrain becomes Volcanic for 2 turns. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat.
-SOLAR_FLARE,Solar Flare,Global Event,4,Apply on target terrain. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat and take 1 damage.
-ASHEN_OVERHEAT,Ashen Overheat,Global Event,4,Target terrain becomes Volcanic for 2 turns. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +2 Heat.
-FALLOUT_SPREAD,Fallout Spread,Global Event,4,"Target 2 adjacent terrains, they becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn."
-RADIATION_STORM,Radiation Storm,Global Event,4,Target 1 terrain becomes Nuclear Waste for 3 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
-BATTLEFIELD_RESET,Battlefield Reset,Global Event,4,Apply on target 1 terrain instantly. Destroy all upgrades on units on this terrain.
-CEASEFIRE_PROTOCOL,Ceasefire Protocol,Global Event,4,Target all terrains becomes Neutral for 2 turns. Units on this terrain cannot attack.
-EVACUATION_ORDER,Evacuation Order,Global Event,4,Return all units to their owners hands.
-SCRAP_STORM,Scrap Storm,Global Event,4,Terrain becomes neutral for 2 turns destroy all upgrades gain 1 DF for each upgrade destroyed this way.
-ICEBOUND_SILENCE,Icebound Silence,Global Event,5,Target terrain becomes Frozen for 2 turns. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed and cannot activate unit abilities.
-PERMAFROST_EXPANSION,Permafrost Expansion,Global Event,5,"Target 2 adjacent terrains, they become Frozen permanently. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed, and roll a d20 1-15 cannot attack this turn 16-20 cannot attack for 2 turns"
-BLAZING_ADVANCE,Blazing Advance,Global Event,5,"Target all terrains, they become Volcanic for 1 turn. Fire units on this terrain gain +1 OR and +1 Speed. Non-Fire units on this terrain gain +1 Heat."
-INFERNO_CORRIDOR,Inferno Corridor,Global Event,5,"Target 2 adjacent terrains, they become Volcanic for 2 turns. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat. Units on this terrain take 1 damage each turn."
-FIRESTORM_FRONT,Firestorm Front,Global Event,5,"Target 2 adjacent terrains, they become Volcanic for 2 turns. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat, and get Speed -1. Units on this terrain take 1 damage each turn."
-EMP_FALLOUT,EMP Fallout,Global Event,5,Target terrain becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. Units on this terrain cannot activate abilities.
-TOTAL_BLACKOUT,Total Blackout,Global Event,5,All terrains becomes Neutral for 1 turn. Units on this terrain cannot activate abilities.
-TORNADO_OUTBREAK,Tornado Outbreak,Global Event,5,Return all units to their owners hands.
-ATMOSPHERIC_RESET,Atmospheric Reset,Global Event,5,All terrains becomes Neutral permanently.
-NUCLEAR_WINTER,Nuclear Winter,Global Event,6,Target all terrains becomes Nuclear Waste for 2 turns. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. Units on this terrain get Speed -1.
-ABSOLUTE_WINTER,Absolute Winter,Global Event,7,"Target all terrains, they become Frozen permanently. Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed."
-SOLAR_EXTINCTION,Solar Extinction,Global Event,7,Target all terrains becomes Volcanic permanently. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat. d20: 1520: Destroy all non-Mech units.
-WORLDFIRE_PULSE,Worldfire Pulse,Global Event,7,Target all terrains. Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat. D20 1-14 1 damage to non-fire units 15-20: 2 damage to non-fire units
-ASHFALL_APOCALYPSE,Ashfall Apocalypse,Global Event,7,Target all terrains becomes Nuclear Waste permanently. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
-NUCLEAR_OPTION,Nuclear Option,Global Event,7,Target all terrains becomes Nuclear Waste permanently. Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn. d20: 1520: Destroy all units.
-METEOR_SHOWER,Meteor Shower,Global Event,7,Target all terrains. Deal 2 damage immediately to units on this terrain. Then roll a d20: 114: 1 damage to units in the terrain 1520: 2 damage to units in the terrain
+SNAP_FREEZE,Snap Freeze,CORE Event - Cryo,2,Terrain becomes Frozen for 2 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD.
+CRYO_SPIKE,Cryo Spike,CORE Event - Cryo,3,Deal 1 damage to all units. . Terrain becomes Frozen for 2 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD.
+WHITEOUT_SIEGE,Whiteout Siege,CORE Event - Cryo,4,Terrain becomes Frozen for 3 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD and cannot attack this turn.
+SLEET_BARRAGE,Sleet Barrage,CORE Event - Cryo,5,Deal 1 damage to all units d20: 15+ deal 1 damage to enemy units instead. Terrain becomes Frozen for 4 turns. Cryo units get +2 DR. Non-Cryo units get -2 SPD.
+ABSOLUTE_WINTER,Absolute Winter,CORE Event - Cryo,7,Terrain becomes Frozen permanently. Cryo units get +1 DR. Non-Cryo units speed is reduced to 1.
+VOLCANIC_SURGE,Volcanic Surge,CORE Event - Thermal,2,Terrain becomes Volcanic for 2 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
+SOLAR_FLARE,Solar Flare,CORE Event - Thermal,3,Deal 1 damage to all units. d20: 15+ deal 1 damage to enemy units instead. Terrain becomes Volcanic for 2 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
+INFERNO_CORRIDOR,Inferno Corridor,CORE Event - Thermal,4,Terrain becomes Volcanic for 3 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
+BLAZING_ADVANCE,Blazing Advance,CORE Event - Thermal,5,Deal 1 damage to all units. Terrain becomes Volcanic for 4 turns. Thermal units get +1 OR and +1 SPD.
+SOLAR_EXTINCTION,Solar Extinction,CORE Event - Thermal,7,Terrain becomes Volcanic permanently. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack or block.
+RADIATION_LEAK,Radiation Leak,CORE Event - Nuclear,2,Terrain becomes Nuclear Waste for 2 turns. Non-Nuclear units take 1 damage at the end of each turn.
+FALLOUT_SPREAD,Fallout Spread,CORE Event - Nuclear,3,Deal 1 damage to all units. d20: 15+ deal 1 damage to enemy units instead.
+GAMMA_DRIFT,Gamma Drift,CORE Event - Nuclear,4,Terrain becomes Nuclear Waste for 3 turns. Non-Nuclear units take 1 damage at the end of each turn.
+ASHFALL_APOCALYPSE,Ashfall Apocalypse,CORE Event - Nuclear,5,Terrain becomes Nuclear Waste for 4 turns. Non-Nuclear units take 1 damage at the end of each turn and cannot activate abilities.
+NUCLEAR_OPTION,Nuclear Option,CORE Event - Nuclear,7,Terrain becomes Nuclear Waste permanently. Roll d20 1-10 destroy all units 11-20 destroy all enemy units.
+TOXIC_SPILL,Toxic Spill,CORE Event - Chemical,2,"Terrain becomes Toxic for 2 turns. When units take damage, they become Corroded. The unit gets -1 or, -1 dr, and -1 speed."
+ACID_BURST,Acid Burst,CORE Event - Chemical,3,All units become Corroded. d20: 15+ only enemy units become Corroded.
+CORROSIVE_SHIFT,Corrosive Shift,CORE Event - Chemical,4,"Terrain becomes Toxic for 3 turns. When units take damage, they become Corroded."
+CHEMICAL_LOCKDOWN,Chemical Lockdown,CORE Event - Chemical,5,Terrain becomes Toxic for 4 turns. Non-chemical units cannot activate abilities.
+BIOHAZARD_FIELD,Biohazard Field,CORE Event - Chemical,7,"Terrain becomes Toxic permanently. Non-chemical units become Corroded -1or, -1dr, -1speed."
+RECLAMATION_FIELD,Reclamation Field,CORE Event - Renewal,2,Terrain becomes Renewal for 2 turns. Renewable Units take 1 less damage from each source.
+STABILIZATION_PULSE,Stabilization Pulse,CORE Event - Renewal,3,Remove all negative effects from all units. Roll a d20: 15+ only friendly units gain damage reduction this turn.
+REGENESIS_SHIFT,Regenesis Shift,CORE Event - Renewal,4,Terrain becomes Renewal for 3 turns. Renewable Units take 1 less damage from each source.
+RESTORATION_PROTOCOL,Restoration Protocol,CORE Event - Renewal,5,Terrain becomes Renewal for 4 turns. Renewable Units take 1 less damage from each source.
+ECOSYSTEM_REBIRTH,Ecosystem Rebirth,CORE Event - Renewal,7,Terrain becomes Renewal permanently. Renewable Units take 1 less damage from each source.
+DENSE_FOG_BANK,Dense Fog Bank,CORE Event - Neutral,2,Terrain becomes Neutral for 2 turns. No damage is dealt during combat this turn.
+SIGNAL_INTERFERENCE,Signal Interference,CORE Event - Neutral,3,Terrain becomes Neutral for 3 turns. Enemy units can not activate abilities unitl your next turn.
+BATTLEFIELD_RESET,Battlefield Reset,CORE Event - Neutral,3,Roll a d20; 1-14: destroy all upgrades 15-20: destroy all enemy upgrades
+TORNADO_OUTBREAK,Tornado Outbreak,CORE Event - Neutral,5,Roll a d20; 1-16: return all units to owners hands 17-20: Return all enemy units to their hand.
+ATMOSPHERIC_RESET,Atmospheric Reset,CORE Event - Neutral,6,Terrain becomes Neutral permanently.
 SWAMP,Swamp,Terrain,,Troops on this terrain lose 1 Speed.
 JUNGLE,Jungle,Terrain,,Troops gain +1 Speed. Tanks lose 1 Speed. Planes lose 1 OR.
 DESERT,Desert,Terrain,,Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat.
