@@ -45,16 +45,12 @@
     <div class="row">
       <strong>Terra CORE — Deckbuilder</strong>
       <span class="pill" id="counts">Loading…</span>
-      <span class="small">Painterly + Pixel support</span>
+      <span class="small">Pixel card library</span>
       <span class="pill" id="savedState">Working deck</span>
     </div>
     <div class="row" style="margin-top:10px;">
       <input id="search" placeholder="Search name or abilities…" style="flex:1; min-width:240px;" />
       <select id="type"><option value="">All Types</option></select>
-      <select id="galleryStyle">
-        <option value="images">Painterly Gallery</option>
-        <option value="Pixel">Pixel Gallery</option>
-      </select>
       <button id="clearFilters">Clear</button>
     </div>
   </header>
@@ -92,8 +88,8 @@
 
       <div class="small" style="margin-top:8px;">
         Saved format:<br>
-        <code>2x VOLCANO_HIDEOUT|images</code><br>
-        <code>3x MAGMA_BASTION|Pixel</code><br><br>
+        <code>2x VOLCANO_HIDEOUT</code><br>
+        <code>3x MAGMA_BASTION</code><br><br>
         TTS export is built for a 50-card deck as a 10×5 sheet.
       </div>
 
@@ -123,9 +119,9 @@
 
 <script>
 const CSV_URL = "./cards.csv";
+const IMAGE_FOLDER = "Pixel";
 const IMAGE_EXTS = [".JPG", ".jpg", ".JPEG", ".jpeg", ".PNG", ".png"];
-const FOLDERS = ["images", "Pixel"];
-const SAVED_DECKS_KEY = "terracore_saved_decks_v2";
+const SAVED_DECKS_KEY = "terracore_saved_decks_pixel_v1";
 const TTS_COLUMNS = 10;
 const TTS_ROWS = 5;
 const TTS_MAX_DIM = 4096;
@@ -134,8 +130,8 @@ const el = (id) => document.getElementById(id);
 
 let CARDS = [];
 let BY_ID = new Map();
-let deck = new Map(); // key = ID|folder
-let foundExtByPath = new Map(); // key = folder/ID -> ext
+let deck = new Map(); // ID -> qty
+let foundExtById = new Map(); // ID -> ext
 let currentSavedDeckName = "";
 
 function escapeHtml(s){
@@ -202,9 +198,8 @@ function deckTotal(){
 
 function expandedDeckEntries(){
   const expanded = [];
-  for (const [key, qty] of deck.entries()){
-    const [id, folder] = key.split("|");
-    for (let i = 0; i < qty; i++) expanded.push({ id, folder });
+  for (const [id, qty] of deck.entries()){
+    for (let i = 0; i < qty; i++) expanded.push({ id });
   }
   return expanded;
 }
@@ -225,20 +220,18 @@ function getFilteredCards(){
 
 window.tcTryNextExt = function(imgEl){
   const id = imgEl.getAttribute("data-id");
-  const folder = imgEl.getAttribute("data-folder");
   let idx = parseInt(imgEl.getAttribute("data-try") || "0", 10) + 1;
   if (idx >= IMAGE_EXTS.length) return;
   imgEl.setAttribute("data-try", String(idx));
-  imgEl.src = `./${folder}/${id}${IMAGE_EXTS[idx]}`;
+  imgEl.src = `./${IMAGE_FOLDER}/${id}${IMAGE_EXTS[idx]}`;
 };
 
 window.tcMarkExt = function(imgEl){
   const id = imgEl.getAttribute("data-id");
-  const folder = imgEl.getAttribute("data-folder");
   const src = imgEl.getAttribute("src") || "";
   for (const ext of IMAGE_EXTS){
     if (src.endsWith(ext)){
-      foundExtByPath.set(`${folder}/${id}`, ext);
+      foundExtById.set(id, ext);
       return;
     }
   }
@@ -247,11 +240,10 @@ window.tcMarkExt = function(imgEl){
 function renderGrid(){
   const grid = el("grid");
   grid.innerHTML = "";
-  const folder = el("galleryStyle").value;
   const items = getFilteredCards();
 
   for (const c of items){
-    const firstUrl = `./${folder}/${c.ID}${IMAGE_EXTS[0]}`;
+    const firstUrl = `./${IMAGE_FOLDER}/${c.ID}${IMAGE_EXTS[0]}`;
 
     const card = document.createElement("div");
     card.className = "card";
@@ -259,7 +251,6 @@ function renderGrid(){
       <img loading="lazy"
            src="${firstUrl}"
            data-id="${escapeHtml(c.ID)}"
-           data-folder="${escapeHtml(folder)}"
            data-try="0"
            onerror="window.tcTryNextExt(this)"
            onload="window.tcMarkExt(this)"
@@ -271,15 +262,11 @@ function renderGrid(){
           <span>${escapeHtml(c.Cost || "")}</span>
         </div>
         <div class="ability">${escapeHtml(c.Abilities || "")}</div>
-        <div class="row">
-          <button class="addPainterly">Add Painterly</button>
-          <button class="addPixel">Add Pixel</button>
-        </div>
+        <button class="addCard">Add to Deck</button>
       </div>
     `;
 
-    card.querySelector(".addPainterly").addEventListener("click", () => addToDeck(c.ID, "images", 1));
-    card.querySelector(".addPixel").addEventListener("click", () => addToDeck(c.ID, "Pixel", 1));
+    card.querySelector(".addCard").addEventListener("click", () => addToDeck(c.ID, 1));
     grid.appendChild(card);
   }
 
@@ -292,12 +279,11 @@ function setPreview(title, text){
   el("exportBox").value = text;
 }
 
-function addToDeck(id, folder, delta){
-  const key = `${id}|${folder}`;
-  const cur = deck.get(key) || 0;
+function addToDeck(id, delta){
+  const cur = deck.get(id) || 0;
   const next = cur + delta;
-  if (next <= 0) deck.delete(key);
-  else deck.set(key, next);
+  if (next <= 0) deck.delete(id);
+  else deck.set(id, next);
   if (currentSavedDeckName) currentSavedDeckName = "";
   updateSavedState();
   renderDeck();
@@ -308,14 +294,11 @@ function renderDeck(){
   list.innerHTML = "";
 
   const entries = [...deck.entries()]
-    .map(([key, qty]) => {
-      const [id, folder] = key.split("|");
-      return { card: BY_ID.get(id), id, folder, qty };
-    })
+    .map(([id, qty]) => ({ card: BY_ID.get(id), id, qty }))
     .filter(x => x.card)
     .sort((a,b) => (a.card.Name || a.id).localeCompare(b.card.Name || b.id));
 
-  for (const {card, id, folder, qty} of entries){
+  for (const {card, id, qty} of entries){
     const item = document.createElement("div");
     item.className = "deckitem";
     item.innerHTML = `
@@ -324,7 +307,7 @@ function renderDeck(){
           <div class="name">${escapeHtml(card.Name || id)}</div>
           <div class="sub">
             <span>${escapeHtml(card.Type || "")}</span>
-            <span>${folder === "images" ? "Painterly" : "Pixel"}</span>
+            <span>Pixel</span>
           </div>
         </div>
         <div class="qty">
@@ -335,8 +318,8 @@ function renderDeck(){
       </div>
     `;
     const [minusBtn, plusBtn] = item.querySelectorAll("button");
-    minusBtn.addEventListener("click", ()=> addToDeck(id, folder, -1));
-    plusBtn.addEventListener("click", ()=> addToDeck(id, folder, 1));
+    minusBtn.addEventListener("click", ()=> addToDeck(id, -1));
+    plusBtn.addEventListener("click", ()=> addToDeck(id, 1));
     list.appendChild(item);
   }
 
@@ -347,17 +330,16 @@ function siteBase(){
   return location.origin + location.pathname.replace(/\/[^\/]*$/, "/");
 }
 
-async function resolveExactExt(id, folder){
-  const cacheKey = `${folder}/${id}`;
-  if (foundExtByPath.has(cacheKey)) return foundExtByPath.get(cacheKey);
+async function resolveExactExt(id){
+  if (foundExtById.has(id)) return foundExtById.get(id);
 
   const base = siteBase();
   for (const ext of IMAGE_EXTS){
-    const url = `${base}${folder}/${id}${ext}`;
+    const url = `${base}${IMAGE_FOLDER}/${id}${ext}`;
     try{
       const res = await fetch(url, { method: "HEAD", cache: "no-store" });
       if (res.ok){
-        foundExtByPath.set(cacheKey, ext);
+        foundExtById.set(id, ext);
         return ext;
       }
     } catch {}
@@ -370,10 +352,9 @@ async function buildPCIOCSV(){
   const rows = ["image"];
   const base = siteBase();
 
-  for (const [key, qty] of deck.entries()){
-    const [id, folder] = key.split("|");
-    const ext = await resolveExactExt(id, folder);
-    for (let i = 0; i < qty; i++) rows.push(`${base}${folder}/${id}${ext}`);
+  for (const [id, qty] of deck.entries()){
+    const ext = await resolveExactExt(id);
+    for (let i = 0; i < qty; i++) rows.push(`${base}${IMAGE_FOLDER}/${id}${ext}`);
   }
 
   return rows.join("\n") + "\n";
@@ -391,10 +372,8 @@ function downloadText(text, filename, mime){
 function deckToTxt(){
   const lines = [];
   const entries = [...deck.entries()].sort((a,b)=>a[0].localeCompare(b[0]));
-  for (const [key, qty] of entries){
-    const [id, folder] = key.split("|");
-    const line = `${id}|${folder}`;
-    lines.push(qty === 1 ? line : `${qty}x ${line}`);
+  for (const [id, qty] of entries){
+    lines.push(qty === 1 ? id : `${qty}x ${id}`);
   }
   return lines.join("\n") + (lines.length ? "\n" : "");
 }
@@ -405,18 +384,17 @@ function loadDeckFromTxt(text){
 
   for (const line of lines){
     const m = line.match(/^(\d+)\s*x?\s+(.+)$/i);
-    let qty = 1, payload = line;
+    let qty = 1, id = line;
     if (m){
       qty = Math.max(1, parseInt(m[1],10));
-      payload = m[2].trim();
+      id = m[2].trim();
     }
 
-    let [id, folder] = payload.split("|");
-    if (!folder || !FOLDERS.includes(folder)) folder = "images";
+    // Backward compatibility: strips old |Pixel or |images if present
+    id = id.split("|")[0].trim();
 
     if (BY_ID.has(id)){
-      const key = `${id}|${folder}`;
-      deck.set(key, (deck.get(key)||0) + qty);
+      deck.set(id, (deck.get(id)||0) + qty);
     }
   }
 
@@ -441,16 +419,17 @@ function setSavedDecks(items){
 }
 
 function serializeDeckEntries(){
-  return [...deck.entries()].map(([key, qty]) => ({ key, qty }));
+  return [...deck.entries()].map(([id, qty]) => ({ id, qty }));
 }
 
 function applySerializedDeck(entries){
   deck = new Map();
   for (const entry of entries || []){
-    if (!entry || !entry.key) continue;
-    const [id, folder] = String(entry.key).split("|");
+    if (!entry) continue;
+    let id = entry.id || entry.key || "";
+    id = String(id).split("|")[0].trim();
     const qty = Math.max(1, parseInt(entry.qty, 10) || 1);
-    if (BY_ID.has(id) && FOLDERS.includes(folder)) deck.set(`${id}|${folder}`, qty);
+    if (BY_ID.has(id)) deck.set(id, qty);
   }
   renderDeck();
 }
@@ -611,8 +590,8 @@ async function buildTTSSheetBlob(){
   const base = siteBase();
   const urls = [];
   for (const entry of expanded){
-    const ext = await resolveExactExt(entry.id, entry.folder);
-    urls.push(`${base}${entry.folder}/${entry.id}${ext}`);
+    const ext = await resolveExactExt(entry.id);
+    urls.push(`${base}${IMAGE_FOLDER}/${entry.id}${ext}`);
   }
 
   const first = await loadImage(urls[0]);
@@ -677,7 +656,6 @@ async function init(){
 
 el("search").addEventListener("input", renderGrid);
 el("type").addEventListener("change", renderGrid);
-el("galleryStyle").addEventListener("change", renderGrid);
 el("clearFilters").addEventListener("click", () => {
   el("search").value = "";
   el("type").value = "";
