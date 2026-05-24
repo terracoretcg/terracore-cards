@@ -1,343 +1,343 @@
 ID,Name,Type,Cost ,Abilities
-BULWARK_FRAME,Bulwark Frame,Mech,1,
-CHILL_FRAME,Chill Frame,Mech,1,
-SCRAP_FRAME,Scrap Frame,Mech,1,
-SIEGE_FRAME,Siege Frame,Mech,2,
-GLACIAL_BREAKER,Glacial Breaker,Mech,2,
-OVERLOAD_FRAME,Overload Frame,Mech,2,
-RUPTURE_FRAME,Rupture Frame,Mech,2,
-BREACHER_FRAME,Breacher Frame,Mech,3,Firewall
-CRYO_LOCK_FRAME,Cryo Lock Frame,Mech,3,Maintain Posistion 
-OVERDRIVE_FRAME,Overdrive Frame,Mech,3,OverClocked 1
-EARTHSHAKER_FRAME,Earthshaker Frame,Mech,3,
-STRIKER_FRAME,Striker Frame,Mech,3,
-IRONCLAD,Ironclad,Mech,3,
-INFERNO_FRAME,Inferno Frame,Mech,4,Rapid Deployment
-AMBUSH_FRAME,Ambush Frame,Mech,4,X Strike
-DROP_FRAME,Drop Frame,Mech,4,
-SENTINEL_FRAME,Sentinel Frame,Mech,4,
-ABSOLUTE_ZERO_ENGINE,Absolute Zero Engine,Mech,4,
-DETONATION_FRAME,Detonation Frame,Mech,5,Recon
-FIREWALL_FRAME,Firewall Frame,Mech,5,firewall
-PHASE_STRIKER,Phase Striker,Mech,5,
-TEMPORAL_BREAKER,Temporal Breaker,Mech,5,
-SUPPRESSION_FRAME,Suppression Frame,Mech,5,
-CONTAINMENT_FRAME,Containment Frame,Mech,6,Thermal Shear - This unit loses 1 extra heat on your turn.
-REACTOR_FRAME,Reactor Frame,Mech,6,OverClocked 2
-GHOST_FRAME,Ghost Frame,Mech,6,Breakthrough
-SUNFORGED_COLOSSUS,Sunforged Colossus,Mech,6,
-ANOMALY_ENGINE,Anomaly Engine,Mech,6,
-SIEGE_COLOSSUS,Siege Colossus,Mech,7,4 Heat: gains breakthrough and can only be blocked by 1 unit this turn
-MELTDOWN_ENGINE,Meltdown Engine,Mech,7,Destroy this Mech and deal damage to target unit equal to the amount of heat this unit has
-DOOM_WALKER,Doom Walker,Mech,7,when a friendly unit is destroyed pay 3 heat and create a 1/1/1 drone
-APEX_GUARDIAN,Apex Guardian,Mech,7,4 Heat: roll d20 deal damage to target unit.
-NULL_ENGINE,Null Engine,Mech,7,
-HOTSHOT,Hotshot,Mech,8,All friendly Mechs Gain OverClocked +3
-AFTERMATH,Aftermath,Mech,8,All friendly Mechs gain when destroyed deal damage equal to the amount of heat on them to an ememy unit that damaged them this turn.
-HARD_COUNT,Hard Count,Mech,8,All friendly Mechs gain pay 6 heat deal 1 damage to target unit for each mech in play
-COLDFRAME,Coldframe,Mech,9,All friendly Mechs gain at the start of your turn reduce heat by 1 extra point
-THE_LAST_LIGHT_OF_MERIDIAN,The Last Light of Meridian,Mech,10,all enemy units get -1or and -1dr
-SKY_BASTION,Sky Bastion,Plane,1,
-STORM_WING,Storm Wing,Plane,1,
-BLITZ_WING,Blitz Wing,Plane,1,
-PATROL_GUNSHIP,Patrol Gunship,Plane,2,
-SNOW_WING,Snow Wing,Plane,2,
-STRIKE_WING,Strike Wing,Plane,2,
-SKIRMISH_JET,Skirmish Jet,Plane,2,
-BOMB_DRONES,Bomb Drones,Plane,3,Breakthrough
-BURN_DRONES,Burn Drones,Plane,3,X Strike
-SHIELD_DRONES,Shield Drones,Plane,3,Combat Ready
-SUPPRESSION_WING,Suppression Wing,Plane,3,
-ICE_LANCER,Ice Lancer,Plane,3,
-FLAME_INTERCEPTOR,Flame Interceptor,Plane,3,
-BOMBARD_WING,Bombard Wing,Plane,4,Breakthrough
-WEATHER_CONTROLLER,Weather Controller,Plane,4,Hover
-FIRESTORM_BOMBER,Firestorm Bomber,Plane,4,Rapid Deployment
-RECON_WING,Recon Wing,Plane,4,
-SPY_PLANE,Spy Plane,Plane,4,
-INTERCEPT_DRONES,Intercept Drones,Plane,5,Hover
-WILDFIRE_WING,Wildfire Wing,Plane,5,Reactor Leak: When this unit is destroyed deal 1 damage to all enemy units and reduce their speed by 1 until the end of this turn.
-DOOM_BOMBER,Doom Bomber,Plane,5,
-SKYDIVE_STRIKERS,Skydive Strikers,Plane,5,
-SOLAR_TALON,Solar Talon,Plane,5,
-GUNSHIP,Gunship,Plane,6,Hover
-PHASE_BOMBER,Phase Bomber,Plane,6,Rapid Deployment
-DISRUPTION_BOMBER,Disruption Bomber,Plane,6,Hover
-SKYBREAKER_GUNSHIP,Skybreaker Gunship,Plane,6,2 df deal 1 extra damage to target if unblocked
-PRECISION_WING,Precision Wing,Plane,6,
-WHITEOUT_BOMBER,Whiteout Bomber,Plane,7,Hacking
-CATACLYSM_WING,Cataclysm Wing,Plane,7,Carpet Bombing
-APOCALYPSE_WING,Apocalypse Wing,Plane,7,mine
-TEMPORAL_SKYBREAKER,Temporal Skybreaker,Plane,7,2 df target unit cant block this turn
-INTERCEPTOR_WING,Interceptor Wing,Plane,7,
-IRONWING,Ironwing,Plane,8,All Friendly Planes Gain hover.
-WHITE_GALE,White Gale,Plane,8,All friendly planes gain rapid deployment and 1 speed.
-LAST_RATTLE,Last Rattle,Plane,8,All friendly units gain when destroyed draw a card.
-SUNSPIKE,Sunspike,Plane,9,All friendly planes gain Carpet Bombing: When attacking deal 1 damage to all enemy ground units if unblocked.
-THE_BURNING_ANGEL,The Burning Angel,Plane,10,All friendly units gain Reactor Leak: When this unit is destroyed deal 1 damage to all enemy units and reduce their speed by 1 until the end of this turn.
-COLD_BASTION,Cold Bastion,Tank,1,
-INCINERATOR_PLATFORM,Incinerator Platform,Tank,1,
-CATACLYSM_PLATFORM,Cataclysm Platform,Tank,1,
-SUPPLY_HAULER,Supply Hauler,Tank,2,
-ICE_CARRIER,Ice Carrier,Tank,2,
-FUEL_CARRIER,Fuel Carrier,Tank,2,
-SCRAP_HAULER,Scrap Hauler,Tank,2,
-TROOP_HAULER,troop hauler,Tank,3,anti air
-HAZARD_RIG,Hazard Rig,Tank,3,Recon: When you play this card you may look at the top 5 cards in your library put 1 in your hand and the rest on top of your deck in any order.
-SHIELD_PLATFORM,Shield Platform,Tank,3,Shield X
-SUPPRESSION_RIG,Suppression Rig,Tank,3,
-THERMAL_PLATFORM,Thermal Platform,Tank,3,
-UNSTABLE_PLATFORM,Unstable Platform,Tank,3,
-CONTAINMENT_PLATFORM,Containment Platform,Tank,4,Maintain Posistion
-OVERPRESSURE_ENGINE,Overpressure Engine,Tank,4,Combat Ready
-RADIATION_ENGINE,Radiation Engine,Tank,4,Rapid Deployment
-TACTICAL_BASTION,Tactical Bastion,Tank,4,
-DEPLOYMENT_CARRIER,Deployment Carrier,Tank,4,
-MOBILE_COVER_UNIT,Mobile Cover Unit,Tank,5,Combat Ready
-BREACH_CARRIER,Breach Carrier,Tank,5,Multi Defender x
-BASTION_CARRIER,Bastion Carrier,Tank,5,
-AEGIS_PLATFORM,Aegis Platform,Tank,5,
-DEFENSE_CARRIER,Defense Carrier,Tank,5,
-PHASE_RELAY,Phase Relay,Tank,6,X Strike
-LOCKDOWN_ENGINE,Lockdown Engine,Tank,6,Anti Air
-SIEGE_PLATFORM,Siege Platform,Tank,6,3 df When this unit blocks and survives Deal damage equal to this units DR to the attacking unit.
-GLACIAL_ENGINE,Glacial Engine,Tank,6,3 df reduce speed of target unit by 1.
-RAPID_SUPPORT_RIG,Rapid Support Rig,Tank,6,
-FURNACE_ENGINE,Furnace Engine,Tank,7,2 df gain 1 or
-FALLOUT_BASTION,Fallout Bastion,Tank,7,3 df deal 1 damage to d20 targets
-TEMPORAL_ENGINE,Temporal Engine,Tank,7,When this unit attacks deal 1 damage to a target
-COMMAND_BASTION,Command Bastion,Tank,7,3 df and engage prevent all damage to target unit
-INTERFERENCE_RIG,Interference Rig,Tank,7,
-WHITE_LOCK,White Lock,Tank,8,All tanks gain when blocked or blocking the enemy unit loses 2 speed.
-LAST_LAUGH,Last Laugh,Tank,8,All friendly tanks gain when destroyed deal 2 damage to d20 enemys
-FIRST_CONTACT,First Contact,Tank,8,All friendly tanks gain deal 1 damage to target base when enter play
-BLACK_ANVIL,Black Anvil,Tank,9,All friendly tanks gain when one is put into play you may search library for an exact copy to put into your hand.
-GRAVEWAR_THE_UNBROKEN,Gravewar The Unbroken,Tank,10,All friendly units gain 1 dr and can block 1 extra attacker
-LINE_INFANTRY,Line Infantry,Troop,1,
-RECON_PATROL,Recon Patrol,Troop,1,
-ASSAULT_TROOPERS,Assault Troopers,Troop,1,
-CRYO_SABOTEURS,Cryo Saboteurs,Troop,2,
-OVERCHARGE_SQUAD,Overcharge Squad,Troop,2,
-SABOTEURS,Saboteurs,Troop,2,
-COUNTERINTEL_TEAM,Counterintel Team,Troop,2,
-FLANK_OPERATIVES,Flank Operatives,Troop,3,Anti Air
-HEAT_RUNNERS,Heat Runners,Troop,3,Rapid Deployment
-CAPTURE_UNIT,Capture Unit,Troop,3,Combat Ready
-SAPPERS,Sappers,Troop,3,
-COLD_MARSHAL,Cold Marshal,Troop,3,
-FIRE_MARSHAL,Fire Marshal,Troop,3,
-SIEGE_MARSHAL,Siege Marshal,Troop,4,tripwire
-FIELD_COMMANDER,Field Commander,Troop,4,Stasis Lock
-SHOCK_COMMANDER,Shock Commander,Troop,4,3 df engage 1 dmg
-DROP_INFANTRY,Drop Infantry,Troop,4,
-SECURITY_DETAIL,Security Detail,Troop,4,
-HIGH_ADJUDICATOR,High Adjudicator,Troop,5,Air Suppression
-WASTELAND_RAIDERS,Wasteland Raiders,Troop,5,x strike
-SHIELDBEARERS,Shieldbearers,Troop,5,Anti Air
-TACTICAL_SERGEANT,Tactical Sergeant,Troop,5,
-ENFORCEMENT_CAPTAIN,Enforcement Captain,Troop,5,
-WARCALLER,Warcaller,Troop,6,1 df can only be blocked by 1 unit
-PHASE_CAPTAIN,Phase Captain,Troop,6,Flamethrower: When attacking or blocking deal 1 additional damage to up to 2 enemy units.
-MUTANT_PACK,Mutant Pack,Troop,6,Breakthrough
-SHIELD_MARSHAL,Shield Marshal,Troop,6,Anti Air
-PIT_BOSS,Pit Boss,Troop,6,
-DEMOLITION_CREW,Demolition Crew,Troop,7,Maintain Posistion 
-ICE_SKIRMISHERS,Ice Skirmishers,Troop,7,Maintain Posistion 
-FLAME_SCOUTS,Flame Scouts,Troop,7,Combant Ready
-JUNK_RAIDERS,Junk raiders,Troop,7,
-BASTION_CAPTAIN,Bastion Captain,Troop,7,
-REDMARK_STRIKE_LEAD,Redmark Strike Lead,Troop,8,All friendly Troops gain pay 2 DF deal 1 damage to target unit
-MERCER_TASK_LEAD,Mercer Task Lead,Troop,8,all friendly troops gain Recon.
-MARA_CALDWELL_FIELD_LEAD,Mara Caldwell Field Lead,Troop,8,All friendly troops gain Flamethrower: When attacking or blocking deal 1 additional damage to up to 2 enemy units.
-GRAVES_GROUND_OPS,Graves Ground Ops,Troop,9,When an enemy unit is destroyed you may pay 1 df if you do create a 1/1/1 drone
-SCRAPLORD,Scraplord,Troop,10,All friendly units gain when destroyed create 1/1/1 drone
-VETERAN_INFANTRY,Veteran Infantry,Vet,3,
-REACTOR_SPECIALIST,Reactor Specialist,Vet,3,
-FLIGHT_VETERAN,Flight Veteran,Vet,3,
-ARMORED_CREW_VET,Armored Crew Vet,Vet,3,
-URBAN_BREACH_VET,Urban Breach Vet,Vet,4,Maintain Position
-FRAME_TARGETER,Frame Targeter,Vet,4,
-STRIKE_PILOT,Strike Pilot,Vet,4,
-SIEGE_GUNNER,Siege Gunner,Vet,4,
-SHOCK_LEADER,Shock Leader,Vet,5,
-WARFRAME_ACE,Warframe Ace,Vet,5,Maintain Position
-AIR_SUPERIORITY_ACE,Air Superiority Ace,Vet,5,
-HULL_COMMANDER,Hull Commander,Vet,5,Maintain Position
-ELITE_CAPTURE_OPERATIVE,Elite Capture Operative,Vet,6,Breakthrough
-ELITE_MECH_COMMANDER,Elite Mech Commander,Vet,6,Reduce Heat cost of active abilites by 1.
-ELITE_SKY_HUNTER,Elite Sky Hunter,Vet,6,Hover; 
-ELITE_SIEGE_MARSHAL,Elite Siege Marshal,Vet,6,Multi-Defender 1
-LEGENDARY_GROUND_COMMANDER,Legendary Ground Commander,Vet,7,Maintain Position; Breakthrough
-LEGENDARY_MECH_PILOT,Legendary Mech Pilot,Vet,7,Overclocked 3
-LEGENDARY_AIR_MARSHAL,Legendary Air Marshal,Vet,7,Hover; Breakthrough
-LEGENDARY_TANK_ACE,Legendary Tank Ace,Vet,7,Anti-Air; Maintain Position
-SALVAGE,Salvage,Ops,0,Discard a card draw a card.
-ARMOR_FRACTURE,Armor Fracture,Ops,1,Target unit gets -2 DR this turn.
-DEEP_CHILL,Deep Chill,Ops,1,Target unit gets -2 Speed until your next turn.
-EMERGENCY_REINFORCE,Emergency Reinforce,Ops,1,"Roll d20: 19 prevent 1 dmg, 1017 prevent 2 dmg, 1820 3 dmg to unit or base."
-NO_SURVIVORS,No Survivors,Ops,1,Destroy a friendly unit and an enemy unit.
-PRECISION_STRIKE,Precision Strike,Ops,1,Roll d20. Deal damage to a unit: 110: 2 dmg; 1118: 3 dmg; 1920: 4 dmg (cannot be prevented).
-CRIPPLING_DAMAGE,Crippling Damage,Ops,1,Deal X damage to a unit.
-CRYO_SILENCE,Cryo Silence,Ops,1,Reduce heat of target unit by 1
-ORBITAL_WINDOW,Orbital Window,Ops,2,Units deployed this turn may attack immediately.
-SCRAP_DETONATION,Scrap Detonation,Ops,2,Destroy a friendly unit. Deal 3 damage to a unit or base.
-SABOTAGE,Sabotage,Ops,2,Stops enemy units from attacking this turn and deal 1 damage to their base.
-FORTIFIED_STAND,Fortified Stand,Ops,2,Prevent X damage divided as you choose among friendly units.
-CRYO_LOCKDOWN,Cryo Lockdown,Ops,2,Target unit cannot Ready during its next Ready step.
-AGGRESSION_SURGE,Aggression Surge,Ops,2,Target unit gains +2 damage this turn.
-TARGET_BEACON,Target Beacon,Ops,2,The next damage you deal to a unit this turn is doubled.
-SHIELD_REINFORCEMENT,Shield Reinforcement,Ops,2,Prevent the next 3 damage to a unit or base.
-ALL_SYSTEMS_RED,All Systems Red,Ops,2,Roll d20. deal X damage to target: 110: +1; 1118: +2; 1920: +3.
-MOBILITY_HACK,Mobility Hack,Ops,2,Target unit gets -2 Speed this turn.
-SCORCHED_EARTH,Scorched Earth,Ops,3,Destroy target upgrade.
-BLITZ_COUNTER,Blitz Counter,Ops,3,Intercept target unit as its deployed
-ENERGY_RECLAIM,Energy Reclaim,Ops,3,Reduce the Deployment Cost of all your cards by 1 this turn
-PERMAFROST_RETURN,Permafrost Return,Ops,3,Return target unit to its owners hand.
-DISRUPTION_STRIKE,Disruption Strike,Ops,3,Target unit gets -1 Speed and -1 DR this turn.
-FLASH_FREEZE,Flash Freeze,Ops,3,Slow attacking enemy units by 1 speed for this turn.
-TARGET_DESIGNATION,Target Designation,Ops,3,Each time damage is dealt to target unit this turn it is increased by 1.
-SUPPRESSIVE_BARRAGE,Suppressive Barrage,Ops,3,Enemy units get -1 Speed this turn.
-HOLD_THE_LINE,Hold the Line,Ops,3,Friendly units may block one additional attacker this turn.
-STRUCTURAL_COLLAPSE,Structural Collapse,Ops,3,Roll d20. Deal damage to all attacking units: 19: 1 dmg; 1017: 2 dmg; 1820: 3 dmg.
-OVERDRIVE,Overdrive,Ops,3,Roll d20: attackers gain +1/+2/+3 OR
-MISSILE_ATTACK,Missile Attack,Ops,3,destroy target unit
-WHITEOUT_PROTOCOL,Whiteout Protocol,Ops,3,Slow defending enemy units by 1 speed for this turn.
-BRITTLE_SYSTEMS,Brittle Systems,Ops,3,Target unit gets -2 DR until end of your next turn.
-HEAT_BURST,Heat Burst,Ops,3,All Attacking Mechs get 1 heat.
-CORROSIVE_FALLOUT,Corrosive Fallout,Ops,4,All units get -1 DR until end of turn.
-TARGET_REASSIGNMENT,Target Reassignment,Ops,4,Change the target of an attack or ability.
-RADIATION_BURST,Radiation Burst,Ops,4,Deal 2 damage to all units.
-FORWARD_ASSAULT,Forward Assault,Ops,4,Enemy units cannot block this turn.
-OVERWHELM,Overwhelm,Ops,4,Enemy units get -1 DR this turn.
-COUNTER_BARRAGE,Counter Barrage,Ops,4,Intercept target card as its deployd
-HARDLIGHT_BARRIER,Hardlight Barrier,Ops,4,Prevent all damage to a unit this turn.
-DRONE_FABRICATION,Drone Fabrication,Ops,4,Roll d20: create 2/3/4 1/1/1 Drones.
-SHIELD_LOCKDOWN,Shield Lockdown,Ops,5,Enemy units cannot activate abilities this turn.
-SCRAP_DRONE_SWARM,Scrap Drone Swarm,Ops,5,All friendly units gain breakthrough
-HEAL_COUNTER,Heal Counter,Ops,5,heal base by d20
-HOVER_COUNTER,Hover Counter,Ops,5,all friendly plains gain hover
-BURNING_PRESSURE,Burning Pressure,Ops,5,All enemy units get +1 heat
-FROZEN_MECH,Frozen Mech,Ops,6,Remove all heat from friendly units.
-COLD_DENIAL,Cold Denial,Ops,7,Enemy units cannot attack or block this turn.
-LAST_BASTION,Last Bastion,Ops,7,"Roll d20: 19 prevent 3 dmg, 1017 prevent 5 dmg, 1820 prevent all dmg this turn."
-NUCLEAR_FALLOUT,Nuclear Fallout,Ops,8,Roll d20. 19: Deal 3 damage to all units; 1017: Deal 4 damage to all units; 1820: Destroy all non-Apex units.
-RELENTLESS_ORDERS,Relentless Orders,Ops,9,Friendly units may attack twice this turn.
-ASSAULT_THRUSTERS,Assault Thrusters,Unit Upgrades,1,Attached Unit gains +1 OR and +1 Speed
-MOBILITY_GOVERNORS,Mobility Governors,Unit Upgrades,1,Attached Unit gains +1 speed and speed cannot be reduced
-HOVER_JETS,Hover Jets,Unit Upgrades,1,Attached unit gains Hover and +1 Speed.
-FLARE_COUNTERMEASURES,Flare Countermeasures,Unit Upgrades,1,Attached unit gains Shield 1 and +1 DR.
-ANTI_AIR_BATTERY,Anti Air Battery,Unit Upgrades,1,Attached unit gains Anti-Air and +1 OR.
-BURNTHROUGH_CANNONS,Burnthrough Cannons,Unit Upgrades,1,Attached unit gains Breakthrough and +1 OR.
-CORROSIVE_PAYLOAD,Corrosive Payload,Unit Upgrades,1,Attached unit gains 2-strike and +1 DR
-HARDLIGHT_PROJECTOR,Hardlight Projector,Unit Upgrades,1,Attached unit gains +1 OR and +1 DR
-MINE_DISPENSER,Mine Dispenser,Unit Upgrades,2,Attached unit gains Mines.
-TRIPWIRE_RIG,Tripwire Rig,Unit Upgrades,2,Attached unit gains Tripwire.
-OVERDRIVE_INJECTORS,Overdrive Injectors,Unit Upgrades,2,Attached unit gains Hacking
-OPTIMIZER,Optimizer,Unit Upgrades,2,Attached unit gains Air Suppression 
-REACTOR_BURST_MODULE,Reactor Burst Module,Unit Upgrades,2,Attached unit gains Flame thrower 
-SUBZERO_ACTUATORS,Subzero Actuators,Unit Upgrades,2,Attached unit gains Stasis Lock
-UNSTABLE_REACTOR,Unstable Reactor,Unit Upgrades,2,Attached unit gains Reactor Leack
-DETONATION_DEFLECTOR,Detonation Deflector,Unit Upgrades,2,Attached unit gains Carpet Bombing
-KINETIC_CONVERTER,Kinetic Converter,Unit Upgrades,3,Attached unit gains Pay 3 Heat: This unit gains +4 Speed.
-REACTOR_CASCADE_PROTOCOL,Reactor Cascade Protocol,Unit Upgrades,3,Attached unit gains Pay 4 Heat: Deal 1 damage to all enemy units.
-PHASE_SHIFT_REACTOR_SKIN,Phase Shift Reactor Skin,Unit Upgrades,3,Attached unit gains Pay 4 Heat: Prevent all damage that would be dealt to this unit this turn.
-BULWARK_PLATING,Bulwark Plating,Unit Upgrades,3,Attached unit gains Recon +1 OR and +1 DR
-ALL_SYSTEMS_RED_SUITE,All Systems Red Suite,Unit Upgrades,3,Attached unit gains  +1 OR and +1 Speed and Overclocked +1.
-THERMAL_SHEAR,Thermal Shear,Unit Upgrades,3,Attached unit gains Firewall and Thermal Shield
-ROUTE_SECURED_BANNER,Route Secured Banner,Unit Upgrades,3,Attached unit gains Route Secured +1 DR and +1 speed.
-TARGET_REASSIGNMENT_CHIP,Target Reassignment Chip,Unit Upgrades,3,Attached unit gains Pay 4 DF: Change the target of an attack or ability to another valid target.
-ENTROPY_CONVERSION_ARRAY,Entropy Conversion Array,Unit Upgrades,4,Attached unit gains Pay 4 Heat: Give +1 OR to up to 5 different units.
-TEMPORAL_OVERBURN_CHAMBER,Temporal Overburn Chamber,Unit Upgrades,4,Attached unit gains Pay 5 Heat:  Roll a d20 deal x damage to all enemy units 1-8 1 damage 9-16 2 damage 17-20 3 damage
-ABSOLUTE_ZERO_FEEDBACK_LOOP,Absolute Zero Feedback Loop,Unit Upgrades,4,Attached unit gains pay 6 Heat: +1 DR to itself and enemy units lose 1 speed.
-SCAVENGED_SWARM_BAY,Scavenged Swarm Bay,Unit Upgrades,4,Attached unit gains pay 3 df roll d20 to create 1/1/1 drone 1-9 1 10-18 2 19-20 3
-ENERGY_ROUTER,Energy Router,Unit Upgrades,4,Attached unit gains pay X DF and transfer that many points of damage to itself.
-JURY_RIGGED_ARMOR,Jury Rigged Armor,Unit Upgrades,4,Attached unit gains cannot be destroyed when this unit is dealt damage destroy this upgrade.
-SCRAP_LAUNCHER,Scrap Launcher,Unit Upgrades,4,Attached unit gains pay 4 DF deal 1 damage for each friendly drone you have in play to target unit.
-ICEBOUND_FIREWALL,Icebound Firewall,Unit Upgrades,4,Attached unit gains Thermal Shear and Firewall.
-THERMAL_FEEDBACK_CANNONS,Thermal Feedback Cannons,Unit Upgrades,5,Attached unit gains Pay 6 Heat: Roll a d20 deal x damage to target unit 1-8 4 damage 9-16 5 damage 17-20 6 damage
-SINGULARITY_COMPRESSION,Singularity Compression,Unit Upgrades,5,Attached unit gains Pay 7 Heat: Double this units OR and DR until end of turn.
-CATACLYSM_DRIVE_MATRIX,Cataclysm Drive Matrix,Unit Upgrades,5,Attached unit gains Pay 8 Heat: Destroy all other units.
-REINFORCEMENT_PROTOCOL,Reinforcement Protocol,Unit Upgrades,5,Attached unit gains pay 5 df Prevent the next 1 damage to each friendly unit this turn.
-LAST_BASTION_OVERRIDE,Last Bastion Override,Unit Upgrades,5,Attached unit gains  Roll d20: 1�9 prevent 3 damage to your base this turn; 10�17 prevent 5; 18�20 prevent all damage to your base this turn.
-SHIELD_WALL_EMITTER,Shield Wall Emitter,Unit Upgrades,5,"Attached Unit Gains When attached unit blocks, prevent 1 damage to all other friendly unit."
-HOLD_THE_LINE_RIG,Hold the Line Rig,Unit Upgrades,5,"Attached unit gains Mines, Tripewires, and Hacking."
-SALVAGE_RESOURCES,Salvage Resources,Unit Upgrades,5,Attached unit gains when it deals damage to a unit that is destroyed gain 1 DF and draw a card.
-REINFORCED_BULKHEADS,Reinforced Bulkheads,Base Upgrades,1,You gain 1 extra DF on your turn.
-SALVAGE_UPGRADE,Salvage Upgrade,Base Upgrades,1,When salvaged is used draw an extra card.
-HOVER_UPGRADE,Hover upgrade,Base Upgrades,5,All friendly units gain Hover.
-OVERCLOCKED_1_UPGRADE,Overclocked 1 Upgrade,Base Upgrades,5,All friendly units gain Overclocked 1.
-COMMAND_RELAY_UPLINK,Command Relay Uplink,Base Upgrades,5,When attacked gain 1 df
-SALVAGE_DRONE_RECYCLER,Salvage Drone Recycler,Base Upgrades,5,"If a unit was destroyed last turn, create a 1/1/1 Drone."
-FIREWALL_UPGRADE,Firewall upgrade,Base Upgrades,6,All friendly units gain Firewall.
-ANTI_AIR_UPGRADE,Anti Air Upgrade,Base Upgrades,6,All friendly units gain Anti-Air.
-DRONE_ASSEMBLY_BAY,Drone Assembly Bay,Base Upgrades,6,Create a 1/1/1 Drone.
-DEFENSE_TURRET_ARRAY,Defense Turret Array,Base Upgrades,6,2 df Deal 2 damage to one attacking unit.
-SIEGE_DRONE_LAUNCHPAD,Siege Drone Launchpad,Base Upgrades,7,"Create a 1/1/1 Drone, then it may block this combat."
-EMERGENCY_SHIELDING,Emergency Shielding,Base Upgrades,7,All friendly units gain +1 DR.
-OR_UPGRADE,OR Upgrade,Base Upgrades,7,All friendly units gain +1 OR.
-SPEED_UPGRADE,Speed Upgrade,Base Upgrades,7,All friendly units gain +1 Speed.
-COMBAT_READY_UPGRADE,Combat Ready Upgrade,Base Upgrades,8,All friendly units gain Combat Ready.
-MAINTAIN_POSITION_UPGRADE,Maintain Position Upgrade,Base Upgrades,8,All friendly units gain Maintain Position.
-BREACH_ALARM_SYSTEM,Breach Alarm System,Base Upgrades,8,Attacking enemy units lose 1 Speed.
-REACTIVE_DRONE_RESPONSE,Reactive Drone Response,Base Upgrades,8,Create a 1/1/1 Drone.
-MULTI_DEFENDER_1_UPGRADE,Multi Defender 1 Upgrade,Base Upgrades,9,All friendly units gain Multi-Defender 1.
-SHIELD_1_UPGRADE,Shield 1 Upgrade,Base Upgrades,9,All friendly units gain Shield 1.
-BREAKTHROUGH_UPGRADE,Breakthrough Upgrade,Base Upgrades,9,All friendly units gain Breakthrough.
-COUNTERFIRE_PROTOCOL,Counterfire Protocol,Base Upgrades,9,"Roll d20. On 10 or higher, deal 3 damage to one attacking unit."
-SNAP_FREEZE,Snap Freeze,CORE Event - Cryo,2,Terrain becomes Frozen for 2 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD.
-CRYO_SPIKE,Cryo Spike,CORE Event - Cryo,3,Deal 1 damage to all units. . Terrain becomes Frozen for 2 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD.
-WHITEOUT_SIEGE,Whiteout Siege,CORE Event - Cryo,4,Terrain becomes Frozen for 3 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD and cannot attack this turn.
-SLEET_BARRAGE,Sleet Barrage,CORE Event - Cryo,5,Deal 1 damage to all units d20: 15+ deal 1 damage to enemy units instead. Terrain becomes Frozen for 4 turns. Cryo units get +2 DR. Non-Cryo units get -2 SPD.
 ABSOLUTE_WINTER,Absolute Winter,CORE Event - Cryo,7,Terrain becomes Frozen permanently. Cryo units get +1 DR. Non-Cryo units speed is reduced to 1.
-VOLCANIC_SURGE,Volcanic Surge,CORE Event - Thermal,2,Terrain becomes Volcanic for 2 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
-SOLAR_FLARE,Solar Flare,CORE Event - Thermal,3,Deal 1 damage to all units. d20: 15+ deal 1 damage to enemy units instead. Terrain becomes Volcanic for 2 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
-INFERNO_CORRIDOR,Inferno Corridor,CORE Event - Thermal,4,Terrain becomes Volcanic for 3 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
-BLAZING_ADVANCE,Blazing Advance,CORE Event - Thermal,5,Deal 1 damage to all units. Terrain becomes Volcanic for 4 turns. Thermal units get +1 OR and +1 SPD.
-SOLAR_EXTINCTION,Solar Extinction,CORE Event - Thermal,7,Terrain becomes Volcanic permanently. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack or block.
-RADIATION_LEAK,Radiation Leak,CORE Event - Nuclear,2,Terrain becomes Nuclear Waste for 2 turns. Non-Nuclear units take 1 damage at the end of each turn.
-FALLOUT_SPREAD,Fallout Spread,CORE Event - Nuclear,3,Deal 1 damage to all units. d20: 15+ deal 1 damage to enemy units instead.
-GAMMA_DRIFT,Gamma Drift,CORE Event - Nuclear,4,Terrain becomes Nuclear Waste for 3 turns. Non-Nuclear units take 1 damage at the end of each turn.
-ASHFALL_APOCALYPSE,Ashfall Apocalypse,CORE Event - Nuclear,5,Terrain becomes Nuclear Waste for 4 turns. Non-Nuclear units take 1 damage at the end of each turn and cannot activate abilities.
-NUCLEAR_OPTION,Nuclear Option,CORE Event - Nuclear,7,Terrain becomes Nuclear Waste permanently. Roll d20 1-10 destroy all units 11-20 destroy all enemy units.
-TOXIC_SPILL,Toxic Spill,CORE Event - Chemical,2,"Terrain becomes Toxic for 2 turns. When units take damage, they become Corroded. The unit gets -1 or, -1 dr, and -1 speed."
-ACID_BURST,Acid Burst,CORE Event - Chemical,3,All units become Corroded. d20: 15+ only enemy units become Corroded.
-CORROSIVE_SHIFT,Corrosive Shift,CORE Event - Chemical,4,"Terrain becomes Toxic for 3 turns. When units take damage, they become Corroded."
-CHEMICAL_LOCKDOWN,Chemical Lockdown,CORE Event - Chemical,5,Terrain becomes Toxic for 4 turns. Non-chemical units cannot activate abilities.
-BIOHAZARD_FIELD,Biohazard Field,CORE Event - Chemical,7,"Terrain becomes Toxic permanently. Non-chemical units become Corroded -1or, -1dr, -1speed."
-RECLAMATION_FIELD,Reclamation Field,CORE Event - Renewal,2,Terrain becomes Renewal for 2 turns. Renewable Units take 1 less damage from each source.
-STABILIZATION_PULSE,Stabilization Pulse,CORE Event - Renewal,3,Remove all negative effects from all units. Roll a d20: 15+ only friendly units gain damage reduction this turn.
-REGENESIS_SHIFT,Regenesis Shift,CORE Event - Renewal,4,Terrain becomes Renewal for 3 turns. Renewable Units take 1 less damage from each source.
-RESTORATION_PROTOCOL,Restoration Protocol,CORE Event - Renewal,5,Terrain becomes Renewal for 4 turns. Renewable Units take 1 less damage from each source.
-ECOSYSTEM_REBIRTH,Ecosystem Rebirth,CORE Event - Renewal,7,Terrain becomes Renewal permanently. Renewable Units take 1 less damage from each source.
-DENSE_FOG_BANK,Dense Fog Bank,CORE Event - Neutral,2,Terrain becomes Neutral for 2 turns. No damage is dealt during combat this turn.
-SIGNAL_INTERFERENCE,Signal Interference,CORE Event - Neutral,3,Terrain becomes Neutral for 3 turns. Enemy units can not activate abilities unitl your next turn.
-BATTLEFIELD_RESET,Battlefield Reset,CORE Event - Neutral,3,Roll a d20; 1-14: destroy all upgrades 15-20: destroy all enemy upgrades
-TORNADO_OUTBREAK,Tornado Outbreak,CORE Event - Neutral,5,Roll a d20; 1-16: return all units to owners hands 17-20: Return all enemy units to their hand.
-ATMOSPHERIC_RESET,Atmospheric Reset,CORE Event - Neutral,6,Terrain becomes Neutral permanently.
-SWAMP,Swamp,Terrain,,Troops on this terrain lose 1 Speed.
-JUNGLE,Jungle,Terrain,,Troops gain +1 Speed. Tanks lose 1 Speed. Planes lose 1 OR.
-DESERT,Desert,Terrain,,Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat.
-FROZEN_FLATS,Frozen Flats,Terrain,,Ice units on this terrain gain +1 DR. Non-Ice units on this terrain lose 1 Speed.
-CITY,City,Terrain,,Troops gain +1 DR. Tanks lose 1 Speed.
-BUNKERED_ZONE,Bunkered Zone,Terrain,,All units gain +1 DR while defending on this terrain.
-FORTIFIED_PASS,Fortified Pass,Terrain,,Ground units gain +1 DR.
-INDUSTRIAL_ZONE,Industrial Zone,Terrain,,Units with upgrades gain +1 OR.
-SCRAP_FIELDS,Scrap Fields,Terrain,,Tanks on this terrain lose 1 OR.
-URBAN_CROSSFIRE,Urban Crossfire,Terrain,,Planes on this terrain lose 1 OR.
-MINE_SCARRED_GROUND,Mine Scarred Ground,Terrain,,Ground units in this terrain take 1 damage when attacking.
-COLLAPSED_HIGHWAY,Collapsed Highway,Terrain,,Tanks gain +1 dr planes lose 1 or.
-LANDING_STRIP,Landing Strip,Terrain,,Planes gain +1 Speed.
-POWER_SUBSTATION,Power Substation,Terrain,,Mechs gain +1 DR.
-RESEARCH_COMPLEX,Research Complex,Terrain,,Units with activated abilities gain +1 OR.
-TOXIC_MARSH,Toxic Marsh,Terrain,,Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
-OPEN_PLAINS,Open Plains,Terrain,,This terrain has no additional effects.
-VOLCANO_HIDEOUT,Volcano Hideout,Bases,,Your units receive +1 OR.
+ACID_BURST,Acid Burst,CORE Event - Chemical,3,"All units become Corroded. d20: 15+ only enemy units become Corroded. Corroded units get -1 OR, -1 DR, and -1 speed until the end or your next turn."
+AFTERMATH,Aftermath,Mech,8,All friendly Mechs gain when destroyed deal damage equal to the amount of heat on them to any unit.
+AGGRESSION_SURGE,Aggression Surge,Ops,2,Target unit gains +2 damage this turn.
+ALL_SYSTEMS_RED,All Systems Red,Ops,2,Roll d20. deal X damage to target: 110: +1; 1118: +2; 1920: +3.
+ANTI_AIR_BATTERY,Anti Air Battery,Unit Upgrades,1,Attached unit gains Anti-Air and +1 OR.
+ANTI_AIR_UPGRADE,Anti Air Upgrade,Base Upgrades,6,All friendly units gain Anti-Air.
+AR_213,AR-213,Plane,3,
+AR_214,AR-214,Plane,3,
+AR_215_RAPID_DEPLOYMENT,"AR-215 ""Rapid Deployment""",Plane,4,Rapid Deployment
+AR_312_HOVER,"AR-312 ""Hover""",Plane,4,Hover
+AR_313,AR-313,Plane,4,
+AR_314,AR-314,Plane,3,
+AR_322_COMBAT_READY,"AR-322 ""Combat Ready""",Plane,3,Combat Ready
+AR_322_HOVER,"AR-322 ""Hover""",Plane,5,Hover
+AR_322_SLIPSTREAM,"AR-322 ""Slipstream""",Plane,6,Rapid Deployment
+AR_325_2_STRIKE,"AR-325 ""2-Strike""",Plane,3,X Strike
+AR_415,AR-415,Plane,4,
+ARMOR_DECAY,Armor Decay,Ops,4,All units get -1 DR until end of turn.
+ARMOR_FRACTURE,Armor Fracture,Ops,1,Target unit gets -2 DR this turn.
+AS_115_RAPID_DEPLOYMENT,"AS-115 ""Rapid Deployment""",Troop,3,Rapid Deployment
+AS_222_ANTI-AIR,"AS-222 ""Anti-Air""",Troop,3,Anti Air
+AS_223,AS-223,Troop,3,
+AS_231_SUPPRESIVE_FIRE,"AS-231 ""Suppresive Fire""",Troop,4,Suppresive Fire 3 df 1 dmg
+AS_233,AS-233,Troop,3,
+AS_322,AS-322,Troop,3,
+AS_322_AIR_SUPPRESSION,"AS-322 ""Air Suppression""",Troop,5,Air Suppression
+AS_322_VANGUARD,"AS-322 ""Vanguard""",Troop,6,Pay 1 DF this unit can only be blocked by 1 unit.
+AS_323_STASIS_LOCK,"AS-323 ""Stasis Lock""",Troop,4,Stasis Lock
+AS_332_TRIPWIRE,"AS-332 ""Tripwire""",Troop,4,tripwire
+AS_333,AS-333,Troop,4,
+AS_334,AS-334,Troop,4,
 ASHEN_FOUNDRY,Ashen Foundry,Bases,,When this base is attacked it deals one point of damage to target of its choice.
-ICE_CITADEL,Ice Citadel,Bases,,Your units receive +1 DR.
-PERMAFROST_KEEP,Permafrost Keep,Bases,,When this base is attacked enemy units get -1 speed.
-RADIATION_COMPLEX,Radiation Complex,Bases,,When this base is attacked enemy units take 1 damage.
-FALLOUT_BUNKER,Fallout Bunker,Bases,,Your units receive when hit by enemy units they take 1 damage.
-FORTIFIED_CHEMICAL_REFINERY,Fortified Chemical Refinery,Bases,,Your units receive when blocking or become blocked enemy units receive -1 OR.
+ASHFALL_APOCALYPSE,Ashfall Apocalypse,CORE Event - Nuclear,5,Terrain becomes Nuclear Waste for 4 turns. Non-Nuclear units take 1 damage at the end of each turn and cannot activate abilities.
+ASSAULT_SWARM,Assault Swarm,Ops,5,All friendly units gain breakthrough
+ASSAULT_THRUSTERS,Assault Thrusters,Unit Upgrades,1,Attached Unit gains +1 OR and +1 Speed
+ATMOSPHERIC_RESET,Atmospheric Reset,CORE Event - Neutral,6,Terrain becomes Neutral permanently.
+AX_314,AX-314,Plane,5,
+AX_415_REACTOR_LEAK,"AX-415 ""Reactor Leak""",Plane,5,Reactor Leak: When this unit is destroyed deal 1 damage to all enemy units and reduce their speed by 1 until the end of their next turn.
+AX_425,AX-425,Plane,5,
+AX_513,AX-513,Plane,5,
+AX_515_SKYBREAKER,"AX-515 ""Skybreaker""",Plane,6,2 df deal 1 extra damage to target if unblocked
+AX_523_LOCKDOWN,"AX-523 ""Lockdown""",Plane,6,Hover
+AX_715,AX-715,Plane,6,
+BATTLEFIELD_RESET,Battlefield Reset,CORE Event - Neutral,3,Roll a d20; 1-14: destroy all upgrades 15-20: destroy all enemy upgrades
+BIOHAZARD_FIELD,Biohazard Field,CORE Event - Chemical,7,"Terrain becomes Toxic permanently. Non-chemical units become Corroded -1or, -1dr, -1speed."
+BLACK_ANVIL,Black Anvil,Tank,9,All friendly tanks gain when one is put into play you may search library for an exact copy to put into your hand.
+BLACKOUT,Blackout,Vet,7,Maintain Position; Breakthrough
+BLAZING_ADVANCE,Blazing Advance,CORE Event - Thermal,5,Deal 1 damage to all units. Terrain becomes Volcanic for 4 turns. Thermal units get +1 OR and +1 SPD.
+BLITZ_COUNTER,Blitz Counter,Ops,3,Intercept target unit as its deployed
+BREACH_ALARM_SYSTEM,Breach Alarm System,Base Upgrades,8,Attacking enemy units lose 1 Speed.
+BREAKTHROUGH_UPGRADE,Breakthrough Upgrade,Base Upgrades,9,All friendly units gain Breakthrough.
+BRITTLE_SYSTEMS,Brittle Systems,Ops,3,Target unit gets -2 DR until end of your next turn.
+BUNKERED_ZONE,Bunkered Zone,Terrain,,All units gain +1 DR while defending on this terrain.
+BURNING_PRESSURE,Burning Pressure,Ops,5,All enemy units get +1 heat
+BURNTHROUGH_CANNONS,Burnthrough Cannons,Unit Upgrades,1,Attached unit gains Breakthrough and +1 OR.
+BX_162,BX-162,Tank,5,
+BX_251,BX-251,Tank,5,
+BX_252_COMBAT_READY,"BX-252 ""Combat Ready""",Tank,5,Combat Ready
+BX_261_COLDFRONT,"BX-261 ""Coldfront""",Tank,6,3 df reduce speed of target unit by 1.
+BX_261_MULTI_DEFENDER,"BX-261 ""Multi Defender""",Tank,5,Multi Defender x
+BX_342,BX-342,Tank,5,
+BX_552_KILLGRID,"BX-552 ""Killgrid""",Tank,6,X Strike
+BX_662,BX-662,Tank,6,
+CASCADE_OVERDRIVE,Cascade Overdrive,Unit Upgrades,4,Attached unit gains Pay 5 Heat:  Roll a d20 deal x damage to all enemy units 1-8 1 damage 9-16 2 damage 17-20 3 damage
 CHEMICAL_FORTRESS,Chemical Fortress,Bases,,When this base is attacked enemy units receive -1 DR until their next turn.
-WIND_FORTRESS,Wind Fortress,Bases,,When this base is attacked it absorbs the first point of damage each turn.
+CHEMICAL_LOCKDOWN,Chemical Lockdown,CORE Event - Chemical,5,Terrain becomes Toxic for 4 turns. Non-chemical units cannot activate abilities.
+CITADEL_PROTOCOL,Citadel Protocol,Unit Upgrades,5,Attached unit gains  Roll d20: 1�9 prevent 3 damage to your base this turn; 10�17 prevent 5; 18�20 prevent all damage to your base this turn.
+CITY,City,Terrain,,Troops gain +1 DR. Tanks lose 1 Speed.
+COLD_DENIAL,Cold Denial,Ops,7,Enemy units cannot attack or block this turn.
+COLDFRAME,Coldframe,Mech,9,All friendly Mechs gain at the start of your turn reduce heat by 1 extra point
+COLLAPSED_HIGHWAY,Collapsed Highway,Terrain,,Tanks gain +1 dr planes lose 1 or.
+COMBAT_READY_UPGRADE,Combat Ready Upgrade,Base Upgrades,8,All friendly units gain Combat Ready.
+COMMAND_RELAY_UPLINK,Command Relay Uplink,Base Upgrades,5,When attacked gain 1 df
+CONTROL_OVERRIDE,Control Override,Unit Upgrades,2,Attached unit gains Hacking
+CORROSIVE_SHIFT,Corrosive Shift,CORE Event - Chemical,4,"Terrain becomes Toxic for 3 turns. When units take damage, they become Corroded."
+COUNTER_BARRAGE,Counter Barrage,Ops,4,Intercept target card as its deployd
+COUNTERFIRE_PROTOCOL,Counterfire Protocol,Base Upgrades,9,"Roll d20. On 10 or higher, deal 3 damage to one attacking unit."
+CRITICAL_OVERLOAD,Critical Overload,Ops,2,Destroy a friendly unit. Deal 3 damage to a unit or base.
+CRYO_SPIKE,Cryo Spike,CORE Event - Cryo,3,Deal 1 damage to all units. . Terrain becomes Frozen for 2 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD.
+CX_445,CX-445,Mech,6,
+CX_535_GHOST,"CX-535 ""Ghost""",Mech,6,Breakthrough
+CX_544_REACTOR,"CX-544 ""Reactor""",Mech,6,OverClocked 2
+CX_553_ICE_COLD,"CX-553 ""Ice Cold""",Mech,6,Thermal Shear - This unit loses 1 extra heat on your turn.
+CX_554_GUARDIAN,"CX-554 ""Guardian""",Mech,7,4 Heat: roll d20 deal damage to target unit.
+CX_555,CX-555,Mech,7,
+CX_652,CX-652,Mech,6,
+CX_653_DOOM_WALKER,"CX-653 ""Doom Walker""",Mech,7,when a friendly unit is destroyed pay 3 heat and create a 1/1/1 drone
+DEADLOCK,Deadlock,Vet,7,Overclocked 3
+DEEP_CHILL,Deep Chill,Ops,1,Target unit gets -2 Speed until your next turn.
+DEFENSE_TURRET_ARRAY,Defense Turret Array,Base Upgrades,6,2 df Deal 2 damage to one attacking unit.
+DENSE_FOG_BANK,Dense Fog Bank,CORE Event - Neutral,2,Terrain becomes Neutral for 2 turns. No damage is dealt during combat this turn.
+DESERT,Desert,Terrain,,Fire units on this terrain gain +1 OR. Non-Fire units on this terrain gain +1 Heat.
+DISRUPTION_STRIKE,Disruption Strike,Ops,3,Target unit gets -1 Speed and -1 DR this turn.
+DRONE_ASSEMBLY_BAY,Drone Assembly Bay,Base Upgrades,6,Create a 1/1/1 Drone.
+DRONE_FABRICATION,Drone Fabrication,Ops,4,Roll d20: create 2/3/4 1/1/1 Drones.
+DRONE_RECYCLER,Drone Recycler,Base Upgrades,5,"If a unit was destroyed last turn, create a 1/1/1 Drone."
+ECOSYSTEM_REBIRTH,Ecosystem Rebirth,CORE Event - Renewal,7,Terrain becomes Renewal permanently. Renewable Units take 1 less damage from each source.
+EMERGENCY_BARRIERS,Emergency Barriers,Ops,2,Prevent the next 3 damage to a unit or base.
+EMERGENCY_REINFORCE,Emergency Reinforce,Ops,1,"Roll d20: 19 prevent 1 dmg, 1017 prevent 2 dmg, 1820 3 dmg to unit or base."
+EMERGENCY_SHIELDING,Emergency Shielding,Base Upgrades,7,All friendly units gain +1 DR.
+ENERGY_RECLAIM,Energy Reclaim,Ops,3,Reduce the Deployment Cost of all your cards by 1 this turn
+ENERGY_ROUTER,Energy Router,Unit Upgrades,4,Attached unit gains pay X DF and transfer that many points of damage to itself.
+FALLOUT_BUNKER,Fallout Bunker,Bases,,Your units receive when hit by enemy units they take 1 damage.
+FALLOUT_SPREAD,Fallout Spread,CORE Event - Nuclear,3,Deal 1 damage to all units. d20: 15+ deal 1 damage to enemy units instead.
+FIRELINK_MATRIX,Firelink Matrix,Unit Upgrades,4,Attached unit gains Pay 4 Heat: Give +1 OR to up to 5 different units.
+FIREWALL_UPGRADE,Firewall upgrade,Base Upgrades,6,All friendly units gain Firewall.
+FIRST_CONTACT,First Contact,Tank,8,All friendly tanks gain deal 1 damage to target base when enter play
+FLARE_COUNTERMEASURES,Flare Countermeasures,Unit Upgrades,1,Attached unit gains Shield 1 and +1 DR.
+FLASH_FREEZE,Flash Freeze,Ops,3,Slow attacking enemy units by 1 speed for this turn.
+FOCUSED_FIRE,Focused Fire,Ops,1,Deal X damage to a unit.
+FORTIFIED_CHEMICAL_REFINERY,Fortified Chemical Refinery,Bases,,Your units receive when blocking or become blocked enemy units receive -1 OR.
+FORTIFIED_PASS,Fortified Pass,Terrain,,Ground units gain +1 DR.
+FORTIFIED_STAND,Fortified Stand,Ops,2,Pay X DFPrevent that much damage divided as you choose.
+FOXFIRE,Foxfire,Vet,7,Hover; Breakthrough
+FRAME_HUNTER,Frame Hunter,Vet,3,
+FRAMEWALKER,Framewalker,Vet,6,Reduce Heat cost of active abilites by 1.
+FROZEN_FLATS,Frozen Flats,Terrain,,Cryo units on this terrain gain +1 DR. Non-cryo units on this terrain lose 1 Speed.
+FROZEN_SYSTEMS,Frozen Systems,Ops,2,Target unit cannot Ready during its next Ready step.
+GAMMA_DRIFT,Gamma Drift,CORE Event - Nuclear,4,Terrain becomes Nuclear Waste for 3 turns. Non-Nuclear units take 1 damage at the end of each turn.
+GHOST_OPERATIVE,Ghost Operative,Vet,3,
+GRAVETREAD,Gravetread,Vet,7,Anti-Air; Maintain Position
+GRAVEWAR_THE_UNBROKEN,Gravewar The Unbroken,Tank,10,All friendly units gain 1 dr and can block 1 extra attacker
+GREAVES_GROUND_OPS,Greaves Ground Ops,Troop,9,When an enemy unit is destroyed you may pay 1 df if you do create a 1/1/1 drone
+GUARDIAN_EMITTER,Guardian Emitter,Unit Upgrades,5,"Attached Unit Gains When attached unit blocks, prevent 1 damage to all other friendly unit."
+HARD_COUNT,Hard Count,Mech,8,All friendly Mechs gain pay 6 heat deal 1 damage to target unit for each mech in play
+HARDLIGHT_BARRIER,Hardlight Barrier,Ops,4,Prevent all damage to a unit this turn.
+HARDLIGHT_PROJECTOR,Hardlight Projector,Unit Upgrades,1,Attached unit gains +1 OR and +1 DR
+HEAL_COUNTER,Heal Counter,Ops,5,heal base by d20
+HEAT_BURST,Heat Burst,Ops,3,All Attacking Mechs get 1 heat.
+HEAT_SINK,Heat Sink,Ops,1,Reduce heat of target unit by 1
+HEATSHIELD_MATRIX,Heatshield Matrix,Unit Upgrades,3,Attached unit gains Firewall and Thermal Shield
+HOLD_THE_LINE,Hold the Line,Ops,3,Friendly units may block one additional attacker this turn.
+HOT_DROP_PROTOCOL,Hot Drop Protocol,Ops,2,Units deployed this turn may attack immediately.
+HOTSHOT,Hotshot,Mech,8,All friendly Mechs Gain OverClocked +3
+HOVER_JETS,Hover Jets,Unit Upgrades,1,Attached unit gains Hover and +1 Speed.
+HOVER_PROTOCOL,Hover Protocol,Ops,5,all friendly plains gain hover
+HOVER_UPGRADE,Hover Upgrade,Base Upgrades,5,All friendly units gain Hover.
+HV_433_FIREWALL,"HV-433 ""Firewall""",Mech,5,firewall
+HV_434,HV-434,Mech,5,
+HV_532,HV-532,Mech,5,
+HV_533_RECON,"HV-533 ""Recon""",Mech,5,Recon
+HV_543,HV-543,Mech,5,
+ICE_CITADEL,Ice Citadel,Bases,,Your units receive +1 DR.
+ICEBOUND_FIREWALL,Icebound Firewall,Unit Upgrades,4,Attached unit gains Thermal Shear and Firewall.
+INCINERATOR_MODULE,Incinerator Module,Unit Upgrades,2,Attached unit gains Flame thrower 
+INDUSTRIAL_ZONE,Industrial Zone,Terrain,,Units with upgrades gain +1 OR.
+INFERNO_CORRIDOR,Inferno Corridor,CORE Event - Thermal,4,Terrain becomes Volcanic for 3 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
+INTERCEPT_PROTOCOL,Intercept Protocol,Ops,4,Change the target of an attack or ability.
+INTERCETOR_SUITE,Interceptor Suite,Unit Upgrades,2,Attached unit gains Air Suppression 
+IR_371_AEGIS,"IR-371 ""Aegis""",Tank,7,3 df and engage prevent all damage to target unit
+IR_471_PARADOX,"IR-471 ""Paradox""",Tank,7,When this unit attacks deal 1 damage to a target
+IR_562_ASHFALL,"IR-562 ""Ashfall""",Tank,7,3 df deal 1 damage to d20 targets
+IR_582,IR-582 ,Tank,7,
+IR_762_HELLFORGE,"IR-762 ""Hellforge""",Tank,7,2 df gain 1 or
+IRON_MARSHAL,Iron Marshal,Vet,6,Multi-Defender 1
+IRONBREAKER,Ironbreaker,Vet,3,
+IRONWING,Ironwing,Plane,8,All Friendly Planes Gain hover.
+JUNGLE,Jungle,Terrain,,Troops gain +1 Speed. Tanks lose 1 Speed. Planes lose 1 OR.
+KINETIC_CONVERTER,Kinetic Converter,Unit Upgrades,3,Attached unit gains Pay 3 Heat: This unit gains +4 Speed.
+LANDING_STRIP,Landing Strip,Terrain,,Planes gain +1 Speed.
+LAST_BASTION,Last Bastion,Ops,7,"Roll d20: 19 prevent 3 dmg, 1017 prevent 5 dmg, 1820 prevent all dmg this turn."
+LAST_LAUGH,Last Laugh,Tank,8,All friendly tanks gain when destroyed deal 2 damage to d20 enemys
+LAST_RATTLE,Last Rattle,Plane,8,All friendly units gain when destroyed draw a card.
+LT_112,LT-112,Mech,2,
+LT_123,LT-123,Mech,2,
+LT_131,LT-131,Mech,1,
+LT_212,LT-212,Mech,1,
+LT_231,LT-231,Mech,2,
+LT_311,LT-311,Mech,1,
+LT_311_COLOSSUS,"LT-311 ""Colossus""",Mech,7,Pay 4 Heat: gains breakthrough and can only be blocked by 1 unit this turn.
+LT_311_FIREWALL,"LT-311 ""Firewall""",Mech,3,Firewall
+LT_321,LT-321,Mech,2,
+MAINTAIN_POSITION_UPGRADE,Maintain Position Upgrade,Base Upgrades,8,All friendly units gain Maintain Position.
+MAKESIFT_ARMOR,Makeshift Armor,Unit Upgrades,4,Attached unit gains cannot be destroyed when this unit is dealt damage destroy this upgrade.
+MARA_CALDWELL_FIREBRAND,"Mara Caldwell, Firebrand",Troop,8,All friendly troops gain Flamethrower: When attacking or blocking deal 1 additional damage to up to 2 enemy units.
+MERCER_PATHFINDER,"Mercer, Pathfinder",Troop,8,all friendly troops gain Recon.
+MINE_DISPENSER,Mine Dispenser,Unit Upgrades,2,Attached unit gains Mines.
+MINE_SCARRED_GROUND,Mine Scarred Ground,Terrain,,Ground units in this terrain take 1 damage when attacking.
+MISSILE_ATTACK,Missile Attack,Ops,3,destroy target unit
+MK_223_OVERCLOCK,"MK-223 ""Overclock""",Mech,3,OverClocked 1
+MK_312_MANTAIN_POSISTION,"MK-312 ""Maintain Posistion""",Mech,3,Maintain Posistion 
+MK_323,MK-323,Mech,3,
+MK_332,MK-332,Mech,3,
+MK_333,MK-333,Mech,4,
+MK_422,MK-422,Mech,3,
+MK_422_MELTDOWN,"MK-422 ""Meltdown""",Mech,7,Destroy this Mech and deal damage to target unit equal to the amount of heat this unit has
+MK_422_RAPID_DEPLOYMENT,"MK-422 ""Rapid Deployment""",Mech,4,Rapid Deployment
+MK_424,MK-424,Mech,4,
+MK_432_2_STRIKE,"MK-432 ""2-Strike""",Mech,4,X Strike
+MK_522,MK-522,Mech,4,
+MOBILITY_HACK,Mobility Hack,Ops,2,Target unit gets -2 Speed this turn.
+MULTI_DEFENDER_UPGRADE,Multi Defender Upgrade,Base Upgrades,9,All friendly units gain Multi-Defender 1.
+NO_SURVIVORS,No Survivors,Ops,1,Destroy a friendly unit and an enemy unit.
+NUCLEAR_FALLOUT,Nuclear Fallout,Ops,8,Roll d20. 19: Deal 3 damage to all units; 1017: Deal 4 damage to all units; 1820: Destroy all non-Apex units.
+NUCLEAR_OPTION,Nuclear Option,CORE Event - Nuclear,7,Terrain becomes Nuclear Waste permanently. Roll d20 1-10 destroy all units 11-20 destroy all enemy units.
+NUCLEAR_SHOCKWAVE,Nuclear Shockwave,Ops,4,Deal 2 damage to all units.
+OMEGA_CASCADE,Omega Cascade,Unit Upgrades,5,Attached unit gains Pay 8 Heat: Destroy all other units.
+OPEN_PLAINS,Open Plains,Terrain,,This terrain has no additional effects.
+OR_UPGRADE,OR Upgrade,Base Upgrades,7,All friendly units gain +1 OR.
+OVERCHARGE_MATRIX,Overcharge Matrix,Unit Upgrades,5,Attached unit gains Pay 7 Heat: Double this units OR and DR until end of turn.
+OVERCLOCKED_1_UPGRADE,Overclocked 1 Upgrade,Base Upgrades,5,All friendly units gain Overclocked 1.
+OVERDRIVE,Overdrive,Ops,3,Roll d20: attackers gain +1/+2/+3 OR
+OVERWHELM,Overwhelm,Ops,4,Enemy units get -1 DR this turn.
+PERMAFROST_KEEP,Permafrost Keep,Bases,,When this base is attacked enemy units get -1 speed.
+PERMAFROST_RETURN,Permafrost Return,Ops,3,Return target unit to its owners hand.
+PHASE_SHIFT_BARRIER,Phase Shift Barrier,Unit Upgrades,3,Attached unit gains Pay 4 Heat: Prevent all damage that would be dealt to this unit this turn.
+POWER_SUBSTATION,Power Substation,Terrain,,Mechs gain +1 DR.
+PRECISION_STRIKE,Precision Strike,Ops,1,Roll d20. Deal damage to a unit: 110: 2 dmg; 1118: 3 dmg; 1920: 4 dmg (cannot be prevented).
+RADIATION_LEAK,Radiation Leak,CORE Event - Nuclear,2,Terrain becomes Nuclear Waste for 2 turns. Non-Nuclear units take 1 damage at the end of each turn.
+RAZORWING_ACE,Razorwing Ace,Vet,5,
+REACTIVE_DRONE_RESPONSE,Reactive Drone Response,Base Upgrades,8,Create a 1/1/1 Drone.
+REACTOR_CASCADE_PROTOCOL,Reactor Cascade Protocol,Unit Upgrades,3,Attached unit gains Pay 4 Heat: Deal 1 damage to all enemy units.
+REACTOR_CITADEL,Reactor Citadel,Bases,,When this base is attacked enemy units take 1 damage.
+REACTOR_COMMANDER,Reactor Commander,Vet,5,Maintain Position
+RECLAMATION_FIELD,Reclamation Field,CORE Event - Renewal,2,Terrain becomes Renewal for 2 turns. Renewable Units take 1 less damage from each source.
+REDIRECT_CHIP,Redirect Chip,Unit Upgrades,3,Attached unit gains Pay 4 DF: Change the target of an attack or ability to another valid target.
+REDLINE_PROTOCOL,Redline Protocol,Unit Upgrades,3,Attached unit gains  +1 OR and +1 Speed and Overclocked +1.
+REDMARK_THUNDERLINE,"Redmark, Thunderline",Troop,8,All friendly Troops gain pay 2 DF deal 1 damage to target unit
+REGENESIS_SHIFT,Regenesis Shift,CORE Event - Renewal,4,Terrain becomes Renewal for 3 turns. Renewable Units take 1 less damage from each source.
+REINFORCEMENT_PROTOCOL,Reinforcement Protocol,Unit Upgrades,5,Attached unit gains pay 5 df Prevent the next 1 damage to each friendly unit this turn.
+RELENTLESS_ORDERS,Relentless Orders,Ops,9,Friendly units may attack twice this turn.
+RESEARCH_COMPLEX,Research Complex,Terrain,,Units with activated abilities gain +1 OR.
+RESOURCE_MODULE,Resource Module,Unit Upgrades,5,Attached unit gains when it deals damage to a unit that is destroyed gain 1 DF and draw a card.
+RESTORATION_PROTOCOL,Restoration Protocol,CORE Event - Renewal,5,Terrain becomes Renewal for 4 turns. Renewable Units take 1 less damage from each source.
+RG_323,RG-323,Troop,5,
+RG_324_ANTI_AIR,"RG-324 ""Anti-Air""",Troop,5,Anti Air
+RG_333,RG-333,Troop,5,
+RG_333_ANTI_AIR,"RG-333 ""Anti-Air""",Troop,6,Anti Air
+RG_334_2_STRIKE,"RG-334 ""2-Strike""",Troop,5,x strike
+RG_433,RG-433,Troop,6,
+RG_433_BREAKTHROUGH,"RG-433 ""Breakthrough""",Troop,6,Breakthrough
+SABOTAGE,Sabotage,Ops,2,Stops enemy units from attacking this turn and deal 1 damage to their base.
+SALVAGE,Salvage,Ops,0,Discard a card draw a card.
+SALVAGE_UPGRADE,Salvage Upgrade,Base Upgrades,1,When salvage is used draw an extra card.
+SATURATION_STRIKE,Saturation Strike,Unit Upgrades,2,Attached unit gains Carpet Bombing
+SCAVENGED_SWARM_BAY,Scavenged Swarm Bay,Unit Upgrades,4,Attached unit gains pay 3 df roll d20 to create 1/1/1 drone 1-9 1 10-18 2 19-20 3
+SCRAP_FIELDS,Scrap Fields,Terrain,,Tanks on this terrain lose 1 OR.
+SCRAP_LAUNCHER,Scrap Launcher,Unit Upgrades,4,Attached unit gains pay 4 DF deal 1 damage for each friendly drone you have in play to target unit.
+SCRAPLORD,Scraplord,Troop,10,All friendly units gain when destroyed create 1/1/1 drone
+SECURE_PASSAGE,Secure Passage,Unit Upgrades,3,Attached unit gains Route Secured +1 DR and +1 speed.
+SG_141_SHIELD,"SG-141 ""Shield """,Tank,3,Shield X
+SG_142_RECON,"SG-142 ""Recon""",Tank,3,Recon: When you play this card you may look at the top 5 cards in your library put 1 in your hand and the rest on top of your deck in any order.
+SG_151,SG-151,Tank,3,
+SG_152_RAPID_DEPLOYMENT,"SG-152 ""Rapid Deployment""",Tank,4,Rapid Deployment
+SG_153,SG-153,Tank,4,
+SG_161,SG-161,Tank,3,
+SG_161_MAINTAIN_POSISTION,"SG-161 ""Maintain Posistion""",Tank,4,Maintain Posistion
+SG_161_SKYLOCK,"SG-161 ""Skylock""",Tank,6,Anti Air
+SG_241,SG-241,Tank,3,
+SG_251_COMBAT_READY,"SG-251 ""Combat Ready""",Tank,4,Combat Ready
+SG_253,SG-253,Tank,4,
+SHIELD_UPGRADE,Shield Upgrade,Base Upgrades,9,All friendly units gain Shield 1.
+SIEGE_DRONE_LAUNCHPAD,Siege Drone Launchpad,Base Upgrades,7,"Create a 1/1/1 Drone, then it may block this combat."
+SIEGE_GUNNER,Siege Gunner,Vet,4,
+SIGNAL_INTERFERENCE,Signal Interference,CORE Event - Neutral,3,Terrain becomes Neutral for 3 turns. Enemy units can not activate abilities unitl your next turn.
+SKY_MARSHAL,Sky Marshal,Vet,6,Hover; 
+SLEET_BARRAGE,Sleet Barrage,CORE Event - Cryo,5,Deal 1 damage to all units d20: 15+ deal 1 damage to enemy units instead. Terrain becomes Frozen for 4 turns. Cryo units get +2 DR. Non-Cryo units get -2 SPD.
+SNAP_FREEZE,Snap Freeze,CORE Event - Cryo,2,Terrain becomes Frozen for 2 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD.
 SOLAR_BASE,Solar Base,Bases,,Your units receive +1 speed
+SOLAR_FLARE,Solar Flare,CORE Event - Thermal,3,Deal 1 damage to all units. d20: 15+ deal 1 damage to enemy units instead. Terrain becomes Volcanic for 2 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
+SPEED_UPGRADE,Speed Upgrade,Base Upgrades,7,All friendly units gain +1 Speed.
+SR_111,SR-111,Plane,2,
+SR_112,SR-112,Plane,1,
+SR_112_BREAKTHROUGH,"SR-112 ""Breakthrough""",Plane,3,Breakthrough
+SR_112_GUNNER,"SR-112 ""Gunner""",Plane,6,Hover
+SR_113,SR-113,Plane,1,
+SR_121,SR-121,Plane,2,
+SR_132,SR-132,Plane,2,
+SR_211,SR-211,Plane,2,
+SR_212,SR-212,Plane,1,
+SR_413_BREAKTHROUGH,"AR-413 ""Breakthrough""",Plane,4,Breakthrough
+STABILIZATION_PULSE,Stabilization Pulse,CORE Event - Renewal,3,Remove all negative effects from all units. Roll a d20: 15+ only friendly units gain damage reduction this turn.
+STRIKE_COMMANDER,Strike Commander,Vet,3,
+STRUCTURAL_COLLAPSE,Structural Collapse,Ops,3,Roll d20. Deal damage to all attacking units: 19: 1 dmg; 1017: 2 dmg; 1820: 3 dmg.
+SUBZERO_ACTUATORS,Subzero Actuators,Unit Upgrades,2,Attached unit gains Stasis Lock
+SUNSPIKE,Sunspike,Plane,9,All friendly planes gain Carpet Bombing: When attacking deal 1 damage to all enemy ground units if unblocked.
+SUPPLY_RELAY_NETWORK,Supply Relay Network,Base Upgrades,1,You gain 1 extra DF on your turn.
+SUPPRESSION_FIELD,Suppression Field,Unit Upgrades,4,Attached unit gains pay 4 Heat: +1 DR to itself and enemy units blocking this unit or are blocked by this unit lose 1 speed.
+SUPPRESSIVE_BARRAGE,Suppressive Barrage,Ops,3,Enemy units get -1 Speed this turn.
+SWAMP,Swamp,Terrain,,Troops on this terrain lose 1 Speed.
+SYSTEMS_SUPPRESSION,Systems Suppression,Ops,5,Enemy units cannot activate abilities this turn.
+TACTICAL_BREAKTHROUGH,Tactical Breakthrough,Ops,4,Enemy units cannot block this turn.
+TACTICAL_ENTRENCHMENT,Tactical Entrenchment,Unit Upgrades,5,"Attached unit gains Mines, Tripewires, and Hacking."
+TACTICAL_MARKING,Tactical Marking,Ops,2,The next damage you deal to a unit this turn is doubled.
+TACTICAL_SABOTAGE,Tactical Sabotage,Ops,3,Destroy target upgrade.
+TALON_LEADER,Talon Leader,Vet,4,
+TARGET_DESIGNATION,Target Designation,Ops,3,Each time damage is dealt to target unit this turn it is increased by 1.
+THE_BURNING_ANGEL,The Burning Angel,Plane,10,All friendly units gain Reactor Leak: When this unit is destroyed deal 1 damage to all enemy units and reduce their speed by 1 until the end of this turn.
+THE_LAST_LIGHT_OF_MERIDIAN,The Last Light of Meridian,Mech,10,all enemy units get -1or and -1dr
+THERMAL_FEEDBACK_CANNONS,Thermal Feedback Cannons,Unit Upgrades,5,Attached unit gains Pay 6 Heat: Roll a d20 deal x damage to target unit 1-8 4 damage 9-16 5 damage 17-20 6 damage
+THERMAL_PURGE,Thermal Purge,Ops,6,Remove all heat from friendly units.
+TITAN_OPERATOR,Titan Operator,Vet,4,
+TN_041,TN-041,Tank,2,
+TN_041_ANTI_AIR,"TN-041 ""Anti-Air""",Tank,3,anti air
+TN_041_BULWARK,"TN-041 ""Bulwark""",Tank,6,3 df When this unit blocks and survives Deal damage equal to this units DR to the attacking unit.
+TN_121,TN-121,Tank,1,
+TN_131,TN-131,Tank,1,
+TN_132,TN-132,Tank,2,
+TN_141,TN-141,Tank,2,
+TN_221,TN-221,Tank,1,
+TN_231,TN-231,Tank,2,
+TORNADO_OUTBREAK,Tornado Outbreak,CORE Event - Neutral,5,Roll a d20; 1-16: return all units to owners hands 17-20: Return all enemy units to their hand.
+TOXIC_MARSH,Toxic Marsh,Terrain,,Nuclear units on this terrain ignore terrain damage. Non-Nuclear units on this terrain take 1 damage each turn.
+TOXIC_SPILL,Toxic Spill,CORE Event - Chemical,2,"Terrain becomes Toxic for 2 turns. When units take damage, they become Corroded. The unit gets -1 or, -1 dr, and -1 speed."
+TR_112,TR-112,Troop,2,
+TR_121,TR-121,Troop,2,
+TR_122,TR-122,Troop,1,
+TR_122_COMBAT_READY,"TR-122 ""Combat Ready""",Troop,3,Combat Ready
+TR_122_TORCH,"TR-122 ""Torch""",Troop,6,Flamethrower: When attacking or blocking deal 1 additional damage to up to 2 enemy units.
+TR_211,TR-211,Troop,1,
+TR_212,TR-212,Troop,1,
+TR_221,TR-221,Troop,2,
+TR_222,TR-222,Troop,2,
+TRIPWIRE_RIG,Tripwire Rig,Unit Upgrades,2,Attached unit gains Tripwire.
+TWINSTRIKE_PAYLOAD,Twinstrike Payload,Unit Upgrades,1,Attached unit gains 2-strike and +1 DR
+UNSTABLE_REACTOR,Unstable Reactor,Unit Upgrades,2,Reactor Leak: When this unit is destroyed deal 1 damage to all enemy units and reduce their speed by 1 until the end of their next turn.
+URBAN_CROSSFIRE,Urban Crossfire,Terrain,,Planes on this terrain lose 1 OR.
+VANGUARD_CAPTAIN,Vanguard Captain,Vet,5,
+VANGUARD_COMMANDER,Vanguard Commander,Vet,5,Maintain Position
+VANGUARD_SYSTEMS,Vanguard Systems,Unit Upgrades,3,Attached unit gains Recon +1 OR and +1 DR
+VELOCITY_OVERRIDE,Velocity Override,Unit Upgrades,1,Attached Unit gains +1 speed and speed cannot be reduced
+VK_735_DEAD_SIGNAL,"VX-735 ""Dead Signal""",Plane,7,Hacking
+VN_443_ASHRUNNER,"VN-443 ""Ashrunner""",Troop,7,Combant Ready
+VN_444,VN-444,Troop,7,
+VN_444_WRECKING_CREW,"VN-444 ""Wrecking Crew""",Troop,7,Maintain Posistion 
+VN_544_HARDPOINT,"VN-544 ""Hardpoint""",Troop,7,Maintain Posistion 
+VN_655,VN-655,Troop,7,
+VOLCANIC_CASCADE,Volcanic Cascade,CORE Event - Thermal,7,Terrain becomes Volcanic permanently. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack or block.
+VOLCANIC_SURGE,Volcanic Surge,CORE Event - Thermal,2,Terrain becomes Volcanic for 2 turns. Thermal units get +1 OR. Non-Thermal units take 1 damage when they attack.
+VOLCANO_HIDEOUT,Volcano Hideout,Bases,,Your units receive +1 OR.
+VX_535_SKYBREAKER,"VX-535 ""Skybreaker""",Plane,7,3 df target unit cant block this turn
+VX_625_SCORCHED_EARTH,"VX-625 ""Scorched Earth""",Plane,7,Carpet Bombing
+VX_814,VX-814,Plane,7,
+VX-524_BONEYARD,"VX-524 ""Boneyard""",Plane,7,Mines
+WARCALLER,Warcaller,Vet,6,Breakthrough
+WARHOUND,Warhound,Vet,4,Maintain Position
+WHITE_GALE,White Gale,Plane,8,All friendly planes gain rapid deployment and 1 speed.
+WHITE_LOCK,White Lock,Tank,8,All tanks gain when blocked or blocking the enemy unit loses 2 speed.
+WHITEOUT_PROTOCOL,Whiteout Protocol,Ops,3,Slow enemy units by 1 speed for this turn.
+WHITEOUT_SIEGE,Whiteout Siege,CORE Event - Cryo,4,Terrain becomes Frozen for 3 turns. Cryo units get +1 DR. Non-Cryo units get -1 SPD and cannot attack this turn.
+WIND_FORTRESS,Wind Fortress,Bases,,When this base is attacked it absorbs the first point of damage each turn.
